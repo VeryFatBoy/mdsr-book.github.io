@@ -1,0 +1,12 @@
+---
+title: "The Authors"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+- [Benjamin S. Baumer](http://www.science.smith.edu/~bbaumer)
+- Nicholas J. Horton
+- Daniel T. Kaplan

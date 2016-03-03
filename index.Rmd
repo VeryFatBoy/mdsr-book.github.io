@@ -2,4 +2,6 @@
 title: "Home"
 ---
 
+#### Coming Soon!
+
 [Modern Data Science with R](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)

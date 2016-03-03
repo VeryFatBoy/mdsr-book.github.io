@@ -1,0 +1,21 @@
+
+.navbar {
+    background-color: #e0c46d;
+    background-image: linear-gradient(to bottom, #e0c46d, #bcac7d);
+    border: 0 1px 0 0 solid #f4ac00;
+}
+
+
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.past {
+  color: darkgray;
+}
+
+.module {
+  border-left: darkgray 1px;
+}

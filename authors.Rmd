@@ -8,5 +8,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 - [Benjamin S. Baumer](http://www.science.smith.edu/~bbaumer)
-- Nicholas J. Horton
-- Daniel T. Kaplan
+- [Nicholas J. Horton](https://www.amherst.edu/people/facstaff/nhorton)
+- [Daniel T. Kaplan](http://www.macalester.edu/~kaplan)

@@ -1,7 +1,12 @@
 ---
-title: "Home"
+title: "*Modern Data Science with R*"
 ---
 
-#### Coming Soon!
+<div>
+  <img src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg">
+</div>
 
-[Modern Data Science with R](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
+Buy it from:
+
+* [CRC Press](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
+* [Amazon.com](https://www.amazon.com/Modern-Data-Science-Download-Statistical/dp/1498724485)

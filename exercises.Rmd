@@ -1,0 +1,57 @@
+---
+html_document:
+  include_toc: true
+---
+
+## Exercises
+
+### Data Vizualization
+
+#### Exercise 2.3
+
+Choose one of the data graphics listed below
+and answer the following questions. Be sure to indicate which graphical display you picked.
+
+a. Identify the visual cues, coordinate system, and scale(s).
+b. How many variables are depicted in the graphic? Explicitly link each variable to a
+visual cue that you listed above.
+c. Critique this data graphic using the taxonomy described in this chapter.
+
+1. [Who does not Pay Income Tax?](http://thefuturebuzz.com/2012/09/19/simplicity-with-data-visualization-is-still-best)
+2. [World’s Top 10 Best Selling Cigarette Brands, 2004-2007](http://vizwiz.blogspot.com/2009/12/simple-is-better.html)
+#. [GNPD Usage by Food Categories](http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg)
+#. [NBA Playoff Rings](http://champsring.com/products/pro-basketball-2013)
+#. [UK University Rankings](http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg)
+#. [Childhood Obesity in the US](http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif)
+#. [Relationship between ages and psychosocial maturity](http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg)
+#. [Location of Floating Plastic Trash](http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg)
+
+
+#### Exercise 2.5
+
+Consider one of the more complicated data graphics listed below. 
+
+a. What story does the data graphic tell? What is the main message that you take away
+from it?
+b. Can the data graphic be described in terms of the taxonomy presented in this chapter?
+If so, list the visual cues, coordinate system, and scales(s) as you did in Problem 2(a).
+If not, describe the feature of this data graphic that lies outside of that taxonomy.
+c. Critique and/or praise the visualization choices made by the designer. Do they work?
+Are they misleading? Thought-provoking? Brilliant? Are there things that you would
+have done differently? Justify your response.
+
+1. [Health InfoScape](http://visualization.geblogs.com/visualization/network/)
+2. [Career Paths for Williams College alums](http://web.williams.edu/Mathematics/devadoss/careerpath.html)
+#. [Wind Map](http://hint.fm/wind/)
+#. [Obama's Budget](http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?\_r=1)
+#. [Mapping the Epigenome](http://www.nytimes.com/imagepages/2008/11/11/science/20081111\_EPIGENETICS\_GRAPHIC.html)
+#. [UK Government Spending](http://image.guardian.co.uk/sys-files/Guardian/documents/2011/11/08/Public\_spending\_2710.pdf)
+#. Malte Spitz's [cellphone usage](http://www.zeit.de/datenschutz/malte-spitz-data-retention)
+#. Wharf 5 [Tide Prediction](http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo\_TidePrediction\_1C\_4\_4096.jpg)
+#. [Wikipedia Changes Map](http://rcmap.hatnote.com/\#en,de,ru,ja,es,fr)
+#. [Programming languages across GitHub](http://infosthetics.com/archives/2014/09/githut\_the\_universe\_of\_programming\_languages\_across\_github.html)
+#. [Causes for breast cancer](http://infosthetics.com/archives/2014/08/the\_many\_factors\_influencing\_breast\_cancer\_incidence.html)
+#. [CitiBike Rebalancing](http://spatialinformationdesignlab.org/projects/citibike-rebalancing-study)
+#. [CO2 Emissions](http://image.guardian.co.uk/sys-files/Guardian/documents/2011/02/10/CarbonWeb.pdf)
+#. [Circos Genomic Data](http://circos.ca/intro/genomic\_data/)
+#. [Jobs Charted by State and Salary](http://flowingdata.com/2014/07/02/jobs-charted-by-state-and-salary/)

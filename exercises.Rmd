@@ -1,6 +1,10 @@
 ---
-html_document:
-  include_toc: true
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
 ---
 
 ## Exercises

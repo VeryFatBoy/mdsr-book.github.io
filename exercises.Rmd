@@ -31,6 +31,19 @@ c. Critique this data graphic using the taxonomy described in this chapter.
 #. [Relationship between ages and psychosocial maturity](http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg)
 #. [Location of Floating Plastic Trash](http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg)
 
+#### Exercise 2.4
+
+Answer the following questions for each of the following collections of data graphics.
+
+#. [What is a Data Scientist?](http://tinyurl.com/what-is-datascientist)
+#. [Charts that explain food in America](http://www.vox.com/a/explain-food-america)
+
+Briefly (one paragraph) critique the designer’s choices. Would you have made different
+choices? Why or why not.
+
+> Note: Each link contains a collection of many data graphics, and we don’t expect (or want) you to write a dissertation on each individual graphic. But each collection shares some common stylistic elements. You should comment on a few things that you notice about the design of the collection.
+
+
 
 #### Exercise 2.5
 

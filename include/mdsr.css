@@ -1,11 +1,42 @@
 
+
 .navbar {
-    background-color: #bd1f36;
-    background-image: linear-gradient(to bottom, #bd1f36, #3f1018);
-    border: 0 1px 0 0 solid #bd1f36;
+  background-color: #bd1f36;
+  background-image: linear-gradient(to bottom, #bd1f36, #3f1018);
+  border: 0 1px 0 0 solid #bd1f36;
 }
 
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  background-color: #1e90ff;
+}
 
+.navbar-default {
+    background-color: #0f006f;
+    border-color: #030033;
+}
+
+a {
+  color: #1e90ff;
+}
+
+a:hover, a:focus {
+  color: #0059b3;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: #262626;
+  text-decoration: none;
+  background-color: #1e90ff;  /*change color of links in drop down here*/
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: silver; /*Change rollover cell color here*/
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: white; /*Change active text color here*/
+}
 
 img {
   display: block;

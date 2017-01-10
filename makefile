@@ -2,8 +2,8 @@ HTML_FILES := $(patsubst %.Rmd, %.html ,$(wildcard *.Rmd))
 
 all: www
 
-www: src/index.Rmd
-	Rscript -e "rmarkdown::render_site('src');"
+www: index.Rmd
+	Rscript -e "rmarkdown::render_site();"
 
 html: $(HTML_FILES)
 

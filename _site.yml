@@ -1,5 +1,5 @@
 name: "www"
-output_dir: "../docs"
+output_dir: "."
 exclude: ["makefile", "README.Rmd", "README.md"]
 navbar:
   title: "Modern Data Science with R"

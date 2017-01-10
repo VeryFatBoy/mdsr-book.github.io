@@ -3,3 +3,9 @@ title: "Modern Data Science with R"
 ---
 
 [Website for *Modern Data Science with R* book](http://mdsr-book.github.io)
+
+To compile the HTML:
+
+```{bash, eval=FALSE}
+make
+```

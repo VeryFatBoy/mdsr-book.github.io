@@ -2,6 +2,7 @@
 cover-red: #bd1f36
 cover-gray: #3f1018
 dodgerblue: #1e90ff
+cover blue: #6d85c1
 blue-gray: #0059b3
 */
 
@@ -16,8 +17,8 @@ blue-gray: #0059b3
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > li > a:hover, 
 .navbar-default .navbar-nav > li > a:focus {
-  background-color: #1e90ff;
-  background-image: linear-gradient(to bottom, #1e90ff, #0059b3);
+  background-color: #6d85c1;
+  background-image: linear-gradient(to bottom, #6d85c1, #0059b3);
 }
 
 .navbar-default {
@@ -26,7 +27,7 @@ blue-gray: #0059b3
 }
 
 a {
-  color: #1e90ff;
+  color: #6d85c1;
 }
 
 a:hover, a:focus {
@@ -36,7 +37,7 @@ a:hover, a:focus {
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   color: #262626;
   text-decoration: none;
-  background-color: #1e90ff;  /*change color of links in drop down here*/
+  background-color: #6d85c1;  /*change color of links in drop down here*/
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -49,7 +50,7 @@ a:hover, a:focus {
 }
 
 .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
-  background-color: #1e90ff;
+  background-color: #6d85c1;
 }
 
 img {

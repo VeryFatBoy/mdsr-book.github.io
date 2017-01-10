@@ -1,9 +1,0 @@
-html_document:
-  self_contained: false
-  theme: united
-  highlight: textmate
-  css: include/mdsr.css
-  lib_dir: lib
-  includes:
-    in_header: include/in_header.html
-    after_body: include/after_body.html

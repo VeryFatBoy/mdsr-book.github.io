@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<style type="text/css">
+
+/* padding for bootstrap navbar */
+body {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* offset scroll position for anchor links (for fixed navbar)  */
+@media (min-width: 980px) {
+  .section h2 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+  .section h3 {
+    padding-top: 52px;
+    margin-top: -52px;
+  }
+}
+
+
+/* don't use link color in navbar */
+.dropdown-menu>li>a {
+  color: black;
+}
+
+
+</style>
+
+<link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="include/mdsr.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3,h4",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Modern Data Science with R</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">The Book</a>
+</li>
+<li>
+  <a href="http://github.com/beanumber/mdsr">The R package</a>
+</li>
+<li>
+  <a href="authors.html">The Authors</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="exercises.html">Exercises</a>
+    </li>
+    <li>
+      <a href="errata.html">Errata</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="exercises" class="section level2">
+<h2>Exercises</h2>
+<div id="data-vizualization" class="section level3">
+<h3>Data Vizualization</h3>
+<div id="exercise-2.3" class="section level4">
+<h4>Exercise 2.3</h4>
+<p>Choose one of the data graphics listed below and answer the following questions. Be sure to indicate which graphical display you picked.</p>
+<ol style="list-style-type: lower-alpha">
+<li>Identify the visual cues, coordinate system, and scale(s).</li>
+<li>How many variables are depicted in the graphic? Explicitly link each variable to a visual cue that you listed above.</li>
+<li>Critique this data graphic using the taxonomy described in this chapter.</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><a href="http://thefuturebuzz.com/2012/09/19/simplicity-with-data-visualization-is-still-best">Who does not Pay Income Tax?</a></li>
+<li><a href="http://vizwiz.blogspot.com/2009/12/simple-is-better.html">World’s Top 10 Best Selling Cigarette Brands, 2004-2007</a></li>
+<li><a href="http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg">GNPD Usage by Food Categories</a></li>
+<li><a href="http://champsring.com/products/pro-basketball-2013">NBA Playoff Rings</a></li>
+<li><a href="http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg">UK University Rankings</a></li>
+<li><a href="http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif">Childhood Obesity in the US</a></li>
+<li><a href="http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg">Relationship between ages and psychosocial maturity</a></li>
+<li><a href="http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg">Location of Floating Plastic Trash</a></li>
+</ol>
+</div>
+<div id="exercise-2.4" class="section level4">
+<h4>Exercise 2.4</h4>
+<p>Answer the following questions for each of the following collections of data graphics.</p>
+<ol>
+<li><a href="http://tinyurl.com/what-is-datascientist">What is a Data Scientist?</a></li>
+<li><a href="http://www.vox.com/a/explain-food-america">Charts that explain food in America</a></li>
+</ol>
+<p>Briefly (one paragraph) critique the designer’s choices. Would you have made different choices? Why or why not.</p>
+<blockquote>
+<p>Note: Each link contains a collection of many data graphics, and we don’t expect (or want) you to write a dissertation on each individual graphic. But each collection shares some common stylistic elements. You should comment on a few things that you notice about the design of the collection.</p>
+</blockquote>
+</div>
+<div id="exercise-2.5" class="section level4">
+<h4>Exercise 2.5</h4>
+<p>Consider one of the more complicated data graphics listed below.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What story does the data graphic tell? What is the main message that you take away from it?</li>
+<li>Can the data graphic be described in terms of the taxonomy presented in this chapter? If so, list the visual cues, coordinate system, and scales(s) as you did in Problem 2(a). If not, describe the feature of this data graphic that lies outside of that taxonomy.</li>
+<li>Critique and/or praise the visualization choices made by the designer. Do they work? Are they misleading? Thought-provoking? Brilliant? Are there things that you would have done differently? Justify your response.</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><a href="http://visualization.geblogs.com/visualization/network/">Health InfoScape</a></li>
+<li><a href="http://web.williams.edu/Mathematics/devadoss/careerpath.html">Career Paths for Williams College alums</a></li>
+<li><a href="http://hint.fm/wind/">Wind Map</a></li>
+<li><a href="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?_r=1">Obama’s Budget</a></li>
+<li><a href="http://www.nytimes.com/imagepages/2008/11/11/science/20081111_EPIGENETICS_GRAPHIC.html">Mapping the Epigenome</a></li>
+<li><a href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/11/08/Public_spending_2710.pdf">UK Government Spending</a></li>
+<li>Malte Spitz’s <a href="http://www.zeit.de/datenschutz/malte-spitz-data-retention">cellphone usage</a></li>
+<li>Wharf 5 <a href="http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo_TidePrediction_1C_4_4096.jpg">Tide Prediction</a></li>
+<li><a href="http://rcmap.hatnote.com/#en,de,ru,ja,es,fr">Wikipedia Changes Map</a></li>
+<li><a href="http://infosthetics.com/archives/2014/09/githut_the_universe_of_programming_languages_across_github.html">Programming languages across GitHub</a></li>
+<li><a href="http://infosthetics.com/archives/2014/08/the_many_factors_influencing_breast_cancer_incidence.html">Causes for breast cancer</a></li>
+<li><a href="http://spatialinformationdesignlab.org/projects/citibike-rebalancing-study">CitiBike Rebalancing</a></li>
+<li><a href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/02/10/CarbonWeb.pdf">CO2 Emissions</a></li>
+<li><a href="http://circos.ca/intro/genomic_data/">Circos Genomic Data</a></li>
+<li><a href="http://flowingdata.com/2014/07/02/jobs-charted-by-state-and-salary/">Jobs Charted by State and Salary</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Created by <a href="http://github.com/beanumber">beanumber</a>.</p>
+      </div>
+    </div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

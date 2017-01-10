@@ -1,0 +1,27 @@
+name: "www"
+output_dir: "../docs"
+exclude: ["makefile", "README.Rmd", "README.md"]
+navbar:
+  title: "Modern Data Science with R"
+  left:
+    - text: "The Book"
+      href: index.html
+    - text: "The R package"
+      href: http://github.com/beanumber/mdsr
+    - text: The Authors
+      href: authors.html
+    - text: "Resources"
+      menu: 
+        - text: "Exercises"
+          href: exercises.html
+        - text: "Errata"
+          href: errata.html
+
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    include:
+      in_header: include/in_header.html
+      after_body: include/after_body.html
+    css: include/mdsr.css

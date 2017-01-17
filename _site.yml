@@ -10,9 +10,25 @@ navbar:
       href: http://github.com/beanumber/mdsr
     - text: The Authors
       href: authors.html
+    - text: "Sample Chapters"
+      menu: 
+        - text: Preface
+          href: excerpts/mdsr-preface.pdf
+        - text: Table of Contents
+          href: excerpts/mdsr-toc.pdf
+        - text: Data Wrangling
+          href: excerpts/mdsr-dataI.pdf
+        - text: Ethics
+          href: excerpts/mdsr-ethics.pdf
+        - text: Regression modeling (appendix)
+          href: excerpts/mdsr-regression.pdf
+        - text: R Index
+          href: excerpts/mdsr-rindex.pdf
+        - text: Subject Index
+          href: excerpts/mdsr-subjectindex.pdf
     - text: "Resources"
       menu: 
-        - text: "Exercises"
+        - text: "Online Exercises"
           href: exercises.html
         - text: "Errata"
           href: errata.html

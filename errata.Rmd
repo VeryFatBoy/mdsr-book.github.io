@@ -3,3 +3,5 @@ title: "Errata"
 ---
 
 ## Known Errors
+
+- Page 10: The last sentence should start "It also seems clear" instead of "In also seems clear". (voberholzer)

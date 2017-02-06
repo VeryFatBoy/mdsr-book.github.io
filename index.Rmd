@@ -2,11 +2,23 @@
 title: "*Modern Data Science with R*"
 ---
 
-<div>
-  <img src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg">
-</div>
+<div class="row">
+  <div class="col-sm-6">
+
+*Modern Data Science with R* is a comprehensive **data science textbook** for undergraduates that incorporates statistical and computational thinking to solve real-world problems with data. Rather than focus exclusively on case studies or programming syntax, this book illustrates how statistical programming in the state-of-the-art R/RStudio computing environment  can be leveraged to extract meaningful information from a variety of data in the service of addressing compelling statistical questions. 
+
+Contemporary data science requires a tight integration of knowledge from statistics, computer science, mathematics, and a domain of application. This book will help readers with some background in statistics and modest prior experience with coding develop and practice the appropriate skills to tackle complex data science projects. The book features a number of exercises and has a flexible organization conducive to teaching a variety of semester courses.
 
 Buy it from:
 
 * [CRC Press](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
 * [Amazon.com](https://www.amazon.com/Modern-Data-Science-Download-Statistical/dp/1498724485)
+
+  </div>
+  <div class="col-sm-6">
+  <img src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg">
+  </div>
+</div>
+
+
+

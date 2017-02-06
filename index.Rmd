@@ -14,6 +14,14 @@ Buy it from:
 * [CRC Press](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
 * [Amazon.com](https://www.amazon.com/Modern-Data-Science-Download-Statistical/dp/1498724485)
 
+
+<div>
+  <a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9781498724487">
+  <i class="fa fa-book"></i>Request an e-Inspection Copy
+  <i class="fa fa-angle-double-right"></i>
+  </a>
+</div>
+
   </div>
   <div class="col-sm-6">
   <img src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg">
@@ -21,4 +29,7 @@ Buy it from:
 </div>
 
 
+
+
+---
 

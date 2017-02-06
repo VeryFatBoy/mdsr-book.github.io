@@ -5,6 +5,8 @@ title: "The Authors"
 <div class="row">
   <div class="col-sm-8">
   [Benjamin S. Baumer](http://www.science.smith.edu/~bbaumer) is an [assistant professor](https://www.smith.edu/academics/faculty/ben-baumer) in the Statistical & Data Sciences program at Smith College. He has been a practicing data scientist since 2004, when he became the first full-time statistical analyst for the [New York Mets](http://www.nymets.com). Ben is a co-author of [*The Sabermetric Revolution*](http://www.upenn.edu/pennpress/book/15168.html) and won the [2016 Contemporary Baseball Analysis Award](http://sabr.org/latest/baumer-brudnicki-mcmurray-win-2016-sabr-analytics-conference-research-awards) from the Society for American Baseball Research.
+  
+  <a href="https://twitter.com/baumerben" class="twitter-follow-button" data-show-count="false">Follow @baumerben</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class="col-sm-4">
   <img src="https://www.smith.edu/sites/default/files/styles/img-faculty-detail/public/media/faculty/ben_baumer_crop.jpg?itok=pvjnyxn" width=170px>
@@ -27,6 +29,8 @@ title: "The Authors"
 <div class="row">
   <div class="col-sm-8">
 [Nicholas J. Horton](https://www.amherst.edu/people/facstaff/nhorton) is a professor of statistics at Amherst College. He is a Fellow of the American Statistical Association (ASA), member of the NRC Committee on Applied and Theoretical Statistics, recipient of a number of national teaching awards, author of a series of books on statistical computing, and actively involved in curricular reform to help students "think with data".
+
+<a href="https://twitter.com/askdrstats" class="twitter-follow-button" data-show-count="false">Follow @askdrstats</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class="col-sm-4">
   <img src="https://www.amherst.edu/system/files/styles/fs_170_170/private/media/photo/1545596.jpg?itok=dZ7O12OH&__=1377443055" width=170px>

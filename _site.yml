@@ -6,8 +6,6 @@ navbar:
   left:
     - text: "The Book"
       href: index.html
-    - text: "The R package"
-      href: http://github.com/beanumber/mdsr
     - text: The Authors
       href: authors.html
     - text: "Sample Chapters"
@@ -30,8 +28,12 @@ navbar:
       menu: 
         - text: "Online Exercises"
           href: exercises.html
+        - text: "The R package"
+          href: http://github.com/beanumber/mdsr
         - text: "Errata"
           href: errata.html
+    - text: "Publicity"
+      href: publicity.html
 
 output:
   html_document:

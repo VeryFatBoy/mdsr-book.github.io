@@ -1,0 +1,12 @@
+---
+title: "Publicity"
+---
+
+
+- [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
+
+- Tweet storm:
+
+<blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Now available: Modern <a href="https://twitter.com/hashtag/DataScience?src=hash">#DataScience</a> with <a href="https://twitter.com/hashtag/Rstats?src=hash">#Rstats</a> by <a href="https://twitter.com/BaumerBen">@BaumerBen</a>, Daniel Kaplan and <a href="https://twitter.com/askdrstats">@askdrstats</a> from <a href="https://twitter.com/CRC_MathStats">@CRC_MathStats</a> <a href="https://t.co/L7CqP4u6yh">https://t.co/L7CqP4u6yh</a> <a href="https://t.co/lFKVKxkLp1">pic.twitter.com/lFKVKxkLp1</a></p>&mdash; Math &amp; Statistics (@CRC_MathStats) <a href="https://twitter.com/CRC_MathStats/status/823553342425202688">January 23, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+

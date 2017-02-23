@@ -5,7 +5,13 @@ title: "Publicity"
 
 - [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
 
-- Tweet storm:
+- Tweets:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just got my copy! I should try to get this autographed :) <a href="https://twitter.com/BaumerBen">@BaumerBen</a> <a href="https://twitter.com/askdrstats">@askdrstats</a> <a href="https://t.co/ZSwKsaE2kY">pic.twitter.com/ZSwKsaE2kY</a></p>&mdash; Mine CetinkayaRundel (@minebocek) <a href="https://twitter.com/minebocek/status/834430820475629568">February 22, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Excited to get this in the mail! Modern Data Science w R by <a href="https://twitter.com/BaumerBen">@BaumerBen</a> Danny Kaplan and <a href="https://twitter.com/askdrstats">@askdrstats</a> <a href="https://t.co/3Cv3p5RB83">pic.twitter.com/3Cv3p5RB83</a></p>&mdash; Miles Ott (@Miles_Ott) <a href="https://twitter.com/Miles_Ott/status/831138723249156096">February 13, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet" data-cards="hidden" data-lang="en"><p lang="en" dir="ltr">Now available: Modern <a href="https://twitter.com/hashtag/DataScience?src=hash">#DataScience</a> with <a href="https://twitter.com/hashtag/Rstats?src=hash">#Rstats</a> by <a href="https://twitter.com/BaumerBen">@BaumerBen</a>, Daniel Kaplan and <a href="https://twitter.com/askdrstats">@askdrstats</a> from <a href="https://twitter.com/CRC_MathStats">@CRC_MathStats</a> <a href="https://t.co/L7CqP4u6yh">https://t.co/L7CqP4u6yh</a> <a href="https://t.co/lFKVKxkLp1">pic.twitter.com/lFKVKxkLp1</a></p>&mdash; Math &amp; Statistics (@CRC_MathStats) <a href="https://twitter.com/CRC_MathStats/status/823553342425202688">January 23, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

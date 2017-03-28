@@ -3,6 +3,8 @@ title: "Publicity"
 ---
 
 
+
+- [MAA Press review](http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed)
 - [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
 
 - Tweets:

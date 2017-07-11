@@ -1,0 +1,176 @@
+---
+title: "Text as Data examples"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "July 8, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+    toc: true
+    toc_depth: 2
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+library(tidyr)
+library(tm)
+library(wordcloud)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+This example builds on the text mining chapter from **Modern Data Science with R**: http://mdsr-book.github.io/.
+
+
+## Data ingestation and processing
+
+```{r}
+library(mdsr)
+library(tidyr)
+library(tm)
+library(wordcloud)
+data(Macbeth_raw)
+# strsplit returns a list: we only want the first element
+macbeth <- strsplit(Macbeth_raw, "\r\n")[[1]]
+length(macbeth)
+head(macbeth)
+```
+
+```{r}
+macbeth[300:310]
+```
+
+## Regular expressions and `grep()`
+
+The  `grep()` function works using a *needle* in a *haystack* paradigm, wherein the first argument is the regular expression (or pattern) you want to find (i.e., the needle) and the second argument is the character vector in which you want to find patterns (i.e., the haystack). Note that unless the argument value is set to TRUE, `grep()` returns the *indices* of the haystack in which the needles were found.
+
+```{r}
+macbeth_lines <- grep("  MACBETH", macbeth, value = TRUE)
+length(macbeth_lines)
+head(macbeth_lines)
+```
+
+```{r}
+length(grep("  MACDUFF", macbeth))
+```
+
+The `grepl` function uses the same syntax but returns a logical vector as long as the haystack. Thus, while the length of the vector returned by `grep` is the number of matches, the length of the vector returned by `grepl` is always the same as the length of the haystack vector.
+
+```{r}
+length(grep("  MACBETH", macbeth))
+length(grepl("  MACBETH", macbeth))
+```
+
+However, both will subset the original vector in the same way, and thus in this respect they are functionally equivalent.
+
+```{r}
+identical(macbeth[grep("  MACBETH", macbeth)],
+          macbeth[grepl("  MACBETH", macbeth)])
+```
+
+To extract the piece of each matching line that actually matched, use the `str_extract()` function from the `stringr` package.
+
+```{r}
+library(stringr)
+pattern <- "  MACBETH"
+grep(pattern, macbeth, value = TRUE) %>%
+  str_extract(pattern) %>%
+  head()
+```
+
+```{r}
+head(grep("MAC.", macbeth, value = TRUE))
+head(grep("MACBETH\\.", macbeth, value = TRUE))
+head(grep("MAC[B-Z]", macbeth, value = TRUE))
+head(grep("MAC(B|D)", macbeth, value = TRUE))
+head(grep("^  MAC[B-Z]", macbeth, value = TRUE))
+head(grep("^ ?MAC[B-Z]", macbeth, value = TRUE))
+head(grep("^ *MAC[B-Z]", macbeth, value = TRUE))
+head(grep("^ +MAC[B-Z]", macbeth, value = TRUE))
+```
+
+## Analysis of speaking lines
+We might learn something about the play by knowing when each character speaks as a function of the line number in the play. We can retrieve this information using `grepl()`.
+
+```{r}
+Macbeth <- grepl("  MACBETH\\.", macbeth)
+LadyMacbeth <- grepl("  LADY MACBETH\\.", macbeth)
+Banquo <- grepl("  BANQUO\\.", macbeth)
+Duncan <- grepl("  DUNCAN\\.", macbeth)
+
+speaker_freq <- data.frame(Macbeth, LadyMacbeth, Banquo, Duncan) %>%
+  mutate(line = 1:length(macbeth)) %>%
+  gather(key = "character", value = "speak", -line) %>%
+  mutate(speak = as.numeric(speak)) %>%
+  filter(line > 218 & line < 3172)
+glimpse(speaker_freq)
+```
+
+Before we create the plot, we will gather some helpful contextual information about when each Act begins.
+
+```{r}
+acts_idx <- grep("^ACT [I|V]+", macbeth)
+acts_labels <- str_extract(macbeth[acts_idx], "^ACT [I|V]+")
+acts <- data.frame(line = acts_idx, labels = acts_labels)
+```
+
+```{r}
+ggplot(data = speaker_freq, aes(x = line, y = speak)) +
+  geom_smooth(aes(color = character), method = "loess", se = 0, span = 0.4) +
+  geom_vline(xintercept = acts_idx, color = "darkgray", lty = 3) +
+  geom_text(data = acts, aes(y = 0.085, label = labels),
+            hjust = "left", color = "darkgray") +
+  ylim(c(0, NA)) + xlab("Line Number") + ylab("Proportion of Speeches")
+```
+
+## Some word analyses
+
+```{r}
+Corpus <- VCorpus(VectorSource(macbeth))
+sampleline <- 300
+Corpus[[sampleline]] %>%
+  as.character() %>%
+  strwrap()
+```
+```{r}
+Corpus <- Corpus %>%
+  tm_map(stripWhitespace) %>%
+  tm_map(removeNumbers) %>%
+  tm_map(removePunctuation) %>%
+  tm_map(content_transformer(tolower)) %>%
+  tm_map(removeWords, stopwords("english"))
+strwrap(as.character(Corpus[[sampleline]]))
+```
+
+```{r fig.width=8, fig.height=8}
+wordcloud(Corpus, max.words = 30, scale = c(8, 1),
+          colors = topo.colors(n = 30), random.color = TRUE)
+```
+
+## Document term matrix analyses
+```{r warning=FALSE}
+DTM <- DocumentTermMatrix(Corpus, control = list(weighting = weightTfIdf))
+# DTM
+findFreqTerms(DTM, lowfreq = 50)
+DTM %>% as.matrix() %>%
+  apply(MARGIN = 2, sum) %>%
+  sort(decreasing = TRUE) %>%
+  head(9)
+```
+
+## Further resources
+Other useful resources include the CRAN Task View on Natural Language processing (https://cran.r-project.org/web/views/NaturalLanguageProcessing.html), 
+the tm package (https://cran.r-project.org/web/packages/tm/index.html), the 
+tidytext package (https://cran.r-project.org/web/packages/tidytext/index.html).

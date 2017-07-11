@@ -1,0 +1,178 @@
+---
+title: "Text as Data exercises"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "July 8, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+library(tidyr)
+library(tm)
+library(wordcloud)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+These exercises are taken from the text as data chapter from **Modern Data Science with R**): http://mdsr-book.github.io/.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+
+
+## Speaking lines
+Speaking lines in Shakespeare's plays are identified by a line that starts with two spaces, then a string of capital letters and spaces (the character's name) followed by a period. Use `grep()` to find all of the speaking lines in *Macbeth*. How many are there? 
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(tidyr)
+library(tm)
+library(wordcloud)
+data(Macbeth_raw)
+macbeth <- strsplit(Macbeth_raw, "\r\n")[[1]]
+head(macbeth)
+# solution goes here
+```
+
+  
+
+## Hyphenated words
+Find all the hyphenated words in one of Shakespeare's plays.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+
+## Most popular names
+Use the `babynames` data table from the `babynames` package to find the ten
+most popular:
+
+1) Boys' names ending in a vowel.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+2) Names ending with `joe`, `jo` `Joe` or `Jo` (e.g., `Billyjoe`).
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+
+## Regular expressions
+Use regular expressions to determine the number of speaking lines from the *Complete Works of William Shakespeare* (http://www.gutenberg.org/cache/epub/100/pg100.txt). Here, we care only about how many times a character speaks---not what they say or for how long they speak. 
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+  
+## Top characters
+Make a bar chart displaying the top 100 characters with the greatest number of lines. 
+*Hint*: you may want to use either the `stringr::str_extract()` or `strsplit()` function here.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+## Shakespare Machine
+In this problem, you will do much of the work to recreate Mark Hansen's *Shakespeare Machine*. Start by watching a video clip (http://vimeo.com/54858820) of the exhibit.
+Use *The Complete Works of William Shakespeare* (see earlier exercise) and regular expressions to find all of the hyphenated words in Shakespeare Machine. How many are there? 
+Use `%in\%` to verify that your list contains the following hyphenated words pictured at 00:46 of the clip.
+
+
+SOLUTION:
+
+```{r}
+sm_words <- c("true-fix'd", "pale-hearted", "lean-fac'd", "hard-hearted", 
+  "best-regarded", "thick-ribbed", "both-sides", "sea-like.", 
+  "shrill-shrieking", "lust-stain'd", "tragical-historical,")
+# solution goes here
+```
+
+
+## Wikipedia table
+Find an interesting Wikipedia page with a table, scrape the data from it, and generate a figure that tells an interesting story. 
+Include an interpretation of the figure.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+## Stackexchange 1
+The site \url{stackexchange.com} displays questions and answers on technical topics.  
+The following code downloads the most recent \R questions related to the \pkg{dplyr} package. 
+
+```{r message=FALSE}
+library(httr)
+# Find the most recent R questions on stackoverflow
+getresult <- GET("http://api.stackexchange.com",
+  path = "questions",
+  query = list(site = "stackoverflow.com", tagged = "dplyr"))
+stop_for_status(getresult) # Ensure returned without error
+questions <- content(getresult)  # Grab content
+names(questions$items[[1]])    # What does the returned data look like?
+length(questions$items)
+substr(questions$items[[1]]$title, 1, 68)
+substr(questions$items[[2]]$title, 1, 68)
+substr(questions$items[[3]]$title, 1, 68)
+```
+
+How many questions were returned?
+Without using jargon, describe in words what is being displayed and how it might be
+used.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+
+## Stackexchange 2
+Repeat the process of downloading the content from \url{stackexchange.com} related to 
+the \pkg{dplyr} package and summarize the results.
+
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+
+
+

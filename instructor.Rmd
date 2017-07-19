@@ -16,10 +16,11 @@ output:
 
 - Text as Data chapter
     - [Video overview](https://youtu.be/sp25j9WaqwA)
-    - Examples [html](instructor/text.html) ([Rmd](instructor/text.Rmd))
-    - Exercises [html](instructor/text-ex.html) ([Rmd](instructor/text-ex.Rmd))
+    - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
+    - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
 
 ### Solutions Manual
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
+Last updated July 19, 2017

@@ -1,7 +1,7 @@
 ---
 title: "Text as Data exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
-date: "July 8, 2017"
+date: "July 19, 2017"
 output:
   html_document:
     fig_height: 5
@@ -81,7 +81,25 @@ SOLUTION:
 # solution goes here
 ```
 
+## Adjectives
 
+Find all of the adjectives in one of Shakespeare's plays that end in `more` or `less` (note change from original question 15.4).
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+## Stage directions
+
+Find all of the lines containing the stage direction \val{Exit} or \val{Exeunt} in one of Shakespeare's plays (note change from original exercise 15.5).
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
 
 ## Regular expressions
 Use regular expressions to determine the number of speaking lines from the *Complete Works of William Shakespeare* (http://www.gutenberg.org/cache/epub/100/pg100.txt). Here, we care only about how many times a character speaks---not what they say or for how long they speak. 

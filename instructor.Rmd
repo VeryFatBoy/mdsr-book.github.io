@@ -12,13 +12,14 @@ output:
 
 ### Online supplements
 
-- Text as Data chapter
-    - [Video](https://youtu.be/sp25j9WaqwA)
-    - [Examples](instructor/text.html)
-    - [Exercises](instructor/text-ex.html)
+(more to come...)
 
+- Text as Data chapter
+    - [Video overview](https://youtu.be/sp25j9WaqwA)
+    - Examples [html](instructor/text.html) ([Rmd](instructor/text.Rmd))
+    - Exercises [html](instructor/text-ex.html) ([Rmd](instructor/text-ex.Rmd))
 
 ### Solutions Manual
 
-A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)!
+A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 

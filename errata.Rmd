@@ -5,6 +5,9 @@ title: "Errata"
 ## Known Errors
 
 - Page 10: The last sentence should start "It also seems clear" instead of "In also seems clear". (voberholzer)
+- Page 90: At the end of Exercise 4.16, the following sentence should be added: "Use the `Births78` data set from the `mosaicData` package as a reference." (nhorton/bbaumer)
+- Page 375: Exercise 15.4 should read: "Find all of the adjectives in one of Shakespeare's plays that end in `more` or `less`." (nhorton/bbaumer)
+- Page 375: Exercise 15.5 should read: "Find all of the lines containing the stage direction `Exit` or `Exeunt` in one of Shakespeare's plays." (nhorton/bbaumer)
 - Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)
 
 ## BibTeX entry

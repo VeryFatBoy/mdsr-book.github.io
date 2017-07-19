@@ -11,7 +11,6 @@ Last updated July 19, 2017
 - Page 375: Exercise 15.4 should read: "Find all of the adjectives in one of Shakespeare's plays that end in `more` or `less`." (nhorton/bbaumer)
 - Page 375: Exercise 15.5 should read: "Find all of the lines containing the stage direction `Exit` or `Exeunt` in one of Shakespeare's plays." (nhorton/bbaumer)
 - Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)
-- Page 461: The option `echo=FALSE` should be `echo=TRUE` for the last code chunks in Exercises D.2 and D.3. (nhorton)
 
 ## BibTeX entry
 

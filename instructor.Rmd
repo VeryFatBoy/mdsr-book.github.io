@@ -1,0 +1,24 @@
+---
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    toc_float:
+      collapsed: false
+      smooth_scroll: true
+---
+
+## Instructor Resources
+
+### Online supplements
+
+- Text as Data chapter
+    - [Video](https://youtu.be/sp25j9WaqwA)
+    - [Examples](instructor/text.html)
+    - [Exercises](instructor/text-ex.html)
+
+
+### Solutions Manual
+
+A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)!
+

@@ -28,6 +28,8 @@ navbar:
       menu: 
         - text: "Online Exercises"
           href: exercises.html
+        - text: "Instructor Resources"
+          href: instructor.html
         - text: "The R package"
           href: http://github.com/beanumber/mdsr
         - text: "Errata"

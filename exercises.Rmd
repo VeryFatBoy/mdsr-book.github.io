@@ -10,10 +10,7 @@ output:
 
 ## Exercises
 
-A full solutions manual is available for instructors (signup link available at http://routledgetextbooks.com/textbooks/instructor_downloads/).
-
-This page includes several sets of online and additional exercises.
-
+This page includes several sets of online exercises.
 
 ### Data Visualization
 

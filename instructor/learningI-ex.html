@@ -126,12 +126,27 @@ $(document).ready(function () {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>These exercises are taken from the supervised learning chapter from <strong>Modern Data Science with R</strong>): <a href="http://mdsr-book.github.io/" class="uri">http://mdsr-book.github.io/</a>. Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.</p>
+<p>These exercises are taken from the supervised learning chapter from <strong>Modern Data Science with R</strong>: <a href="http://mdsr-book.github.io" class="uri">http://mdsr-book.github.io</a>. Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.</p>
 </div>
 <div id="sleep" class="section level2">
 <h2>Sleep</h2>
-<p>The ability to get a good night’s sleep is correlated with many positive health outcomes. The <code>NHANES</code> data set in the <code>NHANES</code> package contains a binary variable <code>SleepTrouble</code> that indicates whether each person has trouble sleeping. For each of the following models: 1. Build a classifier for <code>SleepTrouble</code> 2. Report its effectiveness on the <code>NHANES</code> training data 3. Make an appropriate visualization of the model 4. Interpret the results. What have you learned about people’s sleeping habits?</p>
-<p>You may use whatever variable you like, except for <code>SleepHrsNight</code>. Models: - Null model - Logistic regression - Decision tree - Random forest - Neural network - Naive Bayes - K nearest neighbors</p>
+<p>The ability to get a good night’s sleep is correlated with many positive health outcomes. The <code>NHANES</code> data set in the <code>NHANES</code> package contains a binary variable <code>SleepTrouble</code> that indicates whether each person has trouble sleeping. For each of the following models:</p>
+<ol style="list-style-type: decimal">
+<li>Build a classifier for <code>SleepTrouble</code></li>
+<li>Report its effectiveness on the <code>NHANES</code> training data</li>
+<li>Make an appropriate visualization of the model</li>
+<li>Interpret the results. What have you learned about people’s sleeping habits?</li>
+</ol>
+<p>You may use whatever variable you like, except for <code>SleepHrsNight</code>. Models:</p>
+<ul>
+<li>Null model</li>
+<li>Logistic regression</li>
+<li>Decision tree</li>
+<li>Random forest</li>
+<li>Neural network</li>
+<li>Naive Bayes</li>
+<li>K nearest neighbors</li>
+</ul>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)   
 library(NHANES)
@@ -140,7 +155,15 @@ library(NHANES)
 </div>
 <div id="quantitative-sleep" class="section level2">
 <h2>Quantitative sleep</h2>
-<p>Repeat the previous exercise, but now use the quantitative response variable <code>SleepHrsNight</code>. Build and interpret the following models: - Null model - Multiple regression - Regression tree - Random forest - Ridge regression - LASSO</p>
+<p>Repeat the previous exercise, but now use the quantitative response variable <code>SleepHrsNight</code>. Build and interpret the following models:</p>
+<ul>
+<li>Null model</li>
+<li>Multiple regression</li>
+<li>Regression tree</li>
+<li>Random forest</li>
+<li>Ridge regression</li>
+<li>LASSO</li>
+</ul>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)   
 library(NHANES)
@@ -158,7 +181,7 @@ library(NHANES)
 </div>
 <div id="pregnant" class="section level2">
 <h2>Pregnant?</h2>
-<p>Repeat the first exercise, but for the variable <code>PregnantNow</code>. What did you learn about who is pregnant? \end{Exercise}</p>
+<p>Repeat the first exercise, but for the variable <code>PregnantNow</code>. What did you learn about who is pregnant?</p>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)   
 library(NHANES)
@@ -168,18 +191,13 @@ library(NHANES)
 <div id="nasa-weather" class="section level2">
 <h2>NASA weather</h2>
 <p>The <code>nasaweather</code> package contains data about tropical <code>storms</code> from 1995-2005. Consider the scatterplot between the <code>wind</code> speed and <code>pressure</code> of these <code>storms</code> shown below.</p>
-<p>&lt;<storms>&gt;= library(mdsr) library(nasaweather) ggplot(data = storms, aes(x = pressure, y = wind, color = type)) + geom_point(alpha = 0.5) @</p>
-<p>The <code>type</code> of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are [complicated and not terribly precise)[<a href="https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming" class="uri">https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming</a>] for storm type. Build a classifier for the <code>type</code> of each storm as a function of its <code>wind</code> speed and <code>pressure</code>.</p>
+<p>&lt;<storms, message="FALSE">&gt;= library(mdsr) library(nasaweather) ggplot(data = storms, aes(x = pressure, y = wind, color = type)) + geom_point(alpha = 0.5) @</p>
+<p>The <code>type</code> of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are <a href="https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming">complicated and not terribly precise</a> definitions for storm type. Build a classifier for the <code>type</code> of each storm as a function of its <code>wind</code> speed and <code>pressure</code>.</p>
 <p>Why would a decision tree make a particularly good classifier for these data? Visualize your classifier in the data space in a manner similar to Figure 8.10 or 8.11. % XX hardcoded ref!</p>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)   
-library(nasaweather)</code></pre>
-<pre><code>## 
-## Attaching package: 'nasaweather'</code></pre>
-<pre><code>## The following object is masked from 'package:dplyr':
-## 
-##     storms</code></pre>
-<pre class="r"><code># solution goes here</code></pre>
+library(nasaweather)
+# solution goes here</code></pre>
 </div>
 <div id="arrival-delays" class="section level2">
 <h2>Arrival delays</h2>
@@ -188,7 +206,7 @@ library(nasaweather)</code></pre>
 <pre class="r"><code>library(mdsr)   
 library(nasaweather)
 # solution goes here</code></pre>
-<p>Use the College Scorecard Data () to model student debt as a function of institutional characteristics using the techniques described in this chapter. Compare and contrast results from at least three methods. (Note that a considerable amount of data wrangling will be needed.) \end{Exercise}</p>
+<p>Use the College Scorecard Data (<a href="https://collegescorecard.ed.gov/data" class="uri">https://collegescorecard.ed.gov/data</a>) to model student debt as a function of institutional characteristics using the techniques described in this chapter. Compare and contrast results from at least three methods. (Note that a considerable amount of data wrangling will be needed.)</p>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)   
 # solution goes here</code></pre>

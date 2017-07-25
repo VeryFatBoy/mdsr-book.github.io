@@ -31,6 +31,7 @@ These exercises are taken from the supervised learning chapter from **Modern Dat
 
 ## Sleep
 The ability to get a good night's sleep is correlated with many positive health outcomes. The `NHANES` data set in the `NHANES` package contains a binary variable `SleepTrouble` that indicates whether each person has trouble sleeping. For each of the following models:
+
 1. Build a classifier for `SleepTrouble`
 2. Report its effectiveness on the `NHANES` training data
 3. Make an appropriate visualization of the model
@@ -38,6 +39,7 @@ The ability to get a good night's sleep is correlated with many positive health 
   
 You may use whatever variable you like, except for `SleepHrsNight`.
 Models:
+
 - Null model
 - Logistic regression
 - Decision tree
@@ -51,12 +53,12 @@ SOLUTION:
 ```{r}
 library(mdsr)   
 library(NHANES)
-# XX create test and train
 # solution goes here
 ```
 
 ## Quantitative sleep
 Repeat the previous exercise, but now use the quantitative response variable `SleepHrsNight`. Build and interpret the following models:
+
 - Null model
 - Multiple regression
 - Regression tree
@@ -69,7 +71,6 @@ SOLUTION:
 ```{r}
 library(mdsr)   
 library(NHANES)
-# XX create test and train
 # solution goes here
 ```
 
@@ -82,41 +83,38 @@ SOLUTION:
 ```{r}
 library(mdsr)   
 library(NHANES)
-# XX create test and train
 # solution goes here
 ```
 
 ## Pregnant?
 Repeat the first exercise, but for the variable `PregnantNow`. What did you learn about who is pregnant? 
-\end{Exercise}
 
 SOLUTION:
 
 ```{r}
 library(mdsr)   
 library(NHANES)
-# XX create test and train
 # solution goes here
 ```
 
 ## NASA weather
 The `nasaweather` package contains data about tropical `storms` from 1995-2005. Consider the scatterplot between the `wind` speed and `pressure` of these `storms` shown below.
 
-<<storms>>=
+<<storms, message=FALSE>>=
 library(mdsr)
 library(nasaweather)
 ggplot(data = storms, aes(x = pressure, y = wind, color = type)) + 
   geom_point(alpha = 0.5)
 @
 
-The `type` of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are [complicated and not terribly precise)[https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming] for storm type. Build a classifier for the `type` of each storm as a function of its `wind` speed and `pressure`.  
+The `type` of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are [complicated and not terribly precise](https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming) definitions for storm type. Build a classifier for the `type` of each storm as a function of its `wind` speed and `pressure`.  
 
 Why would a decision tree make a particularly good classifier for these data? Visualize your classifier in the data space in a manner 
-similar to Figure 8.10 or 8.11.  % XX hardcoded ref!
+similar to Figure 8.10 or 8.11.  
 
 SOLUTION:
 
-```{r}
+```{r message=FALSE}
 library(mdsr)   
 library(nasaweather)
 # solution goes here
@@ -136,8 +134,7 @@ library(nasaweather)
 # solution goes here
 ```
 
-Use the College Scorecard Data (\url{https://collegescorecard.ed.gov/data}) to model student debt as a function of institutional characteristics using the techniques described in this chapter.  Compare and contrast results from at least three methods.  (Note that a considerable amount of data wrangling will be needed.)
-\end{Exercise}
+Use the College Scorecard Data (https://collegescorecard.ed.gov/data) to model student debt as a function of institutional characteristics using the techniques described in this chapter.  Compare and contrast results from at least three methods.  (Note that a considerable amount of data wrangling will be needed.)
 
 SOLUTION:
 

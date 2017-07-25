@@ -1,0 +1,147 @@
+---
+title: "Supervised learning exercises"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "July 25, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+These exercises are taken from the supervised learning chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+
+
+## Sleep
+The ability to get a good night's sleep is correlated with many positive health outcomes. The `NHANES` data set in the `NHANES` package contains a binary variable `SleepTrouble` that indicates whether each person has trouble sleeping. For each of the following models:
+1. Build a classifier for `SleepTrouble`
+2. Report its effectiveness on the `NHANES` training data
+3. Make an appropriate visualization of the model
+4. Interpret the results. What have you learned about people's sleeping habits?
+  
+You may use whatever variable you like, except for `SleepHrsNight`.
+Models:
+- Null model
+- Logistic regression
+- Decision tree
+- Random forest
+- Neural network
+- Naive Bayes
+- K nearest neighbors
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(NHANES)
+# XX create test and train
+# solution goes here
+```
+
+## Quantitative sleep
+Repeat the previous exercise, but now use the quantitative response variable `SleepHrsNight`. Build and interpret the following models:
+- Null model
+- Multiple regression
+- Regression tree
+- Random forest
+- Ridge regression
+- LASSO
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(NHANES)
+# XX create test and train
+# solution goes here
+```
+
+## Even more sleep
+Repeat either of the previous exercises, but this time first separate the 
+`NHANES` data set uniformly at random into 75% training and 25% testing sets. Compare the effectiveness of each model on training vs. testing data. 
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(NHANES)
+# XX create test and train
+# solution goes here
+```
+
+## Pregnant?
+Repeat the first exercise, but for the variable `PregnantNow`. What did you learn about who is pregnant? 
+\end{Exercise}
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(NHANES)
+# XX create test and train
+# solution goes here
+```
+
+## NASA weather
+The `nasaweather` package contains data about tropical `storms` from 1995-2005. Consider the scatterplot between the `wind` speed and `pressure` of these `storms` shown below.
+
+<<storms>>=
+library(mdsr)
+library(nasaweather)
+ggplot(data = storms, aes(x = pressure, y = wind, color = type)) + 
+  geom_point(alpha = 0.5)
+@
+
+The `type` of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are [complicated and not terribly precise)[https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming] for storm type. Build a classifier for the `type` of each storm as a function of its `wind` speed and `pressure`.  
+
+Why would a decision tree make a particularly good classifier for these data? Visualize your classifier in the data space in a manner 
+similar to Figure 8.10 or 8.11.  % XX hardcoded ref!
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(nasaweather)
+# solution goes here
+```
+
+
+## Arrival delays
+Fit a series of supervised learning models to predict arrival delays for flights from 
+New York to `SFO` using the `nycflights13` package.  How do the conclusions change from
+the multiple regression model presented in the Statistical Foundations Chapter?
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(nasaweather)
+# solution goes here
+```
+
+Use the College Scorecard Data (\url{https://collegescorecard.ed.gov/data}) to model student debt as a function of institutional characteristics using the techniques described in this chapter.  Compare and contrast results from at least three methods.  (Note that a considerable amount of data wrangling will be needed.)
+\end{Exercise}
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+# solution goes here
+```

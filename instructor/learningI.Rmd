@@ -18,11 +18,6 @@ output:
 
 ```{r, setup, include=FALSE}
 library(mdsr)   # Load additional packages here 
-library(tidyr)
-library(tm)
-library(wordcloud)
-
-
 # Some customization.  You can alter or delete as desired (if you know what you are doing).
 trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
 knitr::opts_chunk$set(
@@ -36,8 +31,8 @@ This example builds on the statistical learning chapter from **Modern Data Scien
 
 ## Data ingestation and processing
 
-```{r}
-library(mdsr)
+```{r eval=FALSE}
+library(mdsr)  # XX turn back on later!
 census <- read.csv(
 "http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", 
   header = FALSE)
@@ -46,7 +41,10 @@ names(census) <- c("age", "workclass", "fnlwgt", "education",
   "race", "sex", "capital.gain", "capital.loss", "hours.per.week", 
   "native.country", "income")
 glimpse(census)
+```
 
+```{r}
+load("Census.Rda")  # XX remove later...
 set.seed(364)
 n <- nrow(census)
 test_idx <- sample.int(n, size = round(0.2 * n))

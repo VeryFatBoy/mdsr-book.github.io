@@ -14,6 +14,12 @@ output:
 
 (more to come...)
 
+- Supervised Learning chapter
+    - [Video overview](XX)
+    - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
+    - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
+
+
 - Text as Data chapter
     - [Video overview](https://youtu.be/sp25j9WaqwA)
     - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))

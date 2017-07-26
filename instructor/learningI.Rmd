@@ -245,7 +245,7 @@ fpr <- confusion[" >50K", " <=50K"] / sum(confusion[, " <=50K"])
 roc + geom_point(x = fpr, y = tpr, size = 3)
 ```
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=TRUE}
 test_q <- test %>%
   select(age, education.num, capital.gain, capital.loss, hours.per.week)
 test_rates <- sapply(ks, FUN = knn_error_rate, x = train_q,

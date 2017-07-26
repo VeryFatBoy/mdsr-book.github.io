@@ -11,7 +11,7 @@
 
 <meta name="author" content="Nicholas Horton (nhorton@amherst.edu)" />
 
-<meta name="date" content="2017-07-25" />
+<meta name="date" content="2017-07-26" />
 
 <title>Supervised learning examples</title>
 
@@ -119,7 +119,7 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">Supervised learning examples</h1>
 <h4 class="author"><em>Nicholas Horton (<a href="mailto:nhorton@amherst.edu">nhorton@amherst.edu</a>)</em></h4>
-<h4 class="date"><em>July 25, 2017</em></h4>
+<h4 class="date"><em>July 26, 2017</em></h4>
 
 </div>
 
@@ -136,7 +136,7 @@ $(document).ready(function () {
 </div>
 <div id="data-ingestation-and-processing" class="section level2">
 <h2>Data ingestation and processing</h2>
-<pre class="r"><code>library(mdsr)  # XX turn back on later!
+<pre class="r"><code>library(mdsr) 
 census &lt;- read.csv(
 &quot;http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data&quot;, 
   header = FALSE)
@@ -145,8 +145,24 @@ names(census) &lt;- c(&quot;age&quot;, &quot;workclass&quot;, &quot;fnlwgt&quot;
   &quot;race&quot;, &quot;sex&quot;, &quot;capital.gain&quot;, &quot;capital.loss&quot;, &quot;hours.per.week&quot;, 
   &quot;native.country&quot;, &quot;income&quot;)
 glimpse(census)</code></pre>
-<pre class="r"><code>load(&quot;Census.Rda&quot;)  # XX remove later...
-set.seed(364)
+<pre><code>## Observations: 32,561
+## Variables: 15
+## $ age            &lt;int&gt; 39, 50, 38, 53, 28, 37, 49, 52, 31, 42, 37, 30,...
+## $ workclass      &lt;fctr&gt;  State-gov,  Self-emp-not-inc,  Private,  Priv...
+## $ fnlwgt         &lt;int&gt; 77516, 83311, 215646, 234721, 338409, 284582, 1...
+## $ education      &lt;fctr&gt;  Bachelors,  Bachelors,  HS-grad,  11th,  Bach...
+## $ education.num  &lt;int&gt; 13, 13, 9, 7, 13, 14, 5, 9, 14, 13, 10, 13, 13,...
+## $ marital.status &lt;fctr&gt;  Never-married,  Married-civ-spouse,  Divorced...
+## $ occupation     &lt;fctr&gt;  Adm-clerical,  Exec-managerial,  Handlers-cle...
+## $ relationship   &lt;fctr&gt;  Not-in-family,  Husband,  Not-in-family,  Hus...
+## $ race           &lt;fctr&gt;  White,  White,  White,  Black,  Black,  White...
+## $ sex            &lt;fctr&gt;  Male,  Male,  Male,  Male,  Female,  Female, ...
+## $ capital.gain   &lt;int&gt; 2174, 0, 0, 0, 0, 0, 0, 0, 14084, 5178, 0, 0, 0...
+## $ capital.loss   &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,...
+## $ hours.per.week &lt;int&gt; 40, 13, 40, 40, 40, 40, 16, 45, 50, 40, 80, 40,...
+## $ native.country &lt;fctr&gt;  United-States,  United-States,  United-States...
+## $ income         &lt;fctr&gt;  &lt;=50K,  &lt;=50K,  &lt;=50K,  &lt;=50K,  &lt;=50K,  &lt;=50K...</code></pre>
+<pre class="r"><code>set.seed(364)
 n &lt;- nrow(census)
 test_idx &lt;- sample.int(n, size = round(0.2 * n))
 train &lt;- census[-test_idx, ]
@@ -156,9 +172,10 @@ nrow(train)</code></pre>
 nrow(test)</code></pre>
 <pre><code>## [1] 6512</code></pre>
 <pre class="r"><code>pi_bar &lt;- tally(~ income, data = train, format = &quot;percent&quot;)[2]
-
-
-tally(~ income, data = train, format = &quot;percent&quot;)</code></pre>
+pi_bar</code></pre>
+<pre><code>##     &gt;50K 
+## 24.25045</code></pre>
+<pre class="r"><code>tally(~ income, data = train, format = &quot;percent&quot;)</code></pre>
 <pre><code>## income
 ##    &lt;=50K     &gt;50K 
 ## 75.74955 24.25045</code></pre>
@@ -168,7 +185,6 @@ split_val &lt;- as.data.frame(dtree$splits)$index
 dtree_frame &lt;- dtree$frame %&gt;%
   select(var, n, dev, yval) %&gt;%
   mutate(pct = n / nrow(train), right = (n - dev) / n)
-
 rpart(income ~ capital.gain, data = train)</code></pre>
 <pre><code>## n= 26049 
 ## 
@@ -271,18 +287,8 @@ confusion</code></pre>
 <p>In this case, the accuracy of the decision tree classifier is now 84.4%, a considerable improvement over the null model.</p>
 <pre class="r"><code>mod_tree2 &lt;- rpart(form, data = train, control = rpart.control(cp = 0.002))
 # XX calculate accuracy</code></pre>
-<pre class="r"><code>library(randomForest)</code></pre>
-<pre><code>## randomForest 4.6-12</code></pre>
-<pre><code>## Type rfNews() to see new features/changes/bug fixes.</code></pre>
-<pre><code>## 
-## Attaching package: 'randomForest'</code></pre>
-<pre><code>## The following object is masked from 'package:ggplot2':
-## 
-##     margin</code></pre>
-<pre><code>## The following object is masked from 'package:dplyr':
-## 
-##     combine</code></pre>
-<pre class="r"><code>mod_forest &lt;- randomForest(form, data = train, ntree = 201, mtry = 3)
+<pre class="r"><code>library(randomForest)
+mod_forest &lt;- randomForest(form, data = train, ntree = 201, mtry = 3)
 mod_forest</code></pre>
 <pre><code>## 
 ## Call:
@@ -430,91 +436,10 @@ roc + geom_point(x = fpr, y = tpr, size = 3)</code></pre>
 <pre class="r"><code>test_q &lt;- test %&gt;%
   select(age, education.num, capital.gain, capital.loss, hours.per.week)
 test_rates &lt;- sapply(ks, FUN = knn_error_rate, x = train_q,
-                     y = train$income, z = test_q)</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre><code>## Warning in is.na(e1) | is.na(e2): longer object length is not a multiple of
-## shorter object length</code></pre>
-<pre><code>## Warning in `!=.default`(y_hat, y): longer object length is not a multiple
-## of shorter object length</code></pre>
-<pre class="r"><code>knn_error_rates &lt;- knn_error_rates %&gt;% mutate(test_rate = test_rates)
-library(tidyr)</code></pre>
-<pre><code>## 
-## Attaching package: 'tidyr'</code></pre>
-<pre><code>## The following object is masked from 'package:Matrix':
-## 
-##     expand</code></pre>
-<pre class="r"><code>knn_error_rates_tidy &lt;- knn_error_rates %&gt;%
+                     y = train$income, z = test_q)
+knn_error_rates &lt;- knn_error_rates %&gt;% mutate(test_rate = test_rates)
+library(tidyr)
+knn_error_rates_tidy &lt;- knn_error_rates %&gt;%
   gather(key = &quot;type&quot;, value = &quot;error_rate&quot;, -k)
 ggplot(data = knn_error_rates_tidy, aes(x = k, y = error_rate)) +
   geom_point(aes(color = type)) + geom_line(aes(color = type)) +

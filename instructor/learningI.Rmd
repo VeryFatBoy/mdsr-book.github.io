@@ -1,7 +1,7 @@
 ---
 title: "Supervised learning examples"
 author: "Nicholas Horton (nhorton@amherst.edu)"
-date: "July 25, 2017"
+date: "July 26, 2017"
 output:
   html_document:
     fig_height: 5
@@ -31,8 +31,8 @@ This example builds on the statistical learning chapter from **Modern Data Scien
 
 ## Data ingestation and processing
 
-```{r eval=FALSE}
-library(mdsr)  # XX turn back on later!
+```{r eval=TRUE}
+library(mdsr) 
 census <- read.csv(
 "http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data", 
   header = FALSE)
@@ -44,7 +44,6 @@ glimpse(census)
 ```
 
 ```{r}
-load("Census.Rda")  # XX remove later...
 set.seed(364)
 n <- nrow(census)
 test_idx <- sample.int(n, size = round(0.2 * n))
@@ -54,17 +53,17 @@ test <- census[test_idx, ]
 nrow(test)
 
 pi_bar <- tally(~ income, data = train, format = "percent")[2]
-
-
+pi_bar
 tally(~ income, data = train, format = "percent")
+```
 
+```{r}
 library(rpart)
 dtree <- rpart(income ~ capital.gain, data = train)
 split_val <- as.data.frame(dtree$splits)$index
 dtree_frame <- dtree$frame %>%
   select(var, n, dev, yval) %>%
   mutate(pct = n / nrow(train), right = (n - dev) / n)
-
 rpart(income ~ capital.gain, data = train)
 ```
 
@@ -144,7 +143,7 @@ mod_tree2 <- rpart(form, data = train, control = rpart.control(cp = 0.002))
 # XX calculate accuracy
 ```
 
-```{r}
+```{r message=FALSE}
 library(randomForest)
 mod_forest <- randomForest(form, data = train, ntree = 201, mtry = 3)
 mod_forest
@@ -192,7 +191,7 @@ confusion
 sum(diag(confusion)) / nrow(train)
 ```
 
-```{r}
+```{r nnet}
 library(nnet)
 mod_nn <- nnet(form, data = train, size = 5)
 income_nn <- predict(mod_nn, newdata = train, type = "class")
@@ -246,7 +245,7 @@ fpr <- confusion[" >50K", " <=50K"] / sum(confusion[, " <=50K"])
 roc + geom_point(x = fpr, y = tpr, size = 3)
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 test_q <- test %>%
   select(age, education.num, capital.gain, capital.loss, hours.per.week)
 test_rates <- sapply(ks, FUN = knn_error_rate, x = train_q,

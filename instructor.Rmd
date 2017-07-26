@@ -12,10 +12,9 @@ output:
 
 ### Online supplements
 
-(more to come...)
 
 - Supervised Learning chapter
-    - [Video overview](XX)
+    - [Video overview](https://youtu.be/Nlezx2gS8hw)
     - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
     - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
 
@@ -24,6 +23,8 @@ output:
     - [Video overview](https://youtu.be/sp25j9WaqwA)
     - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
     - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
+
+(more to come...)
 
 ### Solutions Manual
 

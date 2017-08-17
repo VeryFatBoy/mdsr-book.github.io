@@ -1,5 +1,5 @@
 ---
-title: "R and R Studio appendi exercises"
+title: "R and R Studio appendix exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
 date: "August 17, 2017"
 output:

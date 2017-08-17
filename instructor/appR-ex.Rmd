@@ -1,0 +1,177 @@
+---
+title: "R and R Studio appendi exercises"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "August 17, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+library(tidyr)
+library(tm)
+library(wordcloud)
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+These exercises are taken from the R and RStudio appendix from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+
+
+## Typing commands
+A user has typed the following commands into the console.
+
+```{r}
+obj1 <- 2:10
+obj2 <- c(2, 5)
+obj3 <- c(TRUE, FALSE)
+obj4 <- 42
+```
+
+What values are returned by the following commands?
+
+```{r eval=FALSE}
+obj1 * 10
+obj1[2:4]
+obj1[-3]
+obj1 + obj2
+obj1 * obj3
+obj1 + obj4
+obj2 + obj3
+sum(obj2)
+sum(obj3)
+```
+
+SOLUTION:
+
+  
+
+## Typing more commands
+A user has typed the following commands into the console.
+
+```{r}
+a <- c(10, 15)
+b <- c(TRUE, FALSE)
+c <- c("happy", "sad")
+```
+
+What do each of the following commands return?  Describe the class of the object as well as its value.
+
+```{r eval=FALSE}
+data.frame(a, b, c)
+cbind(a, b)
+rbind(a, b)
+cbind(a, b, c)
+list(a, b, c)[[2]]
+```
+
+SOLUTION:
+
+
+## Typing even more commands
+A user has typed the following commands into the console.
+
+```{r}
+mylist <- list(x1="sally", x2=42, x3=FALSE, x4=1:5)
+```
+
+What values do each of the following commands return?
+```{r eval=FALSE}
+is.list(mylist)
+names(mylist)
+length(mylist)
+mylist[[2]]
+mylist[["x1"]]
+mylist$x2
+length(mylist[["x4"]])
+class(mylist)
+typeof(mylist)
+class(mylist[[4]])
+typeof(mylist[[3]])
+```
+
+SOLUTION:
+
+## Piping
+The following code undertakes some data analysis using the HELP (Health Evaluation and Linkage to Primary Care) trial.
+
+```{r eval=FALSE}
+library(mosaic)
+ds <-
+   read.csv("http://nhorton.people.amherst.edu/r2/datasets/helpmiss.csv")
+summarise(group_by(select(filter(mutate(ds,
+  sex = ifelse(female==1, "F", "M")), !is.na(pcs)), age, pcs, sex),
+  sex), meanage=mean(age), meanpcs=mean(pcs),n=n())
+```
+
+Describe in words what computations are being done.
+Using the 'pipe' notation, translate this code into a more readable version.
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+## Concepts
+The following concepts should have some meaning to you: package, function, command, argument, assignment,
+object, object name, data frame, named argument, quoted character string.  Construct an example of R commands
+that make use of at least four of these.  Label which part of your example R command corresponds to each.
+
+SOLUTION:
+
+
+## Names
+Which of these kinds of names should be wrapped with quotation marks when used in R?
+1. function name
+2. file name
+3. the name of an argument in a named argument
+4. object name
+
+SOLUTION:
+
+
+## What's wrong?
+What's wrong with this statement?
+```{r eval=FALSE}
+help(NHANES, package <- "NHANES")
+```
+
+
+## CPS
+Consult the documentation for `CPS85` in the `mosaicData` package to determine the meaning of CPS.
+
+SOLUTION:
+
+```{r}
+library(mosaicData)
+# solution does here
+```
+
+
+## Errors
+For each of the following assignment statements, describe the error (or note why it does not generate an error).
+```{r eval=FALSE}
+result1 <- sqrt 10
+result2 <-- "Hello to you!"
+3result <- "Hello to you"
+result4 <- "Hello to you
+result5 <- date()
+```
+
+SOLUTION:
+

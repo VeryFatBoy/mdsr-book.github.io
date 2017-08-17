@@ -27,7 +27,6 @@ output:
 - R and RStudio appendix
     - Exercises [html](instructor/appR-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd))
 
-
 (more to come...)
 
 ### Solutions Manual

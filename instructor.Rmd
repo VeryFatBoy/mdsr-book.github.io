@@ -12,13 +12,25 @@ output:
 
 ### Online supplements
 
-- Text as Data chapter
-    - [Video](https://youtu.be/sp25j9WaqwA)
-    - [Examples](instructor/text.html)
-    - [Exercises](instructor/text-ex.html)
 
+- Supervised Learning chapter
+    - [Video overview](https://youtu.be/Nlezx2gS8hw)
+    - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
+    - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
+
+
+- Text as Data chapter
+    - [Video overview](https://youtu.be/sp25j9WaqwA)
+    - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
+    - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
+
+- R and RStudio appendix
+    - Exercises [html](instructor/appR-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd))
+
+(more to come...)
 
 ### Solutions Manual
 
-A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)!
+A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
+Last updated August 17, 2017

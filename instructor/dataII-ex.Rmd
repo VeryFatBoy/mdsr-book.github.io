@@ -1,0 +1,229 @@
+---
+title: "Tidy data and iteration exercises"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "August 31, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+These exercises are taken from the tidy data and iteration chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+
+
+## Home runs
+Consider the number of home runs hit (`HR`) and home runs allowed (`HRA`) for the Chicago Cubs (CHN) baseball team. Reshape the `Teams` data from the `Lahman` package into *long* format and plot a time series conditioned on whether the HRs that involved the Cubs were hit by them or allowed by them.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+
+## Seasons
+Write a function called `count_seasons` that, when given a `teamID`, will count the number of seasons the team played in the `Teams` data frame from the `Lahman` package.
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(Lahman)
+# solution goes here
+```
+
+## We'll always have Brooklyn
+The team IDs corresponding to Brooklyn baseball teams from the `Teams` data frame from the `Lahman` package are listed below. Use `sapply()` to find the number of seasons in which each of those teams played.
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(Lahman)
+bk_teams <- c("BR1", "BR2", "BR3", "BR4", "BRO", "BRP", "BRF")
+# solution goes here
+```
+
+## Marriage
+In the `Marriage` data set included in `mosaicData`, the `appdate`, `ceremonydate`, and `dob` variables are encoded as factors, even though they are dates. Use the `lubridate` package to convert those three columns into a date format.
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+Marriage %>%
+  select(appdate, ceremonydate, dob) %>%
+  glimpse()
+# solution goes here
+```
+
+## Coercion
+Consider the values returned by the `as.numeric()` and `readr::parse_number()` functions when applied to the following vectors.  Describe the results and their implication.
+
+<<>>=
+x1 <- c("1900.45", "$1900.45", "1,900.45", "nearly $2000")
+x2 <- as.factor(x1)
+@
+
+
+## Brittle code
+An analyst wants to calculate the pairwise differences between the Treatment and Control values for a small data set from a crossover trial (all subjects received both treatments) that
+consists of the following observations.
+```{r echo=FALSE}
+library(xtable)
+ds1 <- data_frame(id=c(1:3, 1:3), group=c(rep("T", 3), rep("C", 3)), vals=c(4,6,8,5,6,10))
+```
+```{r results="asis"}
+tab <- xtable(ds1)
+print(tab, type="html", floating=FALSE)
+```
+
+They use the following code to create the new `diff` variable.
+
+```{r eval=FALSE}
+Treat <- filter(ds1, group=="T")
+Control <- filter(ds1, group=="C")
+all <- mutate(Treat, diff = Treat$vals - Control$vals)
+all
+```
+
+Verify that this code works for this example and generates the correct values of -1, 0, and -2.  Describe two problems that might arise if the data set is not sorted in a particular
+order or if one of the observations is missing for one of the subjects.  Provide an alternative approach to generate this
+variable that is more robust (hint: use `tidyr::spread()`).
+
+SOLUTION:
+
+```{r message=FALSE}
+# solution goes here
+```
+
+## Tall to wide
+Generate the code to convert the following data frame to wide format.
+```{r echo=FALSE}
+library(mosaic)
+library(readr)
+library(tidyr)
+df <- data_frame(
+  id=c(1,1,2,2,3,3,4,4,5,5),
+  sex=c("M","M","F","F","F","F","M","M","M","M"),
+  grp=rep(c("A","B"), 5),
+  left=c(0.1,0.2, 0.3,0.4, 0.15,0.25, 0.6,0.65, 0.71,0.79),
+  right=c(0.1,0.25, 0.3,0.35, 0.18,0.25, 0.6,0.6, 0.71,0.79)+0.1
+)
+sumdf <- df %>%
+  group_by(grp, sex) %>%
+  summarize(meanL=mean(left), sdL=sd(left),
+            meanR=mean(right), sdR=sd(right)) %>%
+  ungroup()
+```
+
+```{r echo=FALSE, results='asis'}
+tab <- xtable(sumdf, floating=FALSE)
+print(tab, type="html")
+```
+
+The result should look like the following display.
+```{r echo=FALSE, results="asis"}
+transformed <- sumdf %>%
+  gather(key = "temp", value = "vals", meanL, meanR, sdL, sdR) %>%
+  unite(col = "temp1", sex, temp, sep = ".") %>%
+  spread(temp1, vals)
+tab <- xtable(data.frame(transformed))
+print(tab, type="html")
+```
+
+Hint: use `gather()` in conjunction with `spread()`.
+
+## Multiple models
+Use the `dplyr::do()` function and the `HELPrct` data frame from the `mosaicData` package to fit a
+regression model predicting `cesd` as a function of `age` separately for each of the levels
+of the `substance` variable.  Generate a table of results (estimates and confidence intervals) for each level of the grouping variable.
+New York to `SFO` using the `nycflights13` package.  How do the conclusions change from
+the multiple regression model presented in the Statistical Foundations Chapter?
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+# solution goes here
+```
+
+## Baseball records
+Use the `dplyr::do()` function and the `Lahman` data to replicate one of these baseball records plots (http://tinyurl.com/nytimes-records) from the *The New York Times*.
+
+SOLUTION:
+
+```{r}
+library(mdsr)   
+library(Lahman)
+# solution goes here
+```
+
+## FEC
+Use the `fec` package to download the Federal Election Commission data for 2012. Re-create Figures 2.1 and 2.2 using `ggplot2`.
+
+SOLUTION:
+
+```{r}
+# solution goes here, after downloading the fec package.
+```
+
+## More FEC
+Using the same FEC data as the previous exercise, re-create Figure 2.8.  
+
+SOLUTION:
+
+```{r}
+# solution goes here
+```
+
+## Wikipedia
+Using the approach described in Section 5.5.4, find another table in Wikipedia
+that can be scraped and visualized.  Be sure to interpret your graphical display.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```
+
+## Wrangling with the FEC
+Replicate the wrangling to create the `house_elections` table in the `fec` package from the original Excel source file.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```
+
+## Babynames
+Replicate the functionality of the `make_babynames_dist()` function from the `mdsr` package to wrangle the original tables from the `babynames` package.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```

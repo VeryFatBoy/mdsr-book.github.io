@@ -128,13 +128,62 @@ $(document).ready(function () {
 <h2>Introduction</h2>
 <p>These exercises are taken from the grammar of graphics chapter from <strong>Modern Data Science with R</strong>: <a href="http://mdsr-book.github.io" class="uri">http://mdsr-book.github.io</a>. Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.</p>
 </div>
-<div id="home-runs" class="section level2">
-<h2>Home runs</h2>
-<p>XX</p>
+<div id="galton" class="section level2">
+<h2>Galton</h2>
+<p>Using the famous <code>Galton</code> data set from the <code>mosaicData</code> package:</p>
+<pre class="r"><code>library(mdsr)
+glimpse(Galton)</code></pre>
+<pre><code>## Observations: 898
+## Variables: 6
+## $ family &lt;fctr&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, ...
+## $ father &lt;dbl&gt; 78.5, 78.5, 78.5, 78.5, 75.5, 75.5, 75.5, 75.5, 75.0, 7...
+## $ mother &lt;dbl&gt; 67.0, 67.0, 67.0, 67.0, 66.5, 66.5, 66.5, 66.5, 64.0, 6...
+## $ sex    &lt;fctr&gt; M, F, F, F, M, M, F, F, M, F, M, M, F, F, F, M, M, M, ...
+## $ height &lt;dbl&gt; 73.2, 69.2, 69.0, 69.0, 73.5, 72.5, 65.5, 65.5, 71.0, 6...
+## $ nkids  &lt;int&gt; 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 5, 5, 5, 5, 5, 6, 6, 6, 6...</code></pre>
+<ol style="list-style-type: decimal">
+<li>Create a scatterplot of each person’s  against their father’s height</li>
+<li>Separate your plot into facets by </li>
+<li>Add regression lines to all of your facets</li>
+</ol>
+<p>Hint: recall that you can find out more about the data set by running the command <code>?Galton</code>.</p>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)
-library(Lahman)
-# solution goes here</code></pre>
+glimpse(Galton)</code></pre>
+<pre><code>## Observations: 898
+## Variables: 6
+## $ family &lt;fctr&gt; 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, ...
+## $ father &lt;dbl&gt; 78.5, 78.5, 78.5, 78.5, 75.5, 75.5, 75.5, 75.5, 75.0, 7...
+## $ mother &lt;dbl&gt; 67.0, 67.0, 67.0, 67.0, 66.5, 66.5, 66.5, 66.5, 64.0, 6...
+## $ sex    &lt;fctr&gt; M, F, F, F, M, M, F, F, M, F, M, M, F, F, F, M, M, M, ...
+## $ height &lt;dbl&gt; 73.2, 69.2, 69.0, 69.0, 73.5, 72.5, 65.5, 65.5, 71.0, 6...
+## $ nkids  &lt;int&gt; 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 5, 5, 5, 5, 5, 6, 6, 6, 6...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
+</div>
+<div id="railtrails" class="section level2">
+<h2>Railtrails</h2>
+<p>Using the <code>RailTrail</code> data set from the <code>mosaicData</code> package:</p>
+<ol style="list-style-type: decimal">
+<li>Create a scatterplot of the number of crossings per day  against the high temperature that day</li>
+<li>Separate your plot into facets by </li>
+<li>Add regression lines to the two facets</li>
+</ol>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+glimpse(RailTrail)</code></pre>
+<pre><code>## Observations: 90
+## Variables: 10
+## $ hightemp   &lt;int&gt; 83, 73, 74, 95, 44, 69, 66, 66, 80, 79, 78, 65, 41,...
+## $ lowtemp    &lt;int&gt; 50, 49, 52, 61, 52, 54, 39, 38, 55, 45, 55, 48, 49,...
+## $ avgtemp    &lt;dbl&gt; 66.5, 61.0, 63.0, 78.0, 48.0, 61.5, 52.5, 52.0, 67....
+## $ spring     &lt;int&gt; 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, ...
+## $ summer     &lt;int&gt; 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, ...
+## $ fall       &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, ...
+## $ cloudcover &lt;dbl&gt; 7.6, 6.3, 7.5, 2.6, 10.0, 6.6, 2.4, 0.0, 3.8, 4.1, ...
+## $ precip     &lt;dbl&gt; 0.00, 0.29, 0.32, 0.00, 0.14, 0.02, 0.00, 0.00, 0.0...
+## $ volume     &lt;int&gt; 501, 419, 397, 385, 200, 375, 417, 629, 533, 547, 4...
+## $ weekday    &lt;fctr&gt; 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0,...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
 </div>
 
 

@@ -29,15 +29,41 @@ knitr::opts_chunk$set(
 These exercises are taken from the grammar of graphics chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
 
 
-## Home runs
-XX
+## Galton
+Using the famous `Galton` data set from the `mosaicData` package:
+
+```{r}
+library(mdsr)
+glimpse(Galton)
+```
+
+1. Create a scatterplot of each person's \var{height} against their father's height
+2. Separate your plot into facets by \var{sex}
+3. Add regression lines to all of your facets
+
+Hint: recall that you can find out more about the data set by running the command `?Galton`.
+
 
 SOLUTION:
 
 ```{r}
 library(mdsr)
-library(Lahman)
+glimpse(Galton)
 # solution goes here
 ```
 
 
+## Railtrails
+Using the `RailTrail` data set from the `mosaicData` package:
+
+1.  Create a scatterplot of the number of crossings per day \var{volume} against the high temperature that day
+2. Separate your plot into facets by \var{weekday}
+3. Add regression lines to the two facets
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+glimpse(RailTrail)
+# solution goes here
+```

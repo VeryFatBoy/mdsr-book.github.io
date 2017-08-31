@@ -141,7 +141,7 @@ Using data from the `nasaweather` package, create a scatterplot between `wind` a
 
 SOLUTION:
 
-```{r}
+```{r message=FALSE}
 library(mdsr)
 library(nasaweather)
 glimpse(storms)

@@ -12,8 +12,17 @@ output:
 
 ### Online supplements
 
+- Data Visualization (Chapter 2)
+    - Exercises [html](instructor/datavizI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizI-ex.Rmd)]
+
+- Grammar for Graphics (Chapter 3)
+    - Exercises [html](instructor/datavizII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd)]
+
+- Data Wrangling (Chapter 4)
+    - Exercises [html](instructor/dataI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd)]
+
 - Tidy Data and Iteration (Chapter 5)
-    - Exercises [html](instructor/dataII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd))
+    - Exercises [html](instructor/dataII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd)]
 
 
 - Supervised Learning (Chapter 8)

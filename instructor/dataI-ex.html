@@ -128,12 +128,217 @@ $(document).ready(function () {
 <h2>Introduction</h2>
 <p>These exercises are taken from the data wrangling chapter from <strong>Modern Data Science with R</strong>: <a href="http://mdsr-book.github.io" class="uri">http://mdsr-book.github.io</a>. Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.</p>
 </div>
-<div id="home-runs" class="section level2">
-<h2>Home runs</h2>
-<p>XX</p>
+<div id="verbs" class="section level2">
+<h2>Verbs</h2>
+<p>Each of these tasks can be performed using a single data verb. For each task, say which verb it is:</p>
+<ol style="list-style-type: decimal">
+<li>Find the average of one of the variables.</li>
+<li>Add a new column that is the ratio between two variables.</li>
+<li>Sort the cases in descending order of a variable.</li>
+<li>Create a new data table that includes only those cases that meet a criterion.</li>
+<li>From a data table with three categorical variables A, B, and C, and a quantitative variable X, produce a data frame that has the same cases but only the variables A and X.</li>
+</ol>
 <p>SOLUTION:</p>
 <pre class="r"><code>library(mdsr)
 library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="cancelled-flights" class="section level2">
+<h2>Cancelled flights</h2>
+<p>Use the <code>nycflights13</code> package and the <code>flights</code> data frame to answer the following questions: What month had the highest proportion of cancelled flights? What month had the lowest? Interpret any seasonal patterns.</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+glimpse(flights)</code></pre>
+<pre><code>## Observations: 336,776
+## Variables: 19
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013,...
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...
+## $ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 55...
+## $ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 558, 600, 600, 600, 60...
+## $ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2...
+## $ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 740, 913, 709, 838, 7...
+## $ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 728, 854, 723, 846, 7...
+## $ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -...
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;UA&quot;, &quot;AA&quot;, &quot;B6&quot;, &quot;DL&quot;, &quot;UA&quot;, &quot;B6&quot;, &quot;EV&quot;,...
+## $ flight         &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79...
+## $ tailnum        &lt;chr&gt; &quot;N14228&quot;, &quot;N24211&quot;, &quot;N619AA&quot;, &quot;N804JB&quot;, &quot;N668DN...
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;JFK&quot;, &quot;JFK&quot;, &quot;LGA&quot;, &quot;EWR&quot;, &quot;EWR&quot;...
+## $ dest           &lt;chr&gt; &quot;IAH&quot;, &quot;IAH&quot;, &quot;MIA&quot;, &quot;BQN&quot;, &quot;ATL&quot;, &quot;ORD&quot;, &quot;FLL&quot;...
+## $ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138...
+## $ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 94...
+## $ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5,...
+## $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, ...
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
+</div>
+<div id="frequent-nyc-visitors" class="section level2">
+<h2>Frequent NYC visitors</h2>
+<p>Use the <code>nycflights13</code> package and the <code>flights</code> data frame to answer the following question: What plane (specified by the <code>tailnum</code> variable) traveled the most times from New York City airports in 2013? Plot the number of trips per week over the year.</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+glimpse(planes)</code></pre>
+<pre><code>## Observations: 3,322
+## Variables: 9
+## $ tailnum      &lt;chr&gt; &quot;N10156&quot;, &quot;N102UW&quot;, &quot;N103US&quot;, &quot;N104UW&quot;, &quot;N10575&quot;,...
+## $ year         &lt;int&gt; 2004, 1998, 1999, 1999, 2002, 1999, 1999, 1999, 1...
+## $ type         &lt;chr&gt; &quot;Fixed wing multi engine&quot;, &quot;Fixed wing multi engi...
+## $ manufacturer &lt;chr&gt; &quot;EMBRAER&quot;, &quot;AIRBUS INDUSTRIE&quot;, &quot;AIRBUS INDUSTRIE&quot;...
+## $ model        &lt;chr&gt; &quot;EMB-145XR&quot;, &quot;A320-214&quot;, &quot;A320-214&quot;, &quot;A320-214&quot;, ...
+## $ engines      &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2...
+## $ seats        &lt;int&gt; 55, 182, 182, 182, 55, 182, 182, 182, 182, 182, 5...
+## $ speed        &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N...
+## $ engine       &lt;chr&gt; &quot;Turbo-fan&quot;, &quot;Turbo-fan&quot;, &quot;Turbo-fan&quot;, &quot;Turbo-fan...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
+</div>
+<div id="oldest-plane" class="section level2">
+<h2>Oldest plane</h2>
+<p>Use the <code>nycflights13</code> package and the <code>flights</code> and <code>planes</code> tables to answer the following questions: What is the oldest plane (specified by the <code>tailnum</code> variable) that flew from New York City airports in 2013? How many airplanes that flew from New York City are included in the <code>planes</code> table?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+# solution goes here</code></pre>
+</div>
+<div id="who-made-that" class="section level2">
+<h2>Who made that?</h2>
+<p>Use the <code>nycflights13</code> package and the <code>flights</code> and <code>planes</code> tables to answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>How many planes have a missing date of manufacture?</p></li>
+<li><p>What are the five most common manufacturers?</p></li>
+<li><p>Has the distribution of manufacturer changed over time as reflected by the airplanes flying from NYC in 2013?</p></li>
+</ol>
+<p>(Hint: you may need to recode the manufacturer name and collapse rare vendors into a category called <code>Other</code>)</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+# solution goes here</code></pre>
+</div>
+<div id="weather" class="section level2">
+<h2>Weather</h2>
+<p>Use the <code>nycflights13</code> package and the <code>weather</code> table to answer the following questions: What is the distribution of temperature in July, 2013? Identify any important outliers in terms of the <code>wind_speed</code> variable. What is the relationship between <code>dewp</code> and <code>humid</code>? What is the relationship between <code>precip</code> and <code>visib</code>?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+# solution goes here</code></pre>
+</div>
+<div id="rain-rain-go-away" class="section level2">
+<h2>Rain, rain, go away</h2>
+<p>Use the <code>nycflights13</code> package and the <code>weather</code> table to answer the following questions: On how many days was there precipitation in the New York area in 2013? Were there differences in the mean visibility (<code>visib</code>) based on the day of the week and/or month of the year? XX</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(nycflights13)
+# solution goes here</code></pre>
+</div>
+<div id="batting" class="section level2">
+<h2>Batting</h2>
+<p>Define two new variables in the <code>Teams</code> data frame from the <code>Lahman</code> package: batting average (<span class="math inline">\(BA\)</span>) and slugging percentage (<span class="math inline">\(SLG\)</span>). Batting average is the ratio of hits (<code>H</code>) to at-bats (<code>AB</code>), and slugging percentage is total bases divided by at-bats. To compute total bases, you get 1 for a single, 2 for a double, 3 for a triple, and 4 for a home run.</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="al-vs-nl" class="section level2">
+<h2>AL vs NL</h2>
+<p>Plot a time series of <code>SLG</code> since 1954 conditioned by <code>lgID</code>. Is slugging percentage typically higher in the American League (AL) or the National League (NL)? Can you think of why this might be the case?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="slugging-percentage" class="section level2">
+<h2>Slugging percentage</h2>
+<p>Display the top 15 teams ranked in terms of slugging percentage in MLB history. Repeat this using teams since 1969.</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="angels" class="section level2">
+<h2>Angels</h2>
+<p>The Angels have at times been called the California Angels (<code>CAL</code>), the Anaheim Angels (<code>ANA</code>), and the Los Angeles Angels of Anaheim (<code>LAA</code>). Find the 10 most successful seasons in Angels history. Have they ever won the World Series?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="presidential-baseball" class="section level2">
+<h2>Presidential baseball</h2>
+<p>Create a factor called <code>election</code> that divides the <code>yearID</code> into four-year blocks that correspond to U.S. presidential terms. During which term have the most home runs been hit?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="stolen-bases" class="section level2">
+<h2>Stolen bases</h2>
+<p>Name every player in baseball history who has accumulated at least 300 home runs (<code>HR</code>) and at least 300 stolen bases (<code>SB</code>).</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="wins-and-strikeouts" class="section level2">
+<h2>Wins and strikeouts</h2>
+<p>Name every pitcher in baseball history who has accumulated at least 300 wins (<code>W</code>) and at least 3,000 strikeouts (`SO).</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+library(Lahman)
+# solution goes here</code></pre>
+</div>
+<div id="home-runs-and-batting-average" class="section level2">
+<h2>Home runs and batting average</h2>
+<p>Identify the name and year of every player who has hit at least 50 home runs in a single season. Which player had the lowest batting average in that season?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+# solution goes here</code></pre>
+</div>
+<div id="relative-age-effect" class="section level2">
+<h2>Relative age effect</h2>
+<p>The relative age effect (<a href="https://en.wikipedia.org/wiki/Relative_age_effect" class="uri">https://en.wikipedia.org/wiki/Relative_age_effect</a>) is an attempt to explain anomalies in the distribution of birth month among athletes. Briefly, the idea is that children born just after the age cut-off for participation will be as much as 11 months older than their fellow athletes, which is enough of a disparity to give them an advantage. That advantage will then be compounded over the years, resulting in notably more professional athletes born in these months. Display the distribution of birth months of baseball players who batted during the decade of the 2000s. How are they distributed over the calendar year? Does this support the notion of a relative age effect? (Online hint: use the <code>Births78</code> data set from the <code>mosaicData</code> package as a reference.)</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+glimpse(Births78)</code></pre>
+<pre><code>## Observations: 365
+## Variables: 4
+## $ date      &lt;dttm&gt; 1978-01-01, 1978-01-02, 1978-01-03, 1978-01-04, 197...
+## $ births    &lt;int&gt; 7701, 7527, 8825, 8859, 9043, 9208, 8084, 7611, 9172...
+## $ dayofyear &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1...
+## $ wday      &lt;ord&gt; Sun, Mon, Tues, Wed, Thurs, Fri, Sat, Sun, Mon, Tues...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
+</div>
+<div id="restaurants" class="section level2">
+<h2>Restaurants</h2>
+<p>The <code>Violations</code> data set in the <code>mdsr</code> package contains information regarding the outcome of health inspections of restaurants in New York City. Use these data to calculate the median violation score by zip code for zip codes in Manhattan with 50 or more inspections. What pattern do you see between the number of inspections and the median score?</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
+glimpse(Violations)</code></pre>
+<pre><code>## Observations: 480,621
+## Variables: 16
+## $ camis           &lt;int&gt; 30075445, 30075445, 30075445, 30075445, 300754...
+## $ dba             &lt;chr&gt; &quot;MORRIS PARK BAKE SHOP&quot;, &quot;MORRIS PARK BAKE SHO...
+## $ boro            &lt;chr&gt; &quot;BRONX&quot;, &quot;BRONX&quot;, &quot;BRONX&quot;, &quot;BRONX&quot;, &quot;BRONX&quot;, &quot;...
+## $ building        &lt;int&gt; 1007, 1007, 1007, 1007, 1007, 1007, 1007, 1007...
+## $ street          &lt;chr&gt; &quot;MORRIS PARK AVE&quot;, &quot;MORRIS PARK AVE&quot;, &quot;MORRIS ...
+## $ zipcode         &lt;int&gt; 10462, 10462, 10462, 10462, 10462, 10462, 1046...
+## $ phone           &lt;dbl&gt; 7188924968, 7188924968, 7188924968, 7188924968...
+## $ inspection_date &lt;dttm&gt; 2015-02-09, 2014-03-03, 2013-10-10, 2013-09-1...
+## $ action          &lt;chr&gt; &quot;Violations were cited in the following area(s...
+## $ violation_code  &lt;chr&gt; &quot;06C&quot;, &quot;10F&quot;, NA, &quot;04L&quot;, &quot;04N&quot;, &quot;04C&quot;, &quot;04L&quot;, ...
+## $ score           &lt;int&gt; 6, 2, NA, 6, 6, 32, 32, 32, 32, 32, 32, NA, 10...
+## $ grade           &lt;chr&gt; &quot;A&quot;, &quot;A&quot;, NA, &quot;A&quot;, &quot;A&quot;, NA, NA, NA, NA, NA, NA...
+## $ grade_date      &lt;dttm&gt; 2015-02-09, 2014-03-03, NA, 2013-09-11, 2013-...
+## $ record_date     &lt;dttm&gt; 2016-01-06, 2016-01-06, 2016-01-06, 2016-01-0...
+## $ inspection_type &lt;chr&gt; &quot;Cycle Inspection / Initial Inspection&quot;, &quot;Cycl...
+## $ cuisine_code    &lt;dbl&gt; 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8...</code></pre>
+<pre class="r"><code># solution goes here</code></pre>
+</div>
+<div id="firearms" class="section level2">
+<h2>Firearms</h2>
+<p>Download data on the number of deaths by firearm (<a href="http://www.fdle.state.fl.us/cms/FSAC/Documents/Excel/1971_fwd_murder_firearms.aspx" class="uri">http://www.fdle.state.fl.us/cms/FSAC/Documents/Excel/1971_fwd_murder_firearms.aspx</a>) from the Florida Department of Law Enforcement. Wrangle these data and use <code>ggplot2</code> to re-create Figure 6.1.</p>
+<p>SOLUTION:</p>
+<pre class="r"><code>library(mdsr)
 # solution goes here</code></pre>
 </div>
 

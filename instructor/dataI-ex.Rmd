@@ -29,8 +29,15 @@ knitr::opts_chunk$set(
 These exercises are taken from the data wrangling chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
 
 
-## Home runs
-XX
+## Verbs
+Each of these tasks can be performed using a single data verb.  For each task, say which verb it is:
+
+1. Find the average of one of the variables.
+2. Add a new column that is the ratio between two variables.
+3. Sort the cases in descending order of a variable.
+4. Create a new data table that includes only those cases that meet a criterion.
+5. From a data table with three categorical variables A, B, and C, and a quantitative
+variable X, produce a data frame that has the same cases but only the variables A and X.
 
 SOLUTION:
 
@@ -40,4 +47,204 @@ library(Lahman)
 # solution goes here
 ```
 
+## Cancelled flights
+Use the `nycflights13` package and the `flights` data frame to answer the following questions: What month had the highest proportion of cancelled flights?  What month had the lowest?  Interpret any seasonal patterns.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+glimpse(flights)
+# solution goes here
+```
+
+
+## Frequent NYC visitors
+Use the `nycflights13` package and the `flights` data frame to answer the following question: What plane (specified by the `tailnum` variable) traveled the most times from New York City airports in 2013?  Plot the number of trips per week over the year.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+glimpse(planes)
+# solution goes here
+```
+
+## Oldest plane
+Use the `nycflights13` package and the `flights` and `planes` tables to answer the following questions: What is the oldest plane (specified by the `tailnum` variable) that flew from New York City airports in 2013?
+How many airplanes that flew from New York City are included in the `planes` table?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+# solution goes here
+```
+
+## Who made that?
+Use the `nycflights13` package and the `flights` and `planes` tables to answer the following questions:
+
+1. How many planes have a missing date of manufacture?
+
+2. What are the five most common manufacturers?
+
+3. Has the distribution of manufacturer changed over time as reflected by the airplanes flying from NYC in 2013?  
+
+(Hint: you may need to recode the manufacturer name and collapse rare vendors into a category called `Other`)
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+# solution goes here
+```
+
+## Weather
+Use the `nycflights13` package and the `weather` table to answer the following questions: What is the distribution of temperature in July, 2013?  Identify any important outliers in terms of the `wind_speed` variable.  What is the relationship between `dewp` and `humid`?  What is the relationship between `precip` and `visib`?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+# solution goes here
+```
+
+## Rain, rain, go away
+Use the `nycflights13` package and the `weather` table to answer the following questions: On how many days was there precipitation in the New York area in 2013?  Were there differences in the mean visibility (`visib`) based on the day of the week and/or month of the year?
+XX
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nycflights13)
+# solution goes here
+```
+
+## Batting
+Define two new variables in the `Teams` data frame from the `Lahman` package: batting average ($BA$) and slugging percentage ($SLG$). Batting average is the ratio of hits (`H`) to at-bats (`AB`), and slugging percentage is total bases divided by at-bats. To compute total bases, you get 1 for a single, 2 for a double, 3 for a triple, and 4 for a home run.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## AL vs NL
+Plot a time series of `SLG` since 1954 conditioned by `lgID`. Is slugging percentage typically higher in the American League (AL) or the National League (NL)? Can you think of why this might be the case?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Slugging percentage
+Display the top 15 teams ranked in terms of slugging percentage in MLB history. Repeat this using teams since 1969.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Angels
+The Angels have at times been called the California Angels (`CAL`), the Anaheim Angels (`ANA`), and the Los Angeles Angels of Anaheim (`LAA`). Find the 10 most successful seasons in Angels history. Have they ever won the World Series?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Presidential baseball
+Create a factor called `election` that divides the `yearID` into four-year blocks that correspond to U.S. presidential terms. During which term have the most home runs been hit?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Stolen bases
+Name every player in baseball history who has accumulated at least 300 home runs (`HR`) and at least 300 stolen bases (`SB`).
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Wins and strikeouts
+Name every pitcher in baseball history who has accumulated at least 300 wins (`W`) and at least 3,000 strikeouts (`SO).
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(Lahman)
+# solution goes here
+```
+
+## Home runs and batting average
+Identify the name and year of every player who has hit at least 50 home runs in a single season. Which player had the lowest batting average in that season?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```
+
+## Relative age effect
+The relative age effect (https://en.wikipedia.org/wiki/Relative_age_effect) is an attempt to explain anomalies in the distribution of birth month among athletes. Briefly, the idea is that children born just after the age cut-off for participation will be as much as 11 months older than their fellow athletes, which is enough of a disparity to give them an advantage. That advantage will then be compounded over the years, resulting in notably more professional athletes born in these months. Display the distribution of birth months of baseball players who batted during the decade of the 2000s.  How are they distributed over the calendar year? Does this support the notion of a relative age effect? (Online hint: use the `Births78` data set from the `mosaicData` package as a reference.)
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+glimpse(Births78)
+# solution goes here
+```
+
+## Restaurants
+The `Violations` data set in the `mdsr` package contains information regarding the outcome of health
+inspections of restaurants in New York City.  Use these data to calculate the median violation score by zip code for
+zip codes in Manhattan with 50 or more inspections.  What pattern do you see between the number of inspections and
+the median score?
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+glimpse(Violations)
+# solution goes here
+```
+
+## Firearms
+Download data on the number of deaths by firearm (http://www.fdle.state.fl.us/cms/FSAC/Documents/Excel/1971_fwd_murder_firearms.aspx) from the Florida Department of Law Enforcement. Wrangle these data and use `ggplot2` to re-create Figure 6.1.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```
 

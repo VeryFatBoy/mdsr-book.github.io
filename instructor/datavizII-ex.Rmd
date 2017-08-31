@@ -98,6 +98,63 @@ The `MLB_teams` data set in the `mdsr` package contains information about Major 
 ```{r}
 library(mdsr)
 glimpse(MLB_teams)
+# solution goes here
+```
+
+## Payroll
+Use the `MLB_teams` data in the `mdsr` package to create an informative data graphic that illustrates the relationship between winning percentage and payroll in context.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
 ```
 
 
+## Dead names
+Use the `make_babynames_dist` function in the `mdsr` package to recreate the "Deadest Names" graphic from FiveThirtyEight (http://tinyurl.com/zcbcl9o).
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+babynames_dist <- make_babynames_dist()
+glimpse(babynames_dist)
+```
+
+## MacLeish
+The `macleish` package contains weather data collected every ten minutes in 2015 from two weather stations in Whately, MA.
+Using `ggpplot2` create a data graphic that displays the average temperature over each 10-minute interal (`temperature` as a function of time (`when`).
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(macleish)
+glimpse(whately_2015)
+# solution goes here
+```
+
+## NASA weather
+Using data from the `nasaweather` package, create a scatterplot between `wind` and `pressure` with color being used to distinguish the `type` of storm.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nasaweather)
+glimpse(storms)
+# solution goes here
+```
+
+## More weather
+Using data from the `nasaweather` package, use the `geom_path` function to plot the path of each tropical storm in the `storms` data table. Use color to distinguish the storms from one another, and use facetting to plot each `year` in its own panel.
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+library(nasaweather)
+# solution goes here
+```

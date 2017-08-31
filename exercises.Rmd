@@ -26,7 +26,7 @@ c. Critique this data graphic using the taxonomy described in this chapter.
 
 1. [Who does not Pay Income Tax?](http://thefuturebuzz.com/2012/09/19/simplicity-with-data-visualization-is-still-best)
 2. [World’s Top 10 Best Selling Cigarette Brands, 2004-2007](http://vizwiz.blogspot.com/2009/12/simple-is-better.html)
-#. [GNPD Usage by Food Categories](http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg)
+#. ~~[GNPD Usage by Food Categories](http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg)~~
 #. [NBA Playoff Rings](http://champsring.com/products/pro-basketball-2013)
 #. [UK University Rankings](http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg)
 #. [Childhood Obesity in the US](http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif)
@@ -60,14 +60,14 @@ c. Critique and/or praise the visualization choices made by the designer. Do the
 Are they misleading? Thought-provoking? Brilliant? Are there things that you would
 have done differently? Justify your response.
 
-1. [Health InfoScape](http://visualization.geblogs.com/visualization/network/)
+1. ~~[Health InfoScape](http://visualization.geblogs.com/visualization/network/)~~
 2. [Career Paths for Williams College alums](http://web.williams.edu/Mathematics/devadoss/careerpath.html)
 #. [Wind Map](http://hint.fm/wind/)
 #. [Obama's Budget](http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?\_r=1)
 #. [Mapping the Epigenome](http://www.nytimes.com/imagepages/2008/11/11/science/20081111\_EPIGENETICS\_GRAPHIC.html)
 #. [UK Government Spending](http://image.guardian.co.uk/sys-files/Guardian/documents/2011/11/08/Public\_spending\_2710.pdf)
 #. Malte Spitz's [cellphone usage](http://www.zeit.de/datenschutz/malte-spitz-data-retention)
-#. Wharf 5 [Tide Prediction](http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo\_TidePrediction\_1C\_4\_4096.jpg)
+#. ~~Wharf 5 [Tide Prediction](http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo\_TidePrediction\_1C\_4\_4096.jpg)~~
 #. [Wikipedia Changes Map](http://rcmap.hatnote.com/\#en,de,ru,ja,es,fr)
 #. [Programming languages across GitHub](http://infosthetics.com/archives/2014/09/githut\_the\_universe\_of\_programming\_languages\_across\_github.html)
 #. [Causes for breast cancer](http://infosthetics.com/archives/2014/08/the\_many\_factors\_influencing\_breast\_cancer\_incidence.html)

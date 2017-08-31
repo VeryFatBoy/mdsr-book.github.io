@@ -12,23 +12,23 @@ output:
 
 ### Online supplements
 
-- Tidy Data and Iteration (chapter 5)
+- Tidy Data and Iteration (Chapter 5)
     - Exercises [html](instructor/dataII-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd))
 
 
-- Supervised Learning (chapter 8)
+- Supervised Learning (Chapter 8)
     - [Video overview](https://youtu.be/Nlezx2gS8hw)
-    - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
-    - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
+    - Examples [[html](instructor/learningI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd)]
+    - Exercises [[html](instructor/learningI-ex.html) |  [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd)]
 
 
-- Text as Data (chapter 15)
+- Text as Data (Chapter 15)
     - [Video overview](https://youtu.be/sp25j9WaqwA)
-    - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
-    - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
+    - Examples [[html](instructor/text.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd)]
+    - Exercises [[html](instructor/text-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd)]
 
-- R and RStudio (appendix B)
-    - Exercises [html](instructor/appR-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd))
+- R and RStudio (Appendix B)
+    - Exercises [[html](instructor/appR-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd)]
 
 (more to come...)
 

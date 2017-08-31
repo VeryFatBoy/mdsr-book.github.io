@@ -15,17 +15,17 @@ output:
 
 - Supervised Learning chapter
     - [Video overview](https://youtu.be/Nlezx2gS8hw)
-    - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
-    - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
+    - Examples [[html](instructor/learningI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd)]
+    - Exercises [[html](instructor/learningI-ex.html) |  [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd)]
 
 
 - Text as Data chapter
     - [Video overview](https://youtu.be/sp25j9WaqwA)
-    - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
-    - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
+    - Examples [[html](instructor/text.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd)]
+    - Exercises [[html](instructor/text-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd)]
 
 - R and RStudio appendix
-    - Exercises [html](instructor/appR-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd))
+    - Exercises [[html](instructor/appR-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd)]
 
 (more to come...)
 

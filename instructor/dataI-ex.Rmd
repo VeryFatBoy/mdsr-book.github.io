@@ -41,11 +41,6 @@ variable X, produce a data frame that has the same cases but only the variables 
 
 SOLUTION:
 
-```{r}
-library(mdsr)
-library(Lahman)
-# solution goes here
-```
 
 ## Cancelled flights
 Use the `nycflights13` package and the `flights` data frame to answer the following questions: What month had the highest proportion of cancelled flights?  What month had the lowest?  Interpret any seasonal patterns.

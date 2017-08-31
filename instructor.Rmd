@@ -12,19 +12,22 @@ output:
 
 ### Online supplements
 
+- Tidy Data and Iteration (chapter 5)
+    - Exercises [html](instructor/dataII-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd))
 
-- Supervised Learning chapter
+
+- Supervised Learning (chapter 8)
     - [Video overview](https://youtu.be/Nlezx2gS8hw)
     - Examples [html](instructor/learningI.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd))
     - Exercises [html](instructor/learningI-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd))
 
 
-- Text as Data chapter
+- Text as Data (chapter 15)
     - [Video overview](https://youtu.be/sp25j9WaqwA)
     - Examples [html](instructor/text.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd))
     - Exercises [html](instructor/text-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd))
 
-- R and RStudio appendix
+- R and RStudio (appendix B)
     - Exercises [html](instructor/appR-ex.html) ([Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd))
 
 (more to come...)
@@ -33,4 +36,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated August 17, 2017
+Last updated August 31, 2017

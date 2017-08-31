@@ -1,5 +1,5 @@
 ---
-title: "data visualization exercises"
+title: "Data visualization exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
 date: "August 31, 2017"
 output:
@@ -36,7 +36,7 @@ SOLUTION:
 
 
 ## NY Times
-Consider the two graphics related to *The New York Times*  "Taxmageddon" article at http://www.nytimes.com/2012/04/15/sunday-review/coming-soon-taxmageddon.html. The first is http://www.nytimes.com/imagepages/2012/04/13/opinion/sunday/0415web-leonhardt.html} (whose tax rates rose and fell) and the second is http://www.nytimes.com/imagepages/2012/04/13/opinion/sunday/0415web-leonhardt2.html (who gains most from tax breaks).
+Consider the two graphics related to *The New York Times*  "Taxmageddon" article at http://www.nytimes.com/2012/04/15/sunday-review/coming-soon-taxmageddon.html. The first is http://www.nytimes.com/imagepages/2012/04/13/opinion/sunday/0415web-leonhardt.html (whose tax rates rose and fell) and the second is http://www.nytimes.com/imagepages/2012/04/13/opinion/sunday/0415web-leonhardt2.html (who gains most from tax breaks).
 
 1.  Examine the two graphics carefully. Discuss what you think they convey. What story do the graphics tell?
 2.  Evaluate both graphics in terms of the taxonomy described in this chapter. Are the scales appropriate? Consistent? Clearly labelled? Do variable dimensions exceed data dimensions?

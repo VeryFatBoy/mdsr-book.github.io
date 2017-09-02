@@ -232,7 +232,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 Residual standard error: 6.805 on 28 degrees of freedom
 Multiple R-squared: 0.5917,     Adjusted R-squared: 0.5188
 F-statistic: 8.115 on 5 and 28 DF,  p-value: 7.81e-05</code></pre>
-<p>`<code>&gt; confint(lm2)                    2.5 %     97.5 % (Intercept) -505.8974691 869.386165 CondTail       2.6328174  12.708166 Velocity       0.6155279   2.841188 Angle         -5.2874318   2.084713 BallWt        -9.4549432   1.482457 BallDia       62.3224999 318.420536</code></p>
+<pre><code>&gt; confint(lm2)
+                   2.5 %     97.5 %
+(Intercept) -505.8974691 869.386165
+CondTail       2.6328174  12.708166
+Velocity       0.6155279   2.841188
+Angle         -5.2874318   2.084713
+BallWt        -9.4549432   1.482457
+BallDia       62.3224999 318.420536</code></pre>
 <p>Consider the results from the model of <code>Dist</code> as a function of <code>Cond</code> (first model). Briefly summarize what this model says about the relationship between the wind conditions and the distance travelled by the ball. Make sure to say something sensible about the strength of evidence that there is any relationship at all.</p>
 <p>SOLUTION:</p>
 </div>
@@ -280,18 +287,6 @@ library(NHANES)
 <div id="missing-data-and-nhanes-3" class="section level2">
 <h2>Missing data and NHANES 3</h2>
 <p>Imagine that only 1/10 of the data are available but that these data are sampled from the full set of observations such that missingness depends on diabetes status (this mechanism is called ``Non-Ignorable Non-Response“, or NINR). What implications will this sampling have on the results?</p>
-<p>SOLUTION:</p>
-</div>
-<div id="additional-problem-family-dinners" class="section level2">
-<h2>Additional problem: family dinners</h2>
-<p>Here is an short excerpt from an article, “Benefits of the Dinner Table Ritual,” in the <em>{New York Times</em>, May 3, 2005 (<a href="http://www.nytimes.com/2005/05/03/health/nutrition/benefits-of-the-dinner-table-ritual.html" class="uri">http://www.nytimes.com/2005/05/03/health/nutrition/benefits-of-the-dinner-table-ritual.html</a>).</p>
-<p>The family dinner has long been an example of family togetherness. But recently, scientists have been coming up with compelling reasons … for families to pull up a chair around the table. Recent studies have begun to shore up the idea that family dinners [that is, eating dinner together as a family] can have an effect.</p>
-<p>For example, a 2004 study of 4,746 children 11 to 18 years old, published in <em>The Archives of Pediatrics and Adolescent Medicine</em>, found that frequent family meals were associated with a lower risk of smoking, drinking and using marijuana; with a lower incidence of depressive symptoms and suicidal thoughts; and with better grades.</p>
-<p>Another study last year, a survey of 12- to 17-year-olds by the National Center on Addiction and Substance Abuse at Columbia University, found that teenagers who reported eating two or fewer dinners a week with family members were more than one and a half times as likely to smoke, drink or use illegal substances than were teenagers who had five to seven family dinners. … A study from the University of Minnesota published last year found that adolescent girls who reported having more frequent family meals and a positive atmosphere during those meals were less likely to have eating disorders.</p>
-<ol style="list-style-type: decimal">
-<li><p>Explain in what ways the studies, as reported, do and do not provide a compelling reason for families to eat together frequently.</p></li>
-<li><p>Considering the study done by the National Center on Addition and Substance Abuse, describe what might have been the explanatory and response variables measured, and what sort of model they would have used.</p></li>
-</ol>
 <p>SOLUTION:</p>
 </div>
 

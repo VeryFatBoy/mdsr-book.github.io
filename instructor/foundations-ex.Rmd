@@ -167,7 +167,7 @@ Velocity       0.6155279   2.841188
 Angle         -5.2874318   2.084713
 BallWt        -9.4549432   1.482457
 BallDia       62.3224999 318.420536
-``
+```
 
 Consider the results from the model of `Dist` as a function
 of `Cond` (first model).
@@ -238,21 +238,3 @@ missingness depends on diabetes status
 SOLUTION:
 
 
-## Additional problem: family dinners
-Here is an short excerpt from an article, "Benefits of the Dinner Table Ritual," in the *{New York Times*, May 3, 2005 (http://www.nytimes.com/2005/05/03/health/nutrition/benefits-of-the-dinner-table-ritual.html).
-
-
-The family dinner has long been an example of family togetherness. But recently, scientists have been coming up with compelling reasons ... for families to pull up a chair around the table.
-Recent studies have begun to shore up the idea that family dinners [that is, eating dinner together as a family] can have an effect.
-
-For example, a 2004 study of 4,746 children 11 to 18 years old, published in *The Archives of Pediatrics and Adolescent Medicine*, found that frequent family meals were associated with a lower risk of smoking, drinking and using marijuana; with a lower incidence of depressive symptoms and suicidal thoughts; and with better grades.
-
-Another study last year, a survey of 12- to 17-year-olds by the National Center on Addiction and Substance Abuse at Columbia University, found that teenagers who reported eating two or fewer dinners a week with family members were more than one and a half times as likely to smoke, drink or use illegal substances than were teenagers who had five to seven family dinners.  ... A study from the University of Minnesota published last year found that adolescent girls who reported
-having more frequent family meals and a positive atmosphere during those meals were less likely to have eating disorders.
-
-1. Explain in what ways the studies, as reported, do and do not provide a compelling reason for families to eat together frequently.
-
-2. Considering the study done by the National Center on Addition and Substance Abuse, describe what might have been the explanatory and response variables measured, and what sort of model they would have
-used.
-
-SOLUTION:

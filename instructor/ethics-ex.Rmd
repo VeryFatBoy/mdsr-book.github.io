@@ -1,7 +1,7 @@
 ---
-title: "Supervised learning exercises"
+title: "Professional ethics exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
-date: "July 25, 2017"
+date: "September 2, 2017"
 output:
   html_document:
     fig_height: 5
@@ -26,119 +26,79 @@ knitr::opts_chunk$set(
 ```
 
 ## Introduction
-These exercises are taken from the supervised learning chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+These exercises are taken from the professional ethics chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
 
 
-## Sleep
-The ability to get a good night's sleep is correlated with many positive health outcomes. The `NHANES` data set in the `NHANES` package contains a binary variable `SleepTrouble` that indicates whether each person has trouble sleeping. For each of the following models:
-
-1. Build a classifier for `SleepTrouble`
-2. Report its effectiveness on the `NHANES` training data
-3. Make an appropriate visualization of the model
-4. Interpret the results. What have you learned about people's sleeping habits?
-  
-You may use whatever variable you like, except for `SleepHrsNight`.
-Models:
-
-- Null model
-- Logistic regression
-- Decision tree
-- Random forest
-- Neural network
-- Naive Bayes
-- K nearest neighbors
+## API's
+A researcher is interested in the relationship of weather to sentiment on Twitter.  They want to scrape data from http://www.wunderground.com and join that to Tweets in that geographic area at a particular time.  One complication is that Weather Underground limits the number of data points that can be downloaded for free using their API (application program interface).  The researcher sets up six free accounts to allow them to collect the data they want in a shorter time-frame.  What ethical guidelines are violated by this approach to data scraping?
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-library(NHANES)
-# solution goes here
-```
 
-## Quantitative sleep
-Repeat the previous exercise, but now use the quantitative response variable `SleepHrsNight`. Build and interpret the following models:
-
-- Null model
-- Multiple regression
-- Regression tree
-- Random forest
-- Ridge regression
-- LASSO
+## Deidentified?
+A data analyst received permission to post a data set that was scraped from a social media site.  The full data set included name, screen name, email address, geographic location, IP (Internet protocol) address, demographic profiles, and preferences for relationships.  Why might it be problematic to post a deidentified form of this data set where name and email address were removed?
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-library(NHANES)
-# solution goes here
-```
-
-## Even more sleep
-Repeat either of the previous exercises, but this time first separate the 
-`NHANES` data set uniformly at random into 75% training and 25% testing sets. Compare the effectiveness of each model on training vs. testing data. 
+## Jobs and gender bias
+A company uses a machine learning algorithm to determine which job advertisement to display for users searching for technology jobs.  Based on past results, the algorithm tends to display lower paying jobs for women than for men (after controlling for other characteristics than gender).  What ethical considerations might be considered when reviewing this algorithm?
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-library(NHANES)
-# solution goes here
-```
-
-## Pregnant?
-Repeat the first exercise, but for the variable `PregnantNow`. What did you learn about who is pregnant? 
+## Chocolate and weight loss
+A reporter carried out a clinical trial of chocolate where a small number of overweight subjects who had received medical clearance were randomized to either eat dark chocolate or not to eat dark chocolate.  They were followed for a period and their change in weight was recorded from baseline until the end of the study.  More than a dozen outcomes were recorded and one proved to be significantly different in the treatment group than the outcome.  This study was publicized and received coverage from a number of magazines and television programs.  Outline the ethical considerations that arise in this situation.
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-library(NHANES)
-# solution goes here
-```
 
-## NASA weather
-The `nasaweather` package contains data about tropical `storms` from 1995-2005. Consider the scatterplot between the `wind` speed and `pressure` of these `storms` shown below.
-
-<<storms, message=FALSE>>=
-library(mdsr)
-library(nasaweather)
-ggplot(data = storms, aes(x = pressure, y = wind, color = type)) + 
-  geom_point(alpha = 0.5)
-@
-
-The `type` of storm is present in the data, and four types are given: extratropical, hurricane, tropical depression, and tropical storm. There are [complicated and not terribly precise](https://en.wikipedia.org/wiki/Tropical_cyclone#Classifications.2C_terminology.2C_and_naming) definitions for storm type. Build a classifier for the `type` of each storm as a function of its `wind` speed and `pressure`.  
-
-Why would a decision tree make a particularly good classifier for these data? Visualize your classifier in the data space in a manner 
-similar to Figure 8.10 or 8.11.  
+## Sexual orientation
+A data scientist compiled data from several public sources (voter registration, political contributions, tax records) that were used to predict sexual orientation of individuals in a community.  What ethical considerations arise that should guide use of such data sets?
 
 SOLUTION:
 
-```{r message=FALSE}
-library(mdsr)   
-library(nasaweather)
-# solution goes here
-```
 
 
-## Arrival delays
-Fit a series of supervised learning models to predict arrival delays for flights from 
-New York to `SFO` using the `nycflights13` package.  How do the conclusions change from
-the multiple regression model presented in the Statistical Foundations Chapter?
+## Slate
+A *Slate* article (http://tinyurl.com/slate-ethics) discussed whether race/ethnicity should be included in a predictive model for how long a homeless family would stay in homeless services.  Discuss the ethical considerations involved in whether race/ethnicity should be included as a predictor in the model.
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-library(nasaweather)
-# solution goes here
-```
 
-Use the College Scorecard Data (https://collegescorecard.ed.gov/data) to model student debt as a function of institutional characteristics using the techniques described in this chapter.  Compare and contrast results from at least three methods.  (Note that a considerable amount of data wrangling will be needed.)
+## FAFSA
+In the United States, most students apply for grants or subsidized loans to finance their college education. Part of this process involves filling in a federal government form called the Free Application for Federal Student Aid (FAFSA). The form asks for information about family income and assets. The form also includes a place for listing the universities to which the information is to be sent. The data collected by FAFSA includes confidential financial information (listing the schools eligible to receive the information is effectively giving permission to share the data with them).
+
+It turns out that the order in which the schools are listed carries important information. Students typically apply to several schools, but can attend only one of them. Until recently, admissions offices at some universities used the information as an important part of their models of whether an admitted student will accept admissions. The earlier in a list a school appears, the more likely the student is to attend that school.
+
+Here's the catch from the student's point of view. Some institutions use statistical models to allocate grant aid (a scarce resource) where it is most likely to help ensure that a student enrolls.  For these schools, the more likely a student is deemed to accept admissions, the lower the amount of grant aid they are likely to receive.
+
+Is this ethical? Discuss.
 
 SOLUTION:
 
-```{r}
-library(mdsr)   
-# solution goes here
-```
+## AOL
+In 2006, AOL released a database of search terms that users had used in the prior month (see http://www.nytimes.com/2006/08/09/technology/09aol.html).  Research this disclosure and the reaction that ensued.  What ethical issues are involved?  What potential impact has this disclosure had?
+
+SOLUTION:
+
+## CIPSEA
+In the United States, the Confidential Information Protection and Statistical Efficiency Act (CIPSEA) governs the
+confidentiality of data collected by agencies such as the Bureau of Labor Statistics and the Census Bureau.  What are the penalties for willful and knowing disclosure of protected information to
+unauthorized persons?
+
+SOLUTION:
+
+## Fishing
+A statistical analyst carried out an investigation of the association of gender and teaching evaluations at a university.  They undertook exploratory analysis of the data and carried out a number of bivariate comparisons.  The multiple items on the teaching evaluation were consolidated to a single measure based on these exploratory analyses.  They used this information to construct a multivariable regression model that found evidence for biases.  What issues might arise based on such an analytic approach?
+
+SOLUTION:
+
+## More fishing
+An investigative team wants to winnow the set of variables to include in their final multiple regression model.  They have 100 variables and one outcome measured for $n=250$ observations).  They use the following procedure:
+
+1. Fit each of the 100 bivariate models for the outcome as a function of a single predictor, then
+2. Include all of the significant predictors in the overall model.
+
+What does the distribution of the p-value for the overall test look like, assuming that there are no associations between any of the predictors and the outcome (all are assumed to be multivariate normal and independent).
+Carry out a simulation to check your answer.
+
+SOLUTION:

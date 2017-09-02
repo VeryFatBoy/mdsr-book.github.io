@@ -24,6 +24,12 @@ output:
 - Tidy Data and Iteration (Chapter 5)
     - Exercises [[html](instructor/dataII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd)]
 
+- Professional Ethics (Chapter 6)
+    - Exercises [[html](instructor/ethics-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/ethics-ex.Rmd)]
+
+- Statistical Foundations (Chapter 7)
+    - Exercises [[html](instructor/foundations-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/foundations-ex.Rmd)]
+
 
 - Supervised Learning (Chapter 8)
     - [Video overview](https://youtu.be/Nlezx2gS8hw)
@@ -45,4 +51,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated August 31, 2017
+Last updated September 2, 2017

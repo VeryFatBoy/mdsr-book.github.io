@@ -1,0 +1,41 @@
+---
+title: "Unsupervised learning exercises"
+author: "Nicholas Horton (nhorton@amherst.edu)"
+date: "September 2, 2017"
+output:
+  html_document:
+    fig_height: 5
+    fig_width: 7
+  pdf_document:
+    fig_height: 5
+    fig_width: 7
+  word_document:
+    fig_height: 3
+    fig_width: 5
+---
+
+```{r, setup, include=FALSE}
+library(mdsr)   # Load additional packages here 
+
+
+# Some customization.  You can alter or delete as desired (if you know what you are doing).
+trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
+knitr::opts_chunk$set(
+  tidy=FALSE,     # display code as typed
+  size="small")   # slightly smaller font for code
+```
+
+## Introduction
+These exercises are taken from the supervised learning chapter from **Modern Data Science with R**: http://mdsr-book.github.io.  Other materials relevant for instructors (sample activities, overview video) for this chapter can be found there.
+
+## XX
+XX
+
+SOLUTION:
+
+```{r}
+library(mdsr)
+# solution goes here
+```
+
+

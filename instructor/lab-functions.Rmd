@@ -1,0 +1,193 @@
+---
+title: "Writing Functions"
+output:
+  html_document:
+    css: ['../include/lab.css', '../include/mdsr.css']
+    code_folding: show
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+In this lab, we will learn how to write user-defined functions.  
+
+```{r, message=FALSE}
+library(tidyverse)
+library(babynames)
+```
+
+**Goal**: by the end of this lab, you will be able to write a function in R and execute it.
+
+## Extending a single pipeline to a function
+
+We already know how to filter for a particular name:
+
+```{r}
+babynames %>%
+  filter(name == "Benjamin")
+```
+
+Suppose that we want to find the year in which that name was most popular (see Exercise 2 from [Lab 4](https://beanumber.github.io/sds192/lab-single_table.html)). To do this we need a pipeline that consists of several verbs chained together. 
+
+```{r}
+babynames %>%
+  filter(name == "Benjamin") %>%
+  group_by(year) %>%
+  summarize(total = sum(prop)) %>%
+  arrange(desc(total)) %>%
+  head(1) %>%
+  select(year)
+```
+
+But we might want to do this for many names, and it would be tedious to have to re-type -- or even just re-run -- the same code over and over again. An elegant solution is to write a function. For example, here we write a function called `most_popular_year()` that will return the year in which a specific name was most popular. 
+
+```{r}
+most_popular_year <- function(name_arg) {
+  babynames %>%
+    filter(name == name_arg) %>%
+    group_by(year) %>%
+    summarize(total = sum(prop)) %>%
+    arrange(desc(total)) %>%
+    head(1) %>%
+    select(year)
+}
+```
+
+Now we can run our function on several different names without having to re-type all of that code. Here we find the popularity of names associated with actors and actresses who won at the [89th Academy Awards](https://en.wikipedia.org/wiki/89th_Academy_Awards).
+
+```{r}
+most_popular_year(name_arg = "Emma")
+most_popular_year(name_arg = "Viola")
+most_popular_year(name_arg = "Casey")
+most_popular_year(name_arg = "Mahershala")
+```
+
+## Signatures
+
+R doesn't have formal [type signatures](https://en.wikipedia.org/wiki/Type_signature) for its functions the way that some other programming languages do. However, being aware of what kind of objects your functions take, and what kind of objects your function returns, is usually very important. 
+
+You can always show the arguments that a given function takes by using the `formals()` function.
+
+```{r}
+formals(most_popular_year)
+```
+
+In this case, the `most_popular_year()` function takes a single argument called `name_arg`, which should be a character vector, and returns a `tbl_df`. 
+
+More details about functions that exist within packages are available via `help(name_of_function)`. 
+
+### Return values
+
+By default, an R function returns the result of the last command that is executed by the function. For `most_popular_year()`, there is only one "line" of code (i.e., the whole pipeline), and the result of that will be a `tbl_df`. 
+
+Alternatively, you can use `return(blah)` to explicitly return objects. (I think) that every R function returns something (i.e., there is no such thing as a ["void" function](https://en.wikipedia.org/wiki/Void_type)). 
+
+### Default argument values
+
+If you want an argument to your function have a default value, specify it in the function definition. 
+
+The way that we have defined `most_popular_year()`, there is no default value for `name_arg`. Thus, if we call the function with no arguments, it will break. 
+
+```{r}
+most_popular_year()
+```
+In this case, this is probably the desired behavior, since it doesn't make sense to call this function without specifying a name. However, we could have defined it with a default value, say `"Benjamin"`. 
+
+```{r}
+most_popular_year_ben <- function(name_arg = "Benjamin") {
+  babynames %>%
+    filter(name == name_arg) %>%
+    group_by(year) %>%
+    summarize(total = sum(prop)) %>%
+    arrange(desc(total)) %>%
+    head(1) %>%
+    select(year)
+}
+```
+
+Now we can call the function without specifying the `name_arg` argument, but in that case we'll get the results for `"Benjamin"`. 
+
+```{r}
+most_popular_year_ben()
+```
+
+We can still of course still override the default value of `name_arg`:
+
+```{r}
+most_popular_year_ben(name_arg = "Jordan")
+```
+
+## Scoping
+
+How did our function know about the `babynames` table? Why wasn't that an input to the function? The answer to the first question involes the notion of [variable scoping](http://adv-r.had.co.nz/Functions.html#lexical-scoping), while the answer to the second question is a design choice. 
+
+The rules for variable scoping in R are...complicated. But what is important for you to understand is that R will look for objects in the global environment if it can't find them locally. So when we run `most_popular_year()`, R will look for a data frame called `babynames` in the global environment. If it exists, then the function should work, but if not, it won't. Thus, whether a user-defined function in R works as expected depends on what is in the global environment. This behavior is different than most compiled programming languages (e.g. C++, Java, etc.), but it is designed to make it easy to script with functions on-the-fly. 
+
+Note that if we unload the `babynames` package, thus removing the `babynames` table from the environment, our function no longer works. 
+
+```{r}
+detach("package:babynames", unload = TRUE)
+# should throw an error
+most_popular_year("Benjamin")
+```
+
+Don't forget to bring `babynames` back.
+
+```{r}
+library(babynames)
+```
+
+To be more explicit, we could pass the table that we want to search for to the function. We can achieve this by re-writing the function to take a `data` argument:
+
+```{r, error=TRUE}
+most_popular_year2 <- function(data, name_arg) {
+  data %>%
+    filter(name == name_arg) %>%
+    group_by(year) %>%
+    summarize(total = sum(prop)) %>%
+    arrange(desc(total)) %>%
+    head(1) %>%
+    select(year)
+}
+# will throw error because we didn't specify "data"
+most_popular_year2(name_arg = "Casey")
+# works
+most_popular_year2(data = babynames, name_arg = "Casey")
+```
+
+This also enables us to apply our function to subsets of the original data. So we can search for the most popular year for `Casey` among boys and girls separately. 
+
+```{r}
+babynames %>%
+  filter(sex == "F") %>%
+  most_popular_year2(name_arg = "Casey")
+babynames %>%
+  filter(sex == "M") %>%
+  most_popular_year2(name_arg = "Casey")
+```
+
+## Order of arguments
+
+Note that the order of the arguments matters only if they are **not** named.
+
+```{r, error=TRUE}
+most_popular_year2(babynames, "Emma")
+most_popular_year2("Emma", babynames)
+most_popular_year2("Emma", data = babynames)
+```
+
+To be safe (and explicit), name your arguments unless you have a good reason not to. 
+
+## Exercises
+
+These exercises use the `nycflights13` data package.
+
+#. Write a function that, for a given carrier identifier (e.g. `DL`), will retrieve the five most common airport destinations from NYC in 2013, and how often the carrier flew there.
+
+#. Use your function to find the top five destinations for Delta Airlines (`DL`).
+
+#. Use your function to find the top five destinations for American Airlines (`AA`). How many of these destinations are shared with Delta? 
+
+#. Write a function that, for a given airport code (e.g. `BDL`), will retrieve the five most common carriers that service that airport from NYC in 2013, and what their average arrival delay time was. 
+

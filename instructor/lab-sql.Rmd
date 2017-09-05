@@ -1,0 +1,205 @@
+---
+title: "Querying a MySQL database"
+output:
+  html_document:
+    css: ['../include/lab.css', '../include/mdsr.css']
+    code_folding: show
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+[SQL](https://en.wikipedia.org/wiki/SQL) is a longstanding database querying language. It is a loosely-implemented standard. We will be using [MySQL](https://en.wikipedia.org/wiki/MySQL).
+
+To facilitate our connection to the MySQL database server, we will need to install the `mdsr` package that accompanies the textbook. 
+
+```{r, message=FALSE, eval=FALSE}
+install.packages("mdsr")
+# do not install RMySQL if you are using the RStudio Server
+install.packages("RMySQL")
+```
+
+**Goal**: by the end of this lab, you will be able to write basic `SELECT` queries in SQL and retrieve the results into R.
+
+## Connecting to MySQL
+
+The data we will be using is stored on a server in Bass Hall. It's called `scidb.smith.edu`. We can connect through a special function provided by the `mdsr` package. You will also need the `RMySQL` package installed. 
+
+```{r, message=FALSE}
+library(mdsr)
+library(RMySQL)
+db <- dbConnect_scidb(dbname = "imdb")
+```
+
+Note that `db` is now a `MySQLConnection` object. 
+
+```{r}
+class(db)
+```
+
+## Retrieving data
+
+To retrieve the results from a query in R, use the `dbGetQuery()` function from the `DBI` package (which is automatically loaded when you load `RMySQL`). Its first argument is a database connection object, and the second argument is an SQL query as a character vector. 
+
+This query returns the list of kinds of "movies" stored in the IMDB.
+
+```{r}
+db %>%
+  dbGetQuery("SELECT * FROM kind_type;")
+```
+
+Of course, you will often want to store the result of your query as a data frame. Here we retrieve the list of different types of information stored in the database, save it as a data frame in R, and show the first few rows. 
+
+```{r}
+info_types <- db %>%
+  dbGetQuery("SELECT * FROM info_type")
+head(info_types)
+```
+
+That's all you need to know about how to get data from MySQL into R. The rest of this lab consists of practicing writing SQL queries. It may be useful to reference the full [documentation for `SELECT` queries](http://dev.mysql.com/doc/refman/5.6/en/select.html). 
+
+> Tip: Practice writing the SQL in the MySQL Workbench first. Once you've got the query you want, then copy-and-paste it back into your R Markdown file.
+
+For example, let's say we wanted to find Ben's favorite movie, which is (obviously) [*The Empire Strikes Back*](http://www.imdb.com/title/tt0080684/). 
+
+![](https://www.movieposter.com/posters/archive/main/4/A70-2036)
+
+The titles are stored in the `title` field (i.e. column) in the `title` table. [Note: your professors are not responsible for naming these tables and fields!] Each row in the `title` table corresponds to a single movie, but of course, we need to restrict the rows we retrieve to only those where the `title` field equals `The Empire Strikes Back`. The following query achieves this.
+
+> Note: SQL does not require the `==` for testing equality, since you aren't ever changing the data. 
+
+> Note: You have to use `'` single quotes since you are working within a `"` double-quoted string. 
+
+```{r}
+db %>%
+  dbGetQuery("SELECT *
+              FROM title
+              WHERE title = 'The Empire Strikes Back';")
+```
+
+That retrieved a lot of movies! Let's see if we can refine our query. First, movies (as opposed to TV episodes, etc.) have the `kind_id` value of `1`. 
+
+```{r}
+db %>%
+  dbGetQuery("SELECT *
+              FROM title
+              WHERE title = 'The Empire Strikes Back'
+                AND kind_id = 1;")
+```
+
+Huh. Now we don't get any results at all. We've made our query *too* specific. It turns out that the actual title of the movie according to IMDB is `Star Wars: Episode V - The Empire Strikes Back`. Let's soften our query by searching for the phrase `The Empire Strikes Back` within the title. We can do this using the `LIKE` function along with some wildcards (`%` in SQL).
+
+```{r}
+db %>%
+  dbGetQuery("SELECT *
+              FROM title
+              WHERE title LIKE '%The Empire Strikes Back%'
+                AND kind_id = 1;")
+```
+
+Finally, let's put those in chronological order. We'll also store the query as a string and pass it do `dbGetQuery()`.  
+
+```{r}
+sql <- "
+SELECT t.title, t.production_year
+FROM title t 
+WHERE t.title LIKE '%The Empire Strikes Back%'
+  AND t.kind_id = 1
+ORDER BY production_year;
+"
+db %>%
+  dbGetQuery(sql)
+```
+
+#. Find your favorite movie in the `title` table. 
+
+#. Find [Viola Davis](http://www.imdb.com/name/nm0205626/?ref_=nv_sr_1)'s `person_id` in the `name` table. 
+
+SAMPLE SOLUTION:
+
+```{r}
+db %>%
+  dbGetQuery("SELECT * FROM name 
+              WHERE name LIKE '%Davis, Viola%';")
+```
+
+
+> Note that she is Viola Davis (I).
+
+## Joining two tables
+
+In the IMDB, the `title` table contains information about movies, the `name` table contains the names of people, the `char_name` table contains information about the names of characters, and the `cast_info` table contains information about which people played which roles in which movies. Linking the tables together is essential in order to extract information from the database. 
+
+Since we already know that the ID of *The Empire Strikes Back* is `3850247`, we can use that to find all of the cast assignments. 
+
+
+```{r}
+db %>%
+  dbGetQuery("SELECT *
+              FROM cast_info
+              WHERE movie_id = 3850247;")
+```
+
+Note that this returns a list of person-role pairs. 
+
+#. Find all the rows in `cast_info` that correspond to Viola Davis as an actress. 
+
+SAMPLE SOLUTION: 
+
+```{r}
+db %>%
+  dbGetQuery("SELECT n.name, ci.role_id
+              FROM cast_info ci
+              JOIN name n ON n.id = ci.person_id
+              WHERE ci.person_id = 2845501;")
+```
+
+Next, we can join the `cast_info` table on the `name` table to recover the names of the people. 
+
+```{r}
+db %>%
+  dbGetQuery("SELECT n.name, ci.role_id
+              FROM cast_info ci
+              JOIN name n ON n.id = ci.person_id
+              WHERE movie_id = 3850247;")
+```
+
+Note how we have used table aliases to save some typing. 
+
+#. Add the names of the characters she played to the list of Viola Davis's roles from the previous exercise. 
+
+SAMPLE SOLUTION: 
+
+```{r}
+db %>%
+  dbGetQuery("SELECT n.name, ci.role_id, cn.name
+              FROM cast_info ci
+              JOIN name n ON n.id = ci.person_id
+              JOIN char_name cn ON cn.id = ci.person_role_id
+              WHERE ci.person_id = 2845501;")
+```
+
+## Joining more than two tables
+
+Of course, we can join more than two tables together in a single query. 
+
+#. Find Viola Davis's full filmography, in chronological order. Include each movie's `title`, `production_year`, and the name of the character that she played. 
+
+SAMPLE SOLUTION: 
+
+```{r}
+sql <- "
+SELECT t.title, t.production_year, cn.name
+FROM cast_info ci
+JOIN title t ON ci.movie_id = t.id
+JOIN char_name cn ON cn.id = ci.person_role_id
+WHERE ci.person_id = 2845501
+  AND t.kind_id = 1
+  AND ci.role_id = 2
+ORDER BY production_year;
+"
+db %>%
+  dbGetQuery(sql)
+```
+

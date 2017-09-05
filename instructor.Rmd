@@ -20,6 +20,7 @@ output:
 
 - Data Wrangling (Chapter 4)
     - Exercises [[html](instructor/dataI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd)]
+    - Lab [[html](instructor/lab-group_by.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd)]
 
 - Tidy Data and Iteration (Chapter 5)
     - Exercises [[html](instructor/dataII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd)]
@@ -42,6 +43,8 @@ output:
 - Simulation (Chapter 10)
     - Exercises [[html](instructor/simulation-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation-ex.Rmd)]
 
+- Database Querying using SQL (Chapter 12)
+    - Lab [[html](instructor/lab-sql.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd)]
 
 - Text as Data (Chapter 15)
     - [Video overview](https://youtu.be/sp25j9WaqwA)
@@ -50,6 +53,10 @@ output:
 
 - R and RStudio (Appendix B)
     - Exercises [[html](instructor/appR-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd)]
+
+- Algorithmic Thinking (Appendix C)
+    - Lab [[html](instructor/lab-functions.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-functions.Rmd)]
+
 
 (more to come...)
 

@@ -37,11 +37,15 @@ output:
     - Examples [[html](instructor/learningI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd)]
     - Exercises [[html](instructor/learningI-ex.html) |  [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd)]
 
+<!--
+
 - Unsupervised Learning (Chapter 9)
     - Exercises [[html](instructor/learningII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningII-ex.Rmd)]
 
 - Simulation (Chapter 10)
     - Exercises [[html](instructor/simulation-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation-ex.Rmd)]
+
+-->
 
 - Database Querying using SQL (Chapter 12)
     - Lab [[html](instructor/lab-sql.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd)]

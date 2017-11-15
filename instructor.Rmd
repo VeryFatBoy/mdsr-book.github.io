@@ -48,6 +48,7 @@ output:
 -->
 
 - Database Querying using SQL (Chapter 12)
+    - Examples [[html](instructor/sql.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/sql.Rmd)]
     - Lab [[html](instructor/lab-sql.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd)]
 
 - Text as Data (Chapter 15)
@@ -68,4 +69,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated September 2, 2017
+Last updated November 15, 2017

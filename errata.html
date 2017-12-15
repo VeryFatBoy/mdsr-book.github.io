@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <style type="text/css">
 
 /* padding for bootstrap navbar */
@@ -65,10 +65,12 @@ body {
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -290,13 +292,14 @@ $(document).ready(function () {
 
 <div id="known-errors" class="section level2">
 <h2>Known Errors</h2>
-<p>Last updated July 19, 2017</p>
+<p>Last updated December 15, 2017</p>
 <ul>
 <li>Page 10: The last sentence should start “It also seems clear” instead of “In also seems clear”. (voberholzer)</li>
 <li>Page 90: At the end of Exercise 4.16, the following sentence should be added: “Use the <code>Births78</code> data set from the <code>mosaicData</code> package as a reference.” (nhorton/bbaumer)</li>
 <li>Page 375: Exercise 15.4 should read: “Find all of the adjectives in one of Shakespeare’s plays that end in <code>more</code> or <code>less</code>.” (nhorton/bbaumer)</li>
 <li>Page 375: Exercise 15.5 should read: “Find all of the lines containing the stage direction <code>Exit</code> or <code>Exeunt</code> in one of Shakespeare’s plays.” (nhorton/bbaumer)</li>
 <li>Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)</li>
+<li>Page 465: The residuals should be defined as <span class="math inline">\(\hat{\epsilon}_i = y_i - \hat{y}_i\)</span>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/14">alanarnholt</a>)</li>
 </ul>
 </div>
 <div id="bibtex-entry" class="section level2">

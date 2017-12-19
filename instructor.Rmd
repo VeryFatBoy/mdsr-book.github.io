@@ -43,6 +43,7 @@ output:
     - Exercises [[html](instructor/learningII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningII-ex.Rmd)]
 
 - Simulation (Chapter 10)
+    - Examples [[html](instructor/simulation.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation.Rmd)]
     - Exercises [[html](instructor/simulation-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation-ex.Rmd)]
 
 -->
@@ -69,4 +70,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated November 15, 2017
+Last updated December 19, 2017

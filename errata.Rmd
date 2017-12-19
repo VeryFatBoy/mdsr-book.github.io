@@ -4,13 +4,15 @@ title: "Errata"
 
 ## Known Errors
 
-Last updated July 19, 2017
+Last updated `r format(Sys.Date(), "%B %e, %Y")`
 
 - Page 10: The last sentence should start "It also seems clear" instead of "In also seems clear". (voberholzer)
+- Page 65: The `filter()` command on the `start` variable at the bottom of the page does not work as intended. The argument should be `start > "1973-01-01"`. ([sschmidt](https://github.com/mdsr-book/mdsr-book.github.io/issues/15))
 - Page 90: At the end of Exercise 4.16, the following sentence should be added: "Use the `Births78` data set from the `mosaicData` package as a reference." (nhorton/bbaumer)
 - Page 375: Exercise 15.4 should read: "Find all of the adjectives in one of Shakespeare's plays that end in `more` or `less`." (nhorton/bbaumer)
 - Page 375: Exercise 15.5 should read: "Find all of the lines containing the stage direction `Exit` or `Exeunt` in one of Shakespeare's plays." (nhorton/bbaumer)
 - Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)
+- Page 465: The residuals should be defined as $\hat{\epsilon}_i = y_i - \hat{y}_i$. ([alanarnholt](https://github.com/mdsr-book/mdsr-book.github.io/issues/14))
 
 ## BibTeX entry
 

@@ -19,6 +19,7 @@ output:
     - Exercises [[html](instructor/datavizII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd)]
 
 - Data Wrangling (Chapter 4)
+    - Examples [[html](instructor/dataI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI.Rmd)]
     - Exercises [[html](instructor/dataI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd)]
     - Lab [[html](instructor/lab-group_by.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd)]
 
@@ -70,4 +71,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated December 19, 2017
+Last updated December 24, 2017

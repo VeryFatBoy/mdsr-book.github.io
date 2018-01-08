@@ -1,0 +1,101 @@
+---
+title: "Simulation in R"
+author: "Nicholas Horton (nhorton@amherst.edu) and Ben Baumer"
+date: "December 19, 2017"
+output: html_document
+---
+
+## Introduction
+This example builds on the database chapter from **Modern Data Science with R**: http://mdsr-book.github.io/.
+
+
+```{r include=FALSE}
+# Don't delete this chunk if you are using the mosaic package
+# This loads the mosaic and dplyr packages
+require(mdsr)
+```
+
+There are many different kinds of cancer, often given the name of the tissue in which they originate: lung cancer, ovarian cancer, prostate cancer, and so on. Different kinds of cancer are treated with different chemotherapeutic drugs. But perhaps the tissue origin of each cancer is not the best indicator of how it should be treated. Could we find a better way?  
+
+Like all cells, cancer cells have a genome containing tens of thousands of genes. Sometimes just a few genes dictate a cell's behavior. Other times there are networks of genes that regulate one another's expression in ways that shape cell features, such as the over-rapid reproduction characteristic of cancer cells. It is now possible to examine the expression of individual genes within a cell. So-called *microarrays* are routinely used for this purpose. Each microarray has tens to hundreds of thousands of probes for gene activity. The result of a microarray assay is a snapshot of gene activity. By comparing snapshots of cells in different states, it's possible to identify the genes that are expressed differently in the states. This can provide insight into how specific genes govern various aspects of cell activity.
+
+A data scientist, as part of a team of biomedical researchers, might take on the job of compiling data from many microarray assays to identify whether different types of cancer are related based on their gene expression. For instance, the `NCI60` data (provided by the `etl_NCI60` function in the `mdsr` package) contains readings from assays of $n=60$ different cell lines of cancer of different tissue types. For each cell line, the data contain readings on over $p>40,000$ different probes. Your job might be to find relationships between different cell lines based on the patterns of probe expression. For this purpose, you might find useful the techniques of statistical learning and unsupervised learning from the supervised and unsupervised learning chapters of *Modern Data Science with R* (https://mdsr-book.github.io).
+
+However, there is a problem. Even cancer cells have to carry out the routine actions that all cells use to maintain themselves. Presumably, the expression of most of the genes in the `NCI60` data are irrelevant to the pecularities of cancer and the similarities and differences between different cancer types. Data interpreting methods can be swamped by a wave of irrelevant data. They are more likely to be effective if the irrelevant data can be removed. Dimension reduction methods such as those described in the unsupervised learning chapter of MDSR can be attractive for this purpose.
+
+When you start down the road toward your goal of finding links among different cancer types, you don't know if you will reach your destination. If you don't, before concluding that there are no relationships, it's helpful to rule out some other possibilities. Perhaps the data reduction and data interpretation methods you used are not powerful enough. Another set of methods might be better. Or perhaps there isn't enough data to be able to detect the patterns you are looking for. 
+
+Simulations can help here. To illustrate, consider a rather simple data reduction technique for the `NCI60` microarray data. If the expression of a probe is the same or very similar across all the different cancers, there's nothing that that probe can tell us about the links among cancers. One way to quantify the variation in a probe from cell line to cell line is the standard deviation of microarray readings for that probe.  
+
+It is a straightforward exercise in data wrangling to calculate this for each probe. The `NCI60` data come in a wide form: a matrix that's 60 columns wide (one for each cell line) and 41,078 rows long (one row for each probe). This expression will find the standard deviation across cell lines for each probe.
+
+```{r echo = TRUE, message=FALSE}
+library(mdsr)
+library(tidyr)
+NCI60 <- etl_NCI60()
+saveRDS(NCI60, file="NCI60.Rda")
+# NCI60 <- readRDS(file="NCI60.Rda")
+```
+
+Let's first take a look at what's in the dataset.
+```{r}
+head(NCI60)
+```
+
+Let's transform the dataset.
+```{r}
+NCI60 %>%
+  gather(value = expression, key = cellLine, -Probe)
+```
+
+And now let's summarize the expression results by probe.
+
+```{r}
+Spreads <- NCI60 %>%
+  gather(value = expression, key = cellLine, -Probe) %>%
+  group_by(Probe) %>%
+  summarize(N = n(), spread = sd(expression)) %>%
+  arrange(desc(spread)) %>%
+  mutate(order = row_number())
+```
+
+
+The `NCI60` dataset has been rearranged into narrow format in `Spreads` with 
+columns `Probe` and `spread` for each of `r format(nrow(Spreads), big.mark = ",", scientific = FALSE)` probes. 
+(A large number of the probes appear several times in the microarray, in one case as many as 14 times.) 
+We arrange this dataset in descending order by the size of the standard deviation, so we can collect the probes that exhibit the most variation across cell lines by taking the topmost ones in `Spreads`. For ease in plotting, the variable `order` has been added to mark the order of each probe in the list.
+
+```{r}
+glimpse(Spreads)
+head(Spreads)
+favstats(~ spread, data=Spreads)
+```
+
+How many of the probes with top standard deviations should we include in further data reduction and interpretation? 1? 10? 1000? 10,000? How should we go about answering this question?
+We'll use a simulation to help determine the number of probes that we select. 
+```{r}
+Sim_spreads <- NCI60 %>%
+  gather(value = expression, key = cellLine, -Probe) %>%
+  mutate(Probe = shuffle(Probe)) %>%
+  group_by(Probe) %>%
+  summarize(N = n(), spread = sd(expression)) %>%
+  arrange(desc(spread)) %>%
+  mutate(order = row_number())
+```
+
+
+What makes this a simulation is the line of the expression where we call `shuffle()`. In that line, we replace each of the probe labels with a randomly selected label. The result is that the `expression` has been statistically disconnected from any other variable, particularly `cellLine`. The simulation creates the kind of data that would result from a system in which the probe expression data is 
+meaningless. In other words, the simulation mechanism matches the null hypothesis that
+the probe labels are irrelevant. By comparing the real `NCI60` data to the simulated data, we can see which probes give evidence that the null hypothesis is false. Let's compare the top 500 spread values in `Spreads` and `Sim_spreads`
+```{r nci60sim,fig.keep="last", message=FALSE}
+Spreads %>%
+  filter(order <= 500) %>%
+  ggplot(aes(x = order, y = spread)) +
+  geom_line(color = "blue", size = 2) +
+  geom_line(data = filter(Sim_spreads, order <= 500), color = "red", size = 2)
+```
+
+We can tell a lot from the results of the simulation. If we decided to use the top 500 probes, we would risk including many that 
+were no more variable than random noise (i.e., that which could have been generated under the null hypothesis). 
+
+But if we set the threshold much lower, including, say, only those probes with a spread greater than 5.0, we would be unlikely to include any that were generated by a mechanism consistent with the null hypothesis. The simulation is telling us that it would be good to look at roughly the top 50 probes, since that is about how many in `NCI60` were out of the range of the simulated results for the null hypothesis. Methods of this sort are often identified as *false discovery rate* methods.

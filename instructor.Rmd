@@ -19,6 +19,7 @@ output:
     - Exercises [[html](instructor/datavizII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd)]
 
 - Data Wrangling (Chapter 4)
+    - Examples [[html](instructor/dataI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI.Rmd)]
     - Exercises [[html](instructor/dataI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd)]
     - Lab [[html](instructor/lab-group_by.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd)]
 
@@ -43,6 +44,7 @@ output:
     - Exercises [[html](instructor/learningII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningII-ex.Rmd)]
 
 - Simulation (Chapter 10)
+    - Examples [[html](instructor/simulation.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation.Rmd)]
     - Exercises [[html](instructor/simulation-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation-ex.Rmd)]
 
 -->
@@ -69,4 +71,4 @@ output:
 
 A full solutions manual is available for instructors through Routledge Textbooks. [Sign Up](http://routledgetextbooks.com/textbooks/instructor_downloads/)
 
-Last updated November 15, 2017
+Last updated December 24, 2017

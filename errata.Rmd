@@ -7,6 +7,7 @@ title: "Errata"
 Last updated `r format(Sys.Date(), "%B %e, %Y")`
 
 - Page 10: The last sentence should start "It also seems clear" instead of "In also seems clear". (voberholzer)
+- Page 36: In the caption to Figure 3.4, it should read "`roadways` is mapped to size", instead of "`educ` is mapped to size." (gmontoya)
 - Page 65: The `filter()` command on the `start` variable at the bottom of the page does not work as intended. The argument should be `start > "1973-01-01"`. ([sschmidt](https://github.com/mdsr-book/mdsr-book.github.io/issues/15))
 - Page 90: At the end of Exercise 4.16, the following sentence should be added: "Use the `Births78` data set from the `mosaicData` package as a reference." (nhorton/bbaumer)
 - Page 214: It's not clear where `Votes_wide` comes from. It's shown in Table 9.1 and the code to generate it is (lkaganovskiy): 
@@ -23,7 +24,7 @@ Last updated `r format(Sys.Date(), "%B %e, %Y")`
 ## BibTeX entry
 
 ```
-@book{baumer2016mdsr,
+@book{baumer2017mdsr,
   title={{Modern Data Science with R}},
   author={Benjamin S. Baumer and Daniel T. Kaplan and Nicholas J. Horton},
   year={2017},

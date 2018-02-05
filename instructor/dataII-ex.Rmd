@@ -158,8 +158,6 @@ Hint: use `gather()` in conjunction with `spread()`.
 Use the `dplyr::do()` function and the `HELPrct` data frame from the `mosaicData` package to fit a
 regression model predicting `cesd` as a function of `age` separately for each of the levels
 of the `substance` variable.  Generate a table of results (estimates and confidence intervals) for each level of the grouping variable.
-New York to `SFO` using the `nycflights13` package.  How do the conclusions change from
-the multiple regression model presented in the Statistical Foundations Chapter?
 
 SOLUTION:
 

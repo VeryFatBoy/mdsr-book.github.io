@@ -1,7 +1,7 @@
 ---
 title: "Tidy data and iteration exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
-date: "August 31, 2017"
+date: "February 5, 2018"
 output:
   html_document:
     fig_height: 5
@@ -152,7 +152,7 @@ tab <- xtable(data.frame(transformed))
 print(tab, type="html")
 ```
 
-Hint: use `gather()` in conjunction with `spread()`.
+Hint: use `gather()` in conjunction with `spread()` and `unite()`.
 
 ## Multiple models
 Use the `dplyr::do()` function and the `HELPrct` data frame from the `mosaicData` package to fit a

@@ -292,20 +292,25 @@ $(document).ready(function () {
 
 <div id="known-errors" class="section level2">
 <h2>Known Errors</h2>
-<p>Last updated December 15, 2017</p>
+<p>Last updated January 25, 2018</p>
 <ul>
 <li>Page 10: The last sentence should start “It also seems clear” instead of “In also seems clear”. (voberholzer)</li>
+<li>Page 36: In the caption to Figure 3.4, it should read “<code>roadways</code> is mapped to size”, instead of “<code>educ</code> is mapped to size.” (gmontoya)</li>
 <li>Page 65: The <code>filter()</code> command on the <code>start</code> variable at the bottom of the page does not work as intended. The argument should be <code>start &gt; &quot;1973-01-01&quot;</code>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/15">sschmidt</a>)</li>
 <li>Page 90: At the end of Exercise 4.16, the following sentence should be added: “Use the <code>Births78</code> data set from the <code>mosaicData</code> package as a reference.” (nhorton/bbaumer)</li>
+<li><p>Page 214: It’s not clear where <code>Votes_wide</code> comes from. It’s shown in Table 9.1 and the code to generate it is (lkaganovskiy):</p>
+<pre class="r"><code>library(mdsr)
+Votes_wide &lt;- Votes %&gt;%
+  tidyr::spread(key = bill, value = vote)</code></pre></li>
 <li>Page 375: Exercise 15.4 should read: “Find all of the adjectives in one of Shakespeare’s plays that end in <code>more</code> or <code>less</code>.” (nhorton/bbaumer)</li>
 <li>Page 375: Exercise 15.5 should read: “Find all of the lines containing the stage direction <code>Exit</code> or <code>Exeunt</code> in one of Shakespeare’s plays.” (nhorton/bbaumer)</li>
 <li>Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)</li>
-<li>Page 465: The residuals should be defined as <span class="math inline">\(\hat{\epsilon}_i = y_i - \hat{y}_i\)</span>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/14">alanarnholt</a>)</li>
+<li><p>Page 465: The residuals should be defined as <span class="math inline">\(\hat{\epsilon}_i = y_i - \hat{y}_i\)</span>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/14">alanarnholt</a>)</p></li>
 </ul>
 </div>
 <div id="bibtex-entry" class="section level2">
 <h2>BibTeX entry</h2>
-<pre><code>@book{baumer2016mdsr,
+<pre><code>@book{baumer2017mdsr,
   title={{Modern Data Science with R}},
   author={Benjamin S. Baumer and Daniel T. Kaplan and Nicholas J. Horton},
   year={2017},

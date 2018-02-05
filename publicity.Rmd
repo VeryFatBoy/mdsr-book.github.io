@@ -3,7 +3,7 @@ title: "Publicity"
 ---
 
 
-
+- Review: Tim Downie, *Journal of Statistical Software*, vol. 80, no. 2, August 2017. (http://dx.doi.org/10.18637/jss.v080.b02)
 - [MAA Press review](http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed)
 - [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
 

@@ -1,7 +1,7 @@
 ---
 title: "Tidy data and iteration exercises"
 author: "Nicholas Horton (nhorton@amherst.edu)"
-date: "August 31, 2017"
+date: "February 5, 2018"
 output:
   html_document:
     fig_height: 5
@@ -152,14 +152,12 @@ tab <- xtable(data.frame(transformed))
 print(tab, type="html")
 ```
 
-Hint: use `gather()` in conjunction with `spread()`.
+Hint: use `gather()` in conjunction with `spread()` and `unite()`.
 
 ## Multiple models
 Use the `dplyr::do()` function and the `HELPrct` data frame from the `mosaicData` package to fit a
 regression model predicting `cesd` as a function of `age` separately for each of the levels
 of the `substance` variable.  Generate a table of results (estimates and confidence intervals) for each level of the grouping variable.
-New York to `SFO` using the `nycflights13` package.  How do the conclusions change from
-the multiple regression model presented in the Statistical Foundations Chapter?
 
 SOLUTION:
 
@@ -203,9 +201,17 @@ that can be scraped and visualized.  Be sure to interpret your graphical display
 
 SOLUTION:
 
-```{r}
-library(mdsr)
-# solution goes here
+```{r message=FALSE}
+# earlier example (please delete this)
+library(rvest)
+library(methods)
+url <- "http://en.wikipedia.org/wiki/Mile_run_world_record_progression"
+tables <- url %>%
+  read_html() %>%
+  html_nodes("table")
+length(tables)
+Table3 <- html_table(tables[[3]])
+head(Table3)
 ```
 
 ## Wrangling with the FEC

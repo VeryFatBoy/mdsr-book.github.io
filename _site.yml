@@ -34,6 +34,9 @@ navbar:
           href: http://github.com/beanumber/mdsr
         - text: "Errata"
           href: errata.html
+        - text: "Haikus"
+          href: haikus.html
+          
     - text: "Publicity"
       href: publicity.html
 

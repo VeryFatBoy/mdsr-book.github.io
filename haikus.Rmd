@@ -1,0 +1,59 @@
+---
+title: "Data Science Haikus"
+---
+
+The following data science haikus were created by the students in Amherst College's STAT231 (Data Science) course during the spring of 2018.
+
+## Winner (Julia Asin)
+
+```
+understand data
+gather spread filter select
+making it tidy
+```
+
+##  Honorable mentions
+
+```
+World full of data
+Just waiting to be explored
+And we hold the keys
+```
+
+## Other notable submissions
+
+```
+Data Science is
+shaping the future using
+numbers and haikus
+```
+```
+data is tidy
+when it paints a picture of
+the world with numbers
+```
+```
+A Frame of Data
+Tidy, Mine, Analyze It
+Now You Have Meaning
+```
+```
+Graphics, tidy data,
+Pipe operator grammar,
+We all praise Hadley
+```
+```
+I find wild data
+Gather and spread to tidy
+Plot show the meaning
+```
+```
+Data visuals;
+Making meaning from nonsense;
+That's my aesthetic.
+```
+```
+Big, messy data
+Yearning for analysis
+R we using R?
+```

@@ -11,6 +11,10 @@ title: "Publicity"
 
 - Tweets:
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">.<a href="https://twitter.com/jo_hardin47?ref_src=twsrc%5Etfw">@jo_hardin47</a> plugging <a href="https://twitter.com/BaumerBen?ref_src=twsrc%5Etfw">@BaumerBen</a>, Danny Kaplan and <a href="https://twitter.com/askdrstats?ref_src=twsrc%5Etfw">@askdrstats</a>&#39; book, Modern Data Science with R, particularly the chapter on ethics. Freely available to download! <a href="https://t.co/fKQInliXTW">https://t.co/fKQInliXTW</a> <a href="https://twitter.com/hashtag/icots10?src=hash&amp;ref_src=twsrc%5Etfw">#icots10</a></p>&mdash; Amelia McNamara (@AmeliaMN) <a href="https://twitter.com/AmeliaMN/status/1016563864664793090?ref_src=twsrc%5Etfw">July 10, 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Just got my copy! I should try to get this autographed :) <a href="https://twitter.com/BaumerBen">@BaumerBen</a> <a href="https://twitter.com/askdrstats">@askdrstats</a> <a href="https://t.co/ZSwKsaE2kY">pic.twitter.com/ZSwKsaE2kY</a></p>&mdash; Mine CetinkayaRundel (@minebocek) <a href="https://twitter.com/minebocek/status/834430820475629568">February 22, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 

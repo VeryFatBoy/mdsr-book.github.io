@@ -16,13 +16,6 @@ output:
 
 ```{r, setup, include=FALSE}
 library(mdsr)   # Load additional packages here 
-
-
-# Some customization.  You can alter or delete as desired (if you know what you are doing).
-trellis.par.set(theme=theme.mosaic()) # change default color scheme for lattice
-knitr::opts_chunk$set(
-  tidy=FALSE,     # display code as typed
-  size="small")   # slightly smaller font for code
 ```
 
 ## Introduction
@@ -32,8 +25,8 @@ These exercises are taken from the grammar of graphics chapter from **Modern Dat
 ## Galton
 Using the famous `Galton` data set from the `mosaicData` package:
 
-1. Create a scatterplot of each person's \var{height} against their father's height
-2. Separate your plot into facets by \var{sex}
+1. Create a scatterplot of each person's `height` against their father's height
+2. Separate your plot into facets by `sex`
 3. Add regression lines to all of your facets
 
 Hint: recall that you can find out more about the data set by running the command `?Galton`.
@@ -51,8 +44,8 @@ glimpse(Galton)
 ## Railtrails
 Using the `RailTrail` data set from the `mosaicData` package:
 
-1.  Create a scatterplot of the number of crossings per day \var{volume} against the high temperature that day
-2. Separate your plot into facets by \var{weekday}
+1.  Create a scatterplot of the number of crossings per day `volume` against the high temperature that day
+2. Separate your plot into facets by `weekday`
 3. Add regression lines to the two facets
 
 SOLUTION:
@@ -83,7 +76,7 @@ The following questions use the `Marriage` data set from the `mosaicData` packag
 
 1.  Create an informative and meaningful data graphic.
 2. Identify each of the visual cues that you are using, and describe how they are related to each variable.
-3. Create a data graphic with at least \emph{five} variables (either quantitative or categorical). For the purposes of this exercise, do not worry about making your visualization meaningful---just try to encode five variables into one plot.
+3. Create a data graphic with at least *five* variables (either quantitative or categorical). For the purposes of this exercise, do not worry about making your visualization meaningful---just try to encode five variables into one plot.
 
 
 ```{r}

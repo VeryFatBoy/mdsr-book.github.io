@@ -27,6 +27,7 @@ Last updated `r format(Sys.Date(), "%B %e, %Y")`
 
 - Page 91: The key for the Google spreadsheet has changed. Try `hiv_key <- "1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA"` instead. (mwan)
 - Page 378: "The *diameter* of a graph is the length of the longest geodesic between any [two] pairs of vertices." The word "two" should be removed. (agary)
+- Page 156: "We can compare this to a (hypothetical) sample of size n = 1,000" should be "We can compare this to a (hypothetical) sample of size n = 200"
 - Page 379: A parenthesis is missing after "(see Figure 16.1". (bbaumer)
 
 ## BibTeX entry

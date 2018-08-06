@@ -21,9 +21,9 @@ library(babynames)
 
 ## Summarization with `group_by()` 
 
-Consider Exercise 4 from the [Single Table Anaylsis Lab](lab-single_table.html): 
+Consider the following problem using the `babynames` table in the `babynames` package. 
 
-#. In which year was that name given to M and F babies most equally (i.e. **closest to a 50/50 split**)?
+#. Think of a name. In which year was that name given to M and F babies most equally (i.e. **closest to a 50/50 split**)?
 
 How would you do this? You could, of course, scan the data visually to estimate the percentages in each year:
 

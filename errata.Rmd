@@ -6,6 +6,13 @@ title: "Errata"
 
 Last updated `r format(Sys.Date(), "%B %e, %Y")`
 
+### To be fixed for the third printing
+
+- Page 91: The key for the Google spreadsheet has changed. Try `hiv_key <- "1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA"` instead. (mwan)
+- Page 156: "We can compare this to a (hypothetical) sample of size $n = 1,000$" should be "We can compare this to a (hypothetical) sample of size $n = 200$" (zzhang)
+- Page 378: "The *diameter* of a graph is the length of the longest geodesic between any [two] pairs of vertices." The word "two" should be removed. (agary)
+- Page 379: A parenthesis is missing after "(see Figure 16.1". (bbaumer)
+
 ### Fixed for the second printing
 
 - Page 10: The last sentence should start "It also seems clear" instead of "In also seems clear". (voberholzer)
@@ -22,13 +29,6 @@ Last updated `r format(Sys.Date(), "%B %e, %Y")`
 - Page 375: Exercise 15.5 should read: "Find all of the lines containing the stage direction `Exit` or `Exeunt` in one of Shakespeare's plays." (nhorton/bbaumer)
 - Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)
 - Page 465: The residuals should be defined as $\hat{\epsilon}_i = y_i - \hat{y}_i$. ([alanarnholt](https://github.com/mdsr-book/mdsr-book.github.io/issues/14))
-
-### To be fixed for the third printing
-
-- Page 91: The key for the Google spreadsheet has changed. Try `hiv_key <- "1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA"` instead. (mwan)
-- Page 378: "The *diameter* of a graph is the length of the longest geodesic between any [two] pairs of vertices." The word "two" should be removed. (agary)
-- Page 156: "We can compare this to a (hypothetical) sample of size n = 1,000" should be "We can compare this to a (hypothetical) sample of size n = 200"
-- Page 379: A parenthesis is missing after "(see Figure 16.1". (bbaumer)
 
 ## BibTeX entry
 

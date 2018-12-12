@@ -14,29 +14,36 @@ output:
 
 - Data Visualization (Chapter 2)
     - Exercises [[html](instructor/datavizI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizI-ex.Rmd)]
+    - Code [[.R](code/datavizI.R)]
 
 - Grammar for Graphics (Chapter 3)
     - Exercises [[html](instructor/datavizII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd)]
+    - Code [[.R](code/datavizII.R)]
 
 - Data Wrangling (Chapter 4)
     - Examples [[html](instructor/dataI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI.Rmd)]
     - Exercises [[html](instructor/dataI-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd)]
     - Lab [[html](instructor/lab-group_by.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd)]
+    - Code [[.R](code/dataI.R)]
 
 - Tidy Data and Iteration (Chapter 5)
     - Exercises [[html](instructor/dataII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd)]
+    - Code [[.R](code/dataII.R)]
 
 - Professional Ethics (Chapter 6)
     - Exercises [[html](instructor/ethics-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/ethics-ex.Rmd)]
+    - Code [[.R](code/ethics.R)]
 
 - Statistical Foundations (Chapter 7)
     - Exercises [[html](instructor/foundations-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/foundations-ex.Rmd)]
+    - Code [[.R](code/foundations.R)]
 
 
 - Supervised Learning (Chapter 8)
     - [Video overview](https://youtu.be/Nlezx2gS8hw)
     - Examples [[html](instructor/learningI.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd)]
     - Exercises [[html](instructor/learningI-ex.html) |  [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd)]
+    - Code [[.R](code/learningI.R)]
 
 <!--
 
@@ -52,14 +59,17 @@ output:
 - Database Querying using SQL (Chapter 12)
     - Examples [[html](instructor/sql.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/sql.Rmd)]
     - Lab [[html](instructor/lab-sql.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd)]
+    - Code [[.R](code/sql.R)]
 
 - Text as Data (Chapter 15)
     - [Video overview](https://youtu.be/sp25j9WaqwA)
     - Examples [[html](instructor/text.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd)]
     - Exercises [[html](instructor/text-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd)]
+    - Code [[.R](code/text.R)]
 
 - R and RStudio (Appendix B)
     - Exercises [[html](instructor/appR-ex.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd)]
+    - Code [[.R](code/appR.R)]
 
 - Algorithmic Thinking (Appendix C)
     - Lab [[html](instructor/lab-functions.html) | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-functions.Rmd)]

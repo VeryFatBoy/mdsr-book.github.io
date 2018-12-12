@@ -135,6 +135,9 @@ img {
 button.code-folding-btn:focus {
   outline: none;
 }
+summary {
+  display: list-item;
+}
 </style>
 
 
@@ -149,7 +152,6 @@ body {
   padding-top: 56px;
   margin-top: -56px;
 }
-
 .section h2 {
   padding-top: 56px;
   margin-top: -56px;
@@ -169,6 +171,43 @@ body {
 .section h6 {
   padding-top: 56px;
   margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -190,18 +229,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -410,34 +508,41 @@ div.tocify {
 <li>Data Visualization (Chapter 2)
 <ul>
 <li>Exercises [<a href="instructor/datavizI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizI-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/datavizI.R">.R</a>]</li>
 </ul></li>
 <li>Grammar for Graphics (Chapter 3)
 <ul>
 <li>Exercises [<a href="instructor/datavizII-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/datavizII.R">.R</a>]</li>
 </ul></li>
 <li>Data Wrangling (Chapter 4)
 <ul>
 <li>Examples [<a href="instructor/dataI.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI.Rmd">Rmd</a>]</li>
 <li>Exercises [<a href="instructor/dataI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd">Rmd</a>]</li>
 <li>Lab [<a href="instructor/lab-group_by.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/dataI.R">.R</a>]</li>
 </ul></li>
 <li>Tidy Data and Iteration (Chapter 5)
 <ul>
 <li>Exercises [<a href="instructor/dataII-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/dataII.R">.R</a>]</li>
 </ul></li>
 <li>Professional Ethics (Chapter 6)
 <ul>
 <li>Exercises [<a href="instructor/ethics-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/ethics-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/ethics.R">.R</a>]</li>
 </ul></li>
 <li>Statistical Foundations (Chapter 7)
 <ul>
 <li>Exercises [<a href="instructor/foundations-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/foundations-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/foundations.R">.R</a>]</li>
 </ul></li>
 <li>Supervised Learning (Chapter 8)
 <ul>
 <li><a href="https://youtu.be/Nlezx2gS8hw">Video overview</a></li>
 <li>Examples [<a href="instructor/learningI.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd">Rmd</a>]</li>
 <li>Exercises [<a href="instructor/learningI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/learningI.R">.R</a>]</li>
 </ul></li>
 </ul>
 <!--
@@ -455,16 +560,19 @@ div.tocify {
 <ul>
 <li>Examples [<a href="instructor/sql.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/sql.Rmd">Rmd</a>]</li>
 <li>Lab [<a href="instructor/lab-sql.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/sql.R">.R</a>]</li>
 </ul></li>
 <li>Text as Data (Chapter 15)
 <ul>
 <li><a href="https://youtu.be/sp25j9WaqwA">Video overview</a></li>
 <li>Examples [<a href="instructor/text.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd">Rmd</a>]</li>
 <li>Exercises [<a href="instructor/text-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/text.R">.R</a>]</li>
 </ul></li>
 <li>R and RStudio (Appendix B)
 <ul>
 <li>Exercises [<a href="instructor/appR-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd">Rmd</a>]</li>
+<li>Code [<a href="code/appR.R">.R</a>]</li>
 </ul></li>
 <li>Algorithmic Thinking (Appendix C)
 <ul>

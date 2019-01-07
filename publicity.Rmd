@@ -4,10 +4,11 @@ title: "Publicity"
 
 
 - Journal reviews: 
-    - Jordi Prats, *Significance*, 21 August 2018,  (https://www.significancemagazine.com/science/596-r-book-review-two-approaches-to-learning-data-science)
-    - Andrew Bray, *The American Statistician*, vol. 72, no. 3, pp. 295--297, August 2018. (https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649)
-    - Shuangzhe Liu, *International Statistical Review*, vol. 86, no. 1, pp. 162, April 2018. (https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256)
-    - Tim Downie, *Journal of Statistical Software*, vol. 80, no. 2, August 2017. (http://dx.doi.org/10.18637/jss.v080.b02)
+    - [Allan M. Miller](https://dl.acm.org/citation.cfm?id=3300155&dl=ACM&coll=DL), *ACM SIGACT News*, vol. 49, no. 4, pp. 13--16, December 2018.
+    - [Jordi Prats](https://www.significancemagazine.com/science/596-r-book-review-two-approaches-to-learning-data-science), *Significance*, 21 August 2018
+    - [Andrew Bray](https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649), *The American Statistician*, vol. 72, no. 3, pp. 295--297, August 2018
+    - [Shuangzhe Liu](https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256), *International Statistical Review*, vol. 86, no. 1, pp. 162, April 2018
+    - [Tim Downie](http://dx.doi.org/10.18637/jss.v080.b02), *Journal of Statistical Software*, vol. 80, no. 2, August 2017
 - [MAA Press review](http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed)
 - [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
 

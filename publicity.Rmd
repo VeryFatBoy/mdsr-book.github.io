@@ -9,7 +9,8 @@ title: "Publicity"
     - [Andrew Bray](https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649), *The American Statistician*, vol. 72, no. 3, pp. 295--297, August 2018
     - [Shuangzhe Liu](https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256), *International Statistical Review*, vol. 86, no. 1, pp. 162, April 2018
     - [Tim Downie](http://dx.doi.org/10.18637/jss.v080.b02), *Journal of Statistical Software*, vol. 80, no. 2, August 2017
-- [MAA Press review](http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed)
+- Robert Hayden, [Modern Data Science with R](http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed), MAA Press
+- Murtaza Haider, [*Modern Data Science with R: A review*](https://medium.com/@regionomics/modern-data-science-with-r-a-review-af45161af161)
 - [CRC Press interview with Ben Baumer](https://www.crcpress.com/go/baumer_interview?utm_source=CRCPress&utm_medium=cms&utm_campaign=170200780)
 
 - Tweets:

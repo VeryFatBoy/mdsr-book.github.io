@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -119,7 +120,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -280,18 +280,6 @@ $(document).ready(function () {
 }
 </style>
 
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
-
 <!-- code folding -->
 
 
@@ -404,11 +392,12 @@ $(document).ready(function () {
 
 <div id="known-errors" class="section level2">
 <h2>Known Errors</h2>
-<p>Last updated May 21, 2019</p>
+<p>Last updated November 14, 2019</p>
 <div id="to-be-fixed-for-the-third-printing" class="section level3">
 <h3>To be fixed for the third printing</h3>
 <ul>
-<li>Page 37: The end of the last sentence should read “corresponds to a value of 30 roadways per unit area” (mhilton)</li>
+<li>Page 11: The caption should say “USD” instead of “millions of USD”. (rporta)</li>
+<li>Page 37: The end of the last sentence should read “corresponds to a value of 30 roadways per unit area”. (mhilton)</li>
 <li>Page 91: The key for the Google spreadsheet has changed. Try <code>hiv_key &lt;- &quot;1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA&quot;</code> instead. (mwan)</li>
 <li>Page 156: “We can compare this to a (hypothetical) sample of size <span class="math inline">\(n = 1,000\)</span>” should be “We can compare this to a (hypothetical) sample of size <span class="math inline">\(n = 200\)</span>” (zzhang)</li>
 <li>Page 282: A comma is missing in the SQL query that causes the <code>dest</code> column to be erroneously labelled <code>flight</code>. (kbaker)</li>
@@ -471,6 +460,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

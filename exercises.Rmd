@@ -31,7 +31,7 @@ c. Critique this data graphic using the taxonomy described in this chapter.
 #. [UK University Rankings](http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg)
 #. [Childhood Obesity in the US](http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif)
 #. [Relationship between ages and psychosocial maturity](http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg)
-#. [Location of Floating Plastic Trash](http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg)
+#. ~~[Location of Floating Plastic Trash](http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg)~~
 
 #### Exercise 2.4
 

@@ -13,6 +13,7 @@
 
 <title>Errata</title>
 
+<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -58,6 +59,15 @@ body {
 
 <link rel="stylesheet" href="libs/font-awesome-4.1.0/css/font-awesome.min.css"/>
 
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
   pre:not([class]) {
@@ -102,6 +112,7 @@ h6 {
   text-align: left;
 }
 </style>
+
 
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
 
@@ -390,9 +401,31 @@ $(document).ready(function () {
 </div>
 
 
-<div id="known-errors" class="section level2">
-<h2>Known Errors</h2>
-<p>Last updated July 10, 2020</p>
+<p>Last updated December 21, 2020</p>
+<div id="known-errors-in-the-2nd-edition" class="section level2">
+<h2>Known Errors in the 2nd edition</h2>
+<ul>
+<li><a href="https://www.github.com/mdsr-book/mdsr2e/issues">File an issue</a></li>
+</ul>
+</div>
+<div id="bibtex-entry" class="section level2">
+<h2>BibTeX entry</h2>
+<pre><code>@book{baumer2021mdsr,
+  title={{Modern Data Science with R}},
+  author={Benjamin S. Baumer and Daniel T. Kaplan and Nicholas J. Horton},
+  year={2021},
+  month={3},
+  day={12},
+  edition={2nd},
+  pages={1--673},
+  publisher={Chapman and Hall/CRC Press: Boca Raton},
+  isbn={9780367191498},
+  url={https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498}
+}</code></pre>
+<hr>
+</div>
+<div id="known-errors-in-the-1st-edition" class="section level2">
+<h2>Known Errors in the 1st edition</h2>
 <div id="to-be-fixed-for-the-third-printing" class="section level3">
 <h3>To be fixed for the third printing</h3>
 <ul>
@@ -424,7 +457,7 @@ Votes_wide &lt;- Votes %&gt;%
 </ul>
 </div>
 </div>
-<div id="bibtex-entry" class="section level2">
+<div id="bibtex-entry-1" class="section level2">
 <h2>BibTeX entry</h2>
 <pre><code>@book{baumer2017mdsr,
   title={{Modern Data Science with R}},
@@ -432,6 +465,7 @@ Votes_wide &lt;- Votes %&gt;%
   year={2017},
   month={2},
   day={10},
+  pages={1--582},
   publisher={Chapman and Hall/CRC Press: Boca Raton},
   isbn={9781498724487},
   url={https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487}
@@ -452,7 +486,7 @@ Votes_wide &lt;- Votes %&gt;%
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();

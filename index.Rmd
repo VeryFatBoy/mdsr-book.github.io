@@ -3,11 +3,46 @@ title: "*Modern Data Science with R*"
 ---
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-7">
+
+### [2nd edition, published 2021](https://mdsr-book.github.io/mdsr2e)
+
 
 *Modern Data Science with R* is a comprehensive **data science textbook** for undergraduates that incorporates statistical and computational thinking to solve real-world problems with data. Rather than focus exclusively on case studies or programming syntax, this book illustrates how statistical programming in the state-of-the-art R/RStudio computing environment  can be leveraged to extract meaningful information from a variety of data in the service of addressing compelling statistical questions. 
 
 Contemporary data science requires a tight integration of knowledge from statistics, computer science, mathematics, and a domain of application. This book will help readers with some background in statistics and modest prior experience with coding develop and practice the appropriate skills to tackle complex data science projects. The book features a number of exercises and has a flexible organization conducive to teaching a variety of semester courses.
+
+</br>
+<div>
+<a href="https://www.routledge.com/">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/CRC_Press_logo.svg/1280px-CRC_Press_logo.svg.png" width="300px">
+</a>
+</div>
+
+  </div>
+  <div class="col-sm-5">
+  [![](mdsr2e_cover.png)](https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498)
+
+  Buy it from:
+
+* [CRC Press](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9780367191498)
+* [Amazon.com](https://www.amazon.com/Modern-Science-Chapman-Texts-Statistical-dp-0367191490/dp/0367191490/ref=dp_ob_title_bk)
+
+<div>
+  <a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9780367191498">
+  <i class="fa fa-book"></i>Request an e-Inspection Copy
+  <i class="fa fa-angle-double-right"></i>
+  </a>
+</div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-sm-7">
+
+### 1st edition, published 2017
 
 > "*Modern Data Science with R* is a breakthrough textbook" ([Allan M. Miller](https://dl.acm.org/citation.cfm?id=3300155&dl=ACM&coll=DL), UC Berkeley)
 
@@ -21,9 +56,8 @@ Contemporary data science requires a tight integration of knowledge from statist
 
 
   </div>
-  <div class="col-sm-6">
-  [![](https://www.crcpress.com/images/CRCPress-logo-s.jpg)](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
-  ![](https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg)
+  <div class="col-sm-5">
+  [![](https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg)](https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487)
   
   Buy it from:
 

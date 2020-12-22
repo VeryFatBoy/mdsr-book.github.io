@@ -2,9 +2,32 @@
 title: "Errata"
 ---
 
-## Known Errors
-
 Last updated `r format(Sys.Date(), "%B %e, %Y")`
+
+## Known Errors in the 2nd edition
+
+- [File an issue](https://www.github.com/mdsr-book/mdsr2e/issues)
+
+## BibTeX entry
+
+```
+@book{baumer2021mdsr,
+  title={{Modern Data Science with R}},
+  author={Benjamin S. Baumer and Daniel T. Kaplan and Nicholas J. Horton},
+  year={2021},
+  month={3},
+  day={12},
+  edition={2nd},
+  pages={1--673},
+  publisher={Chapman and Hall/CRC Press: Boca Raton},
+  isbn={9780367191498},
+  url={https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498}
+}
+```
+
+<hr>
+
+## Known Errors in the 1st edition
 
 ### To be fixed for the third printing
 
@@ -43,6 +66,7 @@ Last updated `r format(Sys.Date(), "%B %e, %Y")`
   year={2017},
   month={2},
   day={10},
+  pages={1--582},
   publisher={Chapman and Hall/CRC Press: Boca Raton},
   isbn={9781498724487},
   url={https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/9781498724487}

@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 ```
 
 
-## 2nd edition
+## 2nd edition {#mdsr2e}
 
 ```{r, results='asis'}
 fs::dir_ls("code/mdsr2e") %>%
@@ -19,7 +19,7 @@ fs::dir_ls("code/mdsr2e") %>%
 ```
 
 
-## 1st edition
+## 1st edition {#mdsr1e}
 
 ```{r, results='asis'}
 fs::dir_ls("code/mdsr1e") %>%

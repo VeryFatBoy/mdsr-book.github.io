@@ -33,10 +33,12 @@ navbar:
     - text: "Resources"
       menu: 
         - text: "2nd edition"
+        - text: "Chapter Code"
+          href: code.html#mdsr2e
         - text: "--------------"
         - text: "1st edition"
         - text: "Chapter Code"
-          href: code/
+          href: code.html#mdsr1e
         - text: "Online Exercises"
           href: exercises.html
         - text: "Instructor Resources"

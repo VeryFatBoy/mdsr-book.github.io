@@ -1,0 +1,27 @@
+---
+title: "Chapter Code"
+---
+
+```{r, include=FALSE}
+library(tidyverse)
+library(htmltools)
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+```
+
+
+## 2nd edition
+
+```{r, results='asis'}
+fs::dir_ls("code/mdsr2e") %>%
+  map(~a(.x, href = .x))
+```
+
+
+## 1st edition
+
+```{r, results='asis'}
+fs::dir_ls("code/mdsr1e") %>%
+  map(~a(.x, href = .x))
+```

@@ -11,7 +11,7 @@
 
 
 
-<title>instructor.utf8</title>
+<title>Chapter Code</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -297,75 +294,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-.tocify-subheader {
-  display: inline;
-}
-.tocify-subheader .tocify-item {
-  font-size: 0.95em;
-}
-
-</style>
-
-
 
 </head>
 
@@ -373,16 +301,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -488,96 +406,64 @@ div.tocify {
 
 
 
+<h1 class="title toc-ignore">Chapter Code</h1>
 
 </div>
 
 
-<div id="instructor-resources" class="section level2">
-<h2>Instructor Resources</h2>
-<div id="online-supplements" class="section level3">
-<h3>Online supplements</h3>
-<ul>
-<li>Data Visualization (Chapter 2)
-<ul>
-<li>Exercises [<a href="instructor/datavizI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizI-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/datavizI.R">.R</a>]</li>
-</ul></li>
-<li>Grammar for Graphics (Chapter 3)
-<ul>
-<li>Exercises [<a href="instructor/datavizII-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/datavizII-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/datavizII.R">.R</a>]</li>
-</ul></li>
-<li>Data Wrangling (Chapter 4)
-<ul>
-<li>Examples [<a href="instructor/dataI.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI.Rmd">Rmd</a>]</li>
-<li>Exercises [<a href="instructor/dataI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataI-ex.Rmd">Rmd</a>]</li>
-<li>Lab [<a href="instructor/lab-group_by.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-group_by.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/dataI.R">.R</a>]</li>
-</ul></li>
-<li>Tidy Data and Iteration (Chapter 5)
-<ul>
-<li>Exercises [<a href="instructor/dataII-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/dataII-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/dataII.R">.R</a>]</li>
-</ul></li>
-<li>Professional Ethics (Chapter 6)
-<ul>
-<li>Exercises [<a href="instructor/ethics-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/ethics-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/ethics.R">.R</a>]</li>
-</ul></li>
-<li>Statistical Foundations (Chapter 7)
-<ul>
-<li>Exercises [<a href="instructor/foundations-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/foundations-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/foundations.R">.R</a>]</li>
-</ul></li>
-<li>Supervised Learning (Chapter 8)
-<ul>
-<li><a href="https://youtu.be/Nlezx2gS8hw">Video overview</a></li>
-<li>Examples [<a href="instructor/learningI.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI.Rmd">Rmd</a>]</li>
-<li>Exercises [<a href="instructor/learningI-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningI-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/learningI.R">.R</a>]</li>
-</ul></li>
-</ul>
-<!--
-
-- Unsupervised Learning (Chapter 9)
-    - Exercises [[html](instructor/learningII-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/learningII-ex.Rmd)]
-
-- Simulation (Chapter 10)
-    - Examples [[html](instructor/simulation.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation.Rmd)]
-    - Exercises [[html](instructor/simulation-ex.html)  | [Rmd](https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/simulation-ex.Rmd)]
-
--->
-<ul>
-<li>Database Querying using SQL (Chapter 12)
-<ul>
-<li>Examples [<a href="instructor/sql.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/sql.Rmd">Rmd</a>]</li>
-<li>Lab [<a href="instructor/lab-sql.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-sql.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/sql.R">.R</a>]</li>
-</ul></li>
-<li>Text as Data (Chapter 15)
-<ul>
-<li><a href="https://youtu.be/sp25j9WaqwA">Video overview</a></li>
-<li>Examples [<a href="instructor/text.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text.Rmd">Rmd</a>]</li>
-<li>Exercises [<a href="instructor/text-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/text-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/text.R">.R</a>]</li>
-</ul></li>
-<li>R and RStudio (Appendix B)
-<ul>
-<li>Exercises [<a href="instructor/appR-ex.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/appR-ex.Rmd">Rmd</a>]</li>
-<li>Code [<a href="code/appR.R">.R</a>]</li>
-</ul></li>
-<li>Algorithmic Thinking (Appendix C)
-<ul>
-<li>Lab [<a href="instructor/lab-functions.html">html</a> | <a href="https://rawgit.com/mdsr-book/mdsr-book.github.io/master/instructor/lab-functions.Rmd">Rmd</a>]</li>
-</ul></li>
-</ul>
-<p>(more to come…)</p>
+<div id="nd-edition" class="section level2">
+<h2>2nd edition</h2>
+<p>$<code>code/mdsr2e/01-intro.R</code> <a href="code/mdsr2e/01-intro.R">code/mdsr2e/01-intro.R</a></p>
+<p>$<code>code/mdsr2e/02-datavizI.R</code> <a href="code/mdsr2e/02-datavizI.R">code/mdsr2e/02-datavizI.R</a></p>
+<p>$<code>code/mdsr2e/03-datavizII.R</code> <a href="code/mdsr2e/03-datavizII.R">code/mdsr2e/03-datavizII.R</a></p>
+<p>$<code>code/mdsr2e/04-dataI.R</code> <a href="code/mdsr2e/04-dataI.R">code/mdsr2e/04-dataI.R</a></p>
+<p>$<code>code/mdsr2e/05-joins.R</code> <a href="code/mdsr2e/05-joins.R">code/mdsr2e/05-joins.R</a></p>
+<p>$<code>code/mdsr2e/06-dataII.R</code> <a href="code/mdsr2e/06-dataII.R">code/mdsr2e/06-dataII.R</a></p>
+<p>$<code>code/mdsr2e/07-iteration.R</code> <a href="code/mdsr2e/07-iteration.R">code/mdsr2e/07-iteration.R</a></p>
+<p>$<code>code/mdsr2e/08-ethics.R</code> <a href="code/mdsr2e/08-ethics.R">code/mdsr2e/08-ethics.R</a></p>
+<p>$<code>code/mdsr2e/09-foundations.R</code> <a href="code/mdsr2e/09-foundations.R">code/mdsr2e/09-foundations.R</a></p>
+<p>$<code>code/mdsr2e/10-modeling.R</code> <a href="code/mdsr2e/10-modeling.R">code/mdsr2e/10-modeling.R</a></p>
+<p>$<code>code/mdsr2e/11-learningI.R</code> <a href="code/mdsr2e/11-learningI.R">code/mdsr2e/11-learningI.R</a></p>
+<p>$<code>code/mdsr2e/12-learningII.R</code> <a href="code/mdsr2e/12-learningII.R">code/mdsr2e/12-learningII.R</a></p>
+<p>$<code>code/mdsr2e/13-simulation.R</code> <a href="code/mdsr2e/13-simulation.R">code/mdsr2e/13-simulation.R</a></p>
+<p>$<code>code/mdsr2e/14-datavizIII.R</code> <a href="code/mdsr2e/14-datavizIII.R">code/mdsr2e/14-datavizIII.R</a></p>
+<p>$<code>code/mdsr2e/15-sqlI.R</code> <a href="code/mdsr2e/15-sqlI.R">code/mdsr2e/15-sqlI.R</a></p>
+<p>$<code>code/mdsr2e/16-sqlII.R</code> <a href="code/mdsr2e/16-sqlII.R">code/mdsr2e/16-sqlII.R</a></p>
+<p>$<code>code/mdsr2e/17-geospatialI.R</code> <a href="code/mdsr2e/17-geospatialI.R">code/mdsr2e/17-geospatialI.R</a></p>
+<p>$<code>code/mdsr2e/18-geospatialII.R</code> <a href="code/mdsr2e/18-geospatialII.R">code/mdsr2e/18-geospatialII.R</a></p>
+<p>$<code>code/mdsr2e/19-text.R</code> <a href="code/mdsr2e/19-text.R">code/mdsr2e/19-text.R</a></p>
+<p>$<code>code/mdsr2e/20-netsci.R</code> <a href="code/mdsr2e/20-netsci.R">code/mdsr2e/20-netsci.R</a></p>
+<p>$<code>code/mdsr2e/21-big_data.R</code> <a href="code/mdsr2e/21-big_data.R">code/mdsr2e/21-big_data.R</a></p>
+<p>$<code>code/mdsr2e/A-pkg.R</code> <a href="code/mdsr2e/A-pkg.R">code/mdsr2e/A-pkg.R</a></p>
+<p>$<code>code/mdsr2e/B-appR.R</code> <a href="code/mdsr2e/B-appR.R">code/mdsr2e/B-appR.R</a></p>
+<p>$<code>code/mdsr2e/C-algorithmic.R</code> <a href="code/mdsr2e/C-algorithmic.R">code/mdsr2e/C-algorithmic.R</a></p>
+<p>$<code>code/mdsr2e/D-reproducible.R</code> <a href="code/mdsr2e/D-reproducible.R">code/mdsr2e/D-reproducible.R</a></p>
+<p>$<code>code/mdsr2e/E-regression.R</code> <a href="code/mdsr2e/E-regression.R">code/mdsr2e/E-regression.R</a></p>
+<p>$<code>code/mdsr2e/F-dbsetup.R</code> <a href="code/mdsr2e/F-dbsetup.R">code/mdsr2e/F-dbsetup.R</a></p>
 </div>
-<div id="solutions-manual" class="section level3">
-<h3>Solutions Manual</h3>
-<p>A full solutions manual (last updated July 4, 2017) is available for instructors through Routledge Textbooks. <a href="http://routledgetextbooks.com/textbooks/instructor_downloads/">Sign Up</a></p>
-<p>Last updated February 5, 2018</p>
-</div>
+<div id="st-edition" class="section level2">
+<h2>1st edition</h2>
+<p>$<code>code/mdsr1e/algorithmic.R</code> <a href="code/mdsr1e/algorithmic.R">code/mdsr1e/algorithmic.R</a></p>
+<p>$<code>code/mdsr1e/bigData.R</code> <a href="code/mdsr1e/bigData.R">code/mdsr1e/bigData.R</a></p>
+<p>$<code>code/mdsr1e/dataI.R</code> <a href="code/mdsr1e/dataI.R">code/mdsr1e/dataI.R</a></p>
+<p>$<code>code/mdsr1e/dataII.R</code> <a href="code/mdsr1e/dataII.R">code/mdsr1e/dataII.R</a></p>
+<p>$<code>code/mdsr1e/datavizI.R</code> <a href="code/mdsr1e/datavizI.R">code/mdsr1e/datavizI.R</a></p>
+<p>$<code>code/mdsr1e/datavizII.R</code> <a href="code/mdsr1e/datavizII.R">code/mdsr1e/datavizII.R</a></p>
+<p>$<code>code/mdsr1e/datavizIII.R</code> <a href="code/mdsr1e/datavizIII.R">code/mdsr1e/datavizIII.R</a></p>
+<p>$<code>code/mdsr1e/dbsetup.R</code> <a href="code/mdsr1e/dbsetup.R">code/mdsr1e/dbsetup.R</a></p>
+<p>$<code>code/mdsr1e/ethics.R</code> <a href="code/mdsr1e/ethics.R">code/mdsr1e/ethics.R</a></p>
+<p>$<code>code/mdsr1e/foundations.R</code> <a href="code/mdsr1e/foundations.R">code/mdsr1e/foundations.R</a></p>
+<p>$<code>code/mdsr1e/intro.R</code> <a href="code/mdsr1e/intro.R">code/mdsr1e/intro.R</a></p>
+<p>$<code>code/mdsr1e/learningI.R</code> <a href="code/mdsr1e/learningI.R">code/mdsr1e/learningI.R</a></p>
+<p>$<code>code/mdsr1e/learningII.R</code> <a href="code/mdsr1e/learningII.R">code/mdsr1e/learningII.R</a></p>
+<p>$<code>code/mdsr1e/netsci.R</code> <a href="code/mdsr1e/netsci.R">code/mdsr1e/netsci.R</a></p>
+<p>$<code>code/mdsr1e/regression.R</code> <a href="code/mdsr1e/regression.R">code/mdsr1e/regression.R</a></p>
+<p>$<code>code/mdsr1e/reproducible.R</code> <a href="code/mdsr1e/reproducible.R">code/mdsr1e/reproducible.R</a></p>
+<p>$<code>code/mdsr1e/simulation.R</code> <a href="code/mdsr1e/simulation.R">code/mdsr1e/simulation.R</a></p>
+<p>$<code>code/mdsr1e/spatial.R</code> <a href="code/mdsr1e/spatial.R">code/mdsr1e/spatial.R</a></p>
+<p>$<code>code/mdsr1e/sql.R</code> <a href="code/mdsr1e/sql.R">code/mdsr1e/sql.R</a></p>
+<p>$<code>code/mdsr1e/sqlII.R</code> <a href="code/mdsr1e/sqlII.R">code/mdsr1e/sqlII.R</a></p>
+<p>$<code>code/mdsr1e/text.R</code> <a href="code/mdsr1e/text.R">code/mdsr1e/text.R</a></p>
 </div>
 
     <div id="footer">
@@ -587,8 +473,6 @@ div.tocify {
     </div>
 
 
-</div>
-</div>
 
 </div>
 
@@ -621,32 +505,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3,h4",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

@@ -8,8 +8,12 @@ navbar:
       href: index.html
     - text: The Authors
       href: authors.html
-    - text: "Sample Chapters"
+    - text: "Content"
       menu: 
+        - text: "2nd edition"
+          href: https://mdsr-book.github.io/mdsr2e/
+        - text: "--------------"
+        - text: "1st edition"
         - text: Preface
           href: excerpts/mdsr-preface.pdf
         - text: Table of Contents
@@ -28,6 +32,11 @@ navbar:
           href: excerpts/mdsr-subjectindex.pdf
     - text: "Resources"
       menu: 
+        - text: "2nd edition"
+        - text: "--------------"
+        - text: "1st edition"
+        - text: "Chapter Code"
+          href: code/
         - text: "Online Exercises"
           href: exercises.html
         - text: "Instructor Resources"

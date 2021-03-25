@@ -7,6 +7,7 @@ Last updated `r format(Sys.Date(), "%B %e, %Y")`
 ## Known Errors in the 2nd edition
 
 - [File an issue](https://www.github.com/mdsr-book/mdsr2e/issues)
+- Problem 11 in Chapter 6 should refer to the "approach described in Section 6.4.1.2" instead of Section 5.5.4. (nhorton)
 
 ## BibTeX entry
 

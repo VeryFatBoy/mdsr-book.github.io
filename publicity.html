@@ -13,13 +13,22 @@
 
 <title>Publicity</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -69,11 +78,6 @@ body {
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -86,32 +90,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
@@ -123,10 +101,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -143,40 +117,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -204,7 +151,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -216,7 +163,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -227,10 +174,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -242,7 +202,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -406,7 +365,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -416,13 +375,17 @@ $(document).ready(function () {
 
 
 <ul>
-<li><p>Journal reviews:</p>
+<li><p>2nd edition journal reviews:</p>
 <ul>
-<li><a href="https://dl.acm.org/citation.cfm?id=3300155&amp;dl=ACM&amp;coll=DL">Allan M. Miller</a>, <em>ACM SIGACT News</em>, vol. 49, no. 4, pp. 13–16, December 2018.</li>
-<li><a href="https://www.significancemagazine.com/science/596-r-book-review-two-approaches-to-learning-data-science">Jordi Prats</a>, <em>Significance</em>, 21 August 2018</li>
-<li><a href="https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649">Andrew Bray</a>, <em>The American Statistician</em>, vol. 72, no. 3, pp. 295–297, August 2018</li>
-<li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256">Shuangzhe Liu</a>, <em>International Statistical Review</em>, vol. 86, no. 1, pp. 162, April 2018</li>
-<li><a href="http://dx.doi.org/10.18637/jss.v080.b02">Tim Downie</a>, <em>Journal of Statistical Software</em>, vol. 80, no. 2, August 2017</li>
+<li><a href="https://doi.org/10.1002/bimj.202100258">Annika Hoyer</a>, <em>Biometrical Journal</em>, 13 Sep 2021.</li>
+</ul></li>
+<li><p>1st edition journal reviews:</p>
+<ul>
+<li><a href="https://dl.acm.org/citation.cfm?id=3300155&amp;dl=ACM&amp;coll=DL">Allan M. Miller</a>, <em>ACM SIGACT News</em>, vol. 49, no. 4, pp. 13–16, Dec 2018.</li>
+<li><a href="https://www.significancemagazine.com/science/596-r-book-review-two-approaches-to-learning-data-science">Jordi Prats</a>, <em>Significance</em>, 21 Aug 2018.</li>
+<li><a href="https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649">Andrew Bray</a>, <em>The American Statistician</em>, vol. 72, no. 3, pp. 295–297, Aug 2018.</li>
+<li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256">Shuangzhe Liu</a>, <em>International Statistical Review</em>, vol. 86, no. 1, pp. 162, Apr 2018.</li>
+<li><a href="http://dx.doi.org/10.18637/jss.v080.b02">Tim Downie</a>, <em>Journal of Statistical Software</em>, vol. 80, no. 2, Aug 2017.</li>
 </ul></li>
 <li><p>Robert Hayden, <a href="http://www.maa.org/press/maa-reviews/modern-data-science-with-r?r=mathfeed">Modern Data Science with R</a>, MAA Press</p></li>
 <li><p>Murtaza Haider, <a href="https://medium.com/@regionomics/modern-data-science-with-r-a-review-af45161af161"><em>Modern Data Science with R: A review</em></a></p></li>
@@ -490,7 +453,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

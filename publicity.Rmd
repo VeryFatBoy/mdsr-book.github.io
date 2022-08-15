@@ -4,6 +4,7 @@ title: "Publicity"
 
 
 - 2nd edition journal reviews:
+    - [Kohma Arai and Vyacheslav Lyubchich](https://doi.org/10.1080/00401706.2022.2087421), *Technometrics*, vol. 64, no. 3, pp. 429--429, 26 Jul. 2022.
     - [Annika Hoyer](https://doi.org/10.1002/bimj.202100258), *Biometrical Journal*, 13 Sep 2021. 
 
 - 1st edition journal reviews: 

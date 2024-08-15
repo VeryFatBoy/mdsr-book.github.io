@@ -13,8 +13,8 @@
 
 <title>Errata</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -92,6 +92,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
 
 
@@ -116,6 +117,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -173,11 +177,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -206,8 +214,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -215,16 +223,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -268,7 +269,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -284,7 +285,7 @@ $(document).ready(function () {
   <a href="authors.html">The Authors</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Content
      
     <span class="caret"></span>
@@ -322,7 +323,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Resources
      
     <span class="caret"></span>
@@ -374,12 +375,14 @@ $(document).ready(function () {
 </div>
 
 
-<p>Last updated August 15, 2022</p>
+<p>Last updated August 15, 2024</p>
 <div id="known-errors-in-the-2nd-edition" class="section level2">
 <h2>Known Errors in the 2nd edition</h2>
 <ul>
-<li><a href="https://www.github.com/mdsr-book/mdsr2e/issues">File an issue</a></li>
-<li>Problem 11 in Chapter 6 should refer to the “approach described in Section 6.4.1.2” instead of Section 5.5.4. (nhorton)</li>
+<li><a href="https://www.github.com/mdsr-book/mdsr2e/issues">File an
+issue</a></li>
+<li>Problem 11 in Chapter 6 should refer to the “approach described in
+Section 6.4.1.2” instead of Section 5.5.4. (nhorton)</li>
 </ul>
 </div>
 <div id="bibtex-entry" class="section level2">
@@ -403,31 +406,64 @@ $(document).ready(function () {
 <div id="to-be-fixed-for-the-third-printing" class="section level3">
 <h3>To be fixed for the third printing</h3>
 <ul>
-<li>Page 11: The caption should say “USD” instead of “millions of USD”. (rporta)</li>
-<li>Page 37: The end of the last sentence should read “corresponds to a value of 30 roadways per unit area”. (mhilton)</li>
-<li>Page 91: The key for the Google spreadsheet has changed. Try <code>hiv_key &lt;- "1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA"</code> instead. (mwan)</li>
-<li>Page 156: “We can compare this to a (hypothetical) sample of size <span class="math inline">\(n = 1,000\)</span>” should be “We can compare this to a (hypothetical) sample of size <span class="math inline">\(n = 200\)</span>” (zzhang)</li>
-<li>Page 282: A comma is missing in the SQL query that causes the <code>dest</code> column to be erroneously labelled <code>flight</code>. (kbaker)</li>
-<li>Page 310-313: There is inconsistent usage of <code>babynamedb</code> and <code>babynamedata</code>. All references should be to <code>babynamedb</code>. (kbaker)</li>
-<li>Page 378: “The <em>diameter</em> of a graph is the length of the longest geodesic between any [two] pairs of vertices.” The word “two” should be removed. (agary)</li>
-<li>Page 379: A parenthesis is missing after “(see Figure 16.1”. (bbaumer)</li>
+<li>Page 11: The caption should say “USD” instead of “millions of USD”.
+(rporta)</li>
+<li>Page 37: The end of the last sentence should read “corresponds to a
+value of 30 roadways per unit area”. (mhilton)</li>
+<li>Page 91: The key for the Google spreadsheet has changed. Try
+<code>hiv_key &lt;- "1kWH_xdJDM4SMfT_Kzpkk-1yuxWChfurZuWYjfmv51EA"</code>
+instead. (mwan)</li>
+<li>Page 156: “We can compare this to a (hypothetical) sample of size
+<span class="math inline">\(n = 1,000\)</span>” should be “We can
+compare this to a (hypothetical) sample of size <span
+class="math inline">\(n = 200\)</span>” (zzhang)</li>
+<li>Page 282: A comma is missing in the SQL query that causes the
+<code>dest</code> column to be erroneously labelled <code>flight</code>.
+(kbaker)</li>
+<li>Page 310-313: There is inconsistent usage of <code>babynamedb</code>
+and <code>babynamedata</code>. All references should be to
+<code>babynamedb</code>. (kbaker)</li>
+<li>Page 378: “The <em>diameter</em> of a graph is the length of the
+longest geodesic between any [two] pairs of vertices.” The word “two”
+should be removed. (agary)</li>
+<li>Page 379: A parenthesis is missing after “(see Figure 16.1”.
+(bbaumer)</li>
 </ul>
 </div>
 <div id="fixed-for-the-second-printing" class="section level3">
 <h3>Fixed for the second printing</h3>
 <ul>
-<li><p>Page 10: The last sentence should start “It also seems clear” instead of “In also seems clear”. (voberholzer)</p></li>
-<li><p>Page 36: In the caption to Figure 3.4, it should read “<code>roadways</code> is mapped to size”, instead of “<code>educ</code> is mapped to size.” (gmontoya)</p></li>
-<li><p>Page 65: The <code>filter()</code> command on the <code>start</code> variable at the bottom of the page does not work as intended. The argument should be <code>start &gt; "1973-01-01"</code>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/15">sschmidt</a>)</p></li>
-<li><p>Page 90: At the end of Exercise 4.16, the following sentence should be added: “Use the <code>Births78</code> data set from the <code>mosaicData</code> package as a reference.” (nhorton/bbaumer)</p></li>
-<li><p>Page 214: It’s not clear where <code>Votes_wide</code> comes from. It’s shown in Table 9.1 and the code to generate it is (lkaganovskiy):</p>
+<li><p>Page 10: The last sentence should start “It also seems clear”
+instead of “In also seems clear”. (voberholzer)</p></li>
+<li><p>Page 36: In the caption to Figure 3.4, it should read
+“<code>roadways</code> is mapped to size”, instead of “<code>educ</code>
+is mapped to size.” (gmontoya)</p></li>
+<li><p>Page 65: The <code>filter()</code> command on the
+<code>start</code> variable at the bottom of the page does not work as
+intended. The argument should be <code>start &gt; "1973-01-01"</code>.
+(<a
+href="https://github.com/mdsr-book/mdsr-book.github.io/issues/15">sschmidt</a>)</p></li>
+<li><p>Page 90: At the end of Exercise 4.16, the following sentence
+should be added: “Use the <code>Births78</code> data set from the
+<code>mosaicData</code> package as a reference.”
+(nhorton/bbaumer)</p></li>
+<li><p>Page 214: It’s not clear where <code>Votes_wide</code> comes
+from. It’s shown in Table 9.1 and the code to generate it is
+(lkaganovskiy):</p>
 <pre class="r"><code>library(mdsr)
 Votes_wide &lt;- Votes %&gt;%
   tidyr::spread(key = bill, value = vote)</code></pre></li>
-<li><p>Page 375: Exercise 15.4 should read: “Find all of the adjectives in one of Shakespeare’s plays that end in <code>more</code> or <code>less</code>.” (nhorton/bbaumer)</p></li>
-<li><p>Page 375: Exercise 15.5 should read: “Find all of the lines containing the stage direction <code>Exit</code> or <code>Exeunt</code> in one of Shakespeare’s plays.” (nhorton/bbaumer)</p></li>
-<li><p>Page 399: Lambert Conformal Conic projection is misspelled. (nhorton)</p></li>
-<li><p>Page 465: The residuals should be defined as <span class="math inline">\(\hat{\epsilon}_i = y_i - \hat{y}_i\)</span>. (<a href="https://github.com/mdsr-book/mdsr-book.github.io/issues/14">alanarnholt</a>)</p></li>
+<li><p>Page 375: Exercise 15.4 should read: “Find all of the adjectives
+in one of Shakespeare’s plays that end in <code>more</code> or
+<code>less</code>.” (nhorton/bbaumer)</p></li>
+<li><p>Page 375: Exercise 15.5 should read: “Find all of the lines
+containing the stage direction <code>Exit</code> or <code>Exeunt</code>
+in one of Shakespeare’s plays.” (nhorton/bbaumer)</p></li>
+<li><p>Page 399: Lambert Conformal Conic projection is misspelled.
+(nhorton)</p></li>
+<li><p>Page 465: The residuals should be defined as <span
+class="math inline">\(\hat{\epsilon}_i = y_i - \hat{y}_i\)</span>. (<a
+href="https://github.com/mdsr-book/mdsr-book.github.io/issues/14">alanarnholt</a>)</p></li>
 </ul>
 </div>
 </div>

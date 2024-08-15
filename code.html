@@ -13,8 +13,8 @@
 
 <title>Chapter Code</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -92,6 +92,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
 
 
@@ -116,6 +117,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -173,11 +177,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -206,8 +214,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -215,16 +223,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -268,7 +269,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -284,7 +285,7 @@ $(document).ready(function () {
   <a href="authors.html">The Authors</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Content
      
     <span class="caret"></span>
@@ -322,7 +323,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Resources
      
     <span class="caret"></span>
@@ -376,57 +377,105 @@ $(document).ready(function () {
 
 <div id="mdsr2e" class="section level2">
 <h2>2nd edition</h2>
-<p>$<code>code/mdsr2e/01-intro.R</code> <a href="code/mdsr2e/01-intro.R">code/mdsr2e/01-intro.R</a></p>
-<p>$<code>code/mdsr2e/02-datavizI.R</code> <a href="code/mdsr2e/02-datavizI.R">code/mdsr2e/02-datavizI.R</a></p>
-<p>$<code>code/mdsr2e/03-datavizII.R</code> <a href="code/mdsr2e/03-datavizII.R">code/mdsr2e/03-datavizII.R</a></p>
-<p>$<code>code/mdsr2e/04-dataI.R</code> <a href="code/mdsr2e/04-dataI.R">code/mdsr2e/04-dataI.R</a></p>
-<p>$<code>code/mdsr2e/05-joins.R</code> <a href="code/mdsr2e/05-joins.R">code/mdsr2e/05-joins.R</a></p>
-<p>$<code>code/mdsr2e/06-dataII.R</code> <a href="code/mdsr2e/06-dataII.R">code/mdsr2e/06-dataII.R</a></p>
-<p>$<code>code/mdsr2e/07-iteration.R</code> <a href="code/mdsr2e/07-iteration.R">code/mdsr2e/07-iteration.R</a></p>
-<p>$<code>code/mdsr2e/08-ethics.R</code> <a href="code/mdsr2e/08-ethics.R">code/mdsr2e/08-ethics.R</a></p>
-<p>$<code>code/mdsr2e/09-foundations.R</code> <a href="code/mdsr2e/09-foundations.R">code/mdsr2e/09-foundations.R</a></p>
-<p>$<code>code/mdsr2e/10-modeling.R</code> <a href="code/mdsr2e/10-modeling.R">code/mdsr2e/10-modeling.R</a></p>
-<p>$<code>code/mdsr2e/11-learningI.R</code> <a href="code/mdsr2e/11-learningI.R">code/mdsr2e/11-learningI.R</a></p>
-<p>$<code>code/mdsr2e/12-learningII.R</code> <a href="code/mdsr2e/12-learningII.R">code/mdsr2e/12-learningII.R</a></p>
-<p>$<code>code/mdsr2e/13-simulation.R</code> <a href="code/mdsr2e/13-simulation.R">code/mdsr2e/13-simulation.R</a></p>
-<p>$<code>code/mdsr2e/14-datavizIII.R</code> <a href="code/mdsr2e/14-datavizIII.R">code/mdsr2e/14-datavizIII.R</a></p>
-<p>$<code>code/mdsr2e/15-sqlI.R</code> <a href="code/mdsr2e/15-sqlI.R">code/mdsr2e/15-sqlI.R</a></p>
-<p>$<code>code/mdsr2e/16-sqlII.R</code> <a href="code/mdsr2e/16-sqlII.R">code/mdsr2e/16-sqlII.R</a></p>
-<p>$<code>code/mdsr2e/17-geospatialI.R</code> <a href="code/mdsr2e/17-geospatialI.R">code/mdsr2e/17-geospatialI.R</a></p>
-<p>$<code>code/mdsr2e/18-geospatialII.R</code> <a href="code/mdsr2e/18-geospatialII.R">code/mdsr2e/18-geospatialII.R</a></p>
-<p>$<code>code/mdsr2e/19-text.R</code> <a href="code/mdsr2e/19-text.R">code/mdsr2e/19-text.R</a></p>
-<p>$<code>code/mdsr2e/20-netsci.R</code> <a href="code/mdsr2e/20-netsci.R">code/mdsr2e/20-netsci.R</a></p>
-<p>$<code>code/mdsr2e/21-big_data.R</code> <a href="code/mdsr2e/21-big_data.R">code/mdsr2e/21-big_data.R</a></p>
-<p>$<code>code/mdsr2e/A-pkg.R</code> <a href="code/mdsr2e/A-pkg.R">code/mdsr2e/A-pkg.R</a></p>
-<p>$<code>code/mdsr2e/B-appR.R</code> <a href="code/mdsr2e/B-appR.R">code/mdsr2e/B-appR.R</a></p>
-<p>$<code>code/mdsr2e/C-algorithmic.R</code> <a href="code/mdsr2e/C-algorithmic.R">code/mdsr2e/C-algorithmic.R</a></p>
-<p>$<code>code/mdsr2e/D-reproducible.R</code> <a href="code/mdsr2e/D-reproducible.R">code/mdsr2e/D-reproducible.R</a></p>
-<p>$<code>code/mdsr2e/E-regression.R</code> <a href="code/mdsr2e/E-regression.R">code/mdsr2e/E-regression.R</a></p>
-<p>$<code>code/mdsr2e/F-dbsetup.R</code> <a href="code/mdsr2e/F-dbsetup.R">code/mdsr2e/F-dbsetup.R</a></p>
+<p>$<code>code/mdsr2e/01-intro.R</code>
+<a href="code/mdsr2e/01-intro.R">code/mdsr2e/01-intro.R</a></p>
+<p>$<code>code/mdsr2e/02-datavizI.R</code>
+<a href="code/mdsr2e/02-datavizI.R">code/mdsr2e/02-datavizI.R</a></p>
+<p>$<code>code/mdsr2e/03-datavizII.R</code>
+<a href="code/mdsr2e/03-datavizII.R">code/mdsr2e/03-datavizII.R</a></p>
+<p>$<code>code/mdsr2e/04-dataI.R</code>
+<a href="code/mdsr2e/04-dataI.R">code/mdsr2e/04-dataI.R</a></p>
+<p>$<code>code/mdsr2e/05-joins.R</code>
+<a href="code/mdsr2e/05-joins.R">code/mdsr2e/05-joins.R</a></p>
+<p>$<code>code/mdsr2e/06-dataII.R</code>
+<a href="code/mdsr2e/06-dataII.R">code/mdsr2e/06-dataII.R</a></p>
+<p>$<code>code/mdsr2e/07-iteration.R</code>
+<a href="code/mdsr2e/07-iteration.R">code/mdsr2e/07-iteration.R</a></p>
+<p>$<code>code/mdsr2e/08-ethics.R</code>
+<a href="code/mdsr2e/08-ethics.R">code/mdsr2e/08-ethics.R</a></p>
+<p>$<code>code/mdsr2e/09-foundations.R</code>
+<a href="code/mdsr2e/09-foundations.R">code/mdsr2e/09-foundations.R</a></p>
+<p>$<code>code/mdsr2e/10-modeling.R</code>
+<a href="code/mdsr2e/10-modeling.R">code/mdsr2e/10-modeling.R</a></p>
+<p>$<code>code/mdsr2e/11-learningI.R</code>
+<a href="code/mdsr2e/11-learningI.R">code/mdsr2e/11-learningI.R</a></p>
+<p>$<code>code/mdsr2e/12-learningII.R</code>
+<a href="code/mdsr2e/12-learningII.R">code/mdsr2e/12-learningII.R</a></p>
+<p>$<code>code/mdsr2e/13-simulation.R</code>
+<a href="code/mdsr2e/13-simulation.R">code/mdsr2e/13-simulation.R</a></p>
+<p>$<code>code/mdsr2e/14-datavizIII.R</code>
+<a href="code/mdsr2e/14-datavizIII.R">code/mdsr2e/14-datavizIII.R</a></p>
+<p>$<code>code/mdsr2e/15-sqlI.R</code>
+<a href="code/mdsr2e/15-sqlI.R">code/mdsr2e/15-sqlI.R</a></p>
+<p>$<code>code/mdsr2e/16-sqlII.R</code>
+<a href="code/mdsr2e/16-sqlII.R">code/mdsr2e/16-sqlII.R</a></p>
+<p>$<code>code/mdsr2e/17-geospatialI.R</code>
+<a href="code/mdsr2e/17-geospatialI.R">code/mdsr2e/17-geospatialI.R</a></p>
+<p>$<code>code/mdsr2e/18-geospatialII.R</code>
+<a href="code/mdsr2e/18-geospatialII.R">code/mdsr2e/18-geospatialII.R</a></p>
+<p>$<code>code/mdsr2e/19-text.R</code>
+<a href="code/mdsr2e/19-text.R">code/mdsr2e/19-text.R</a></p>
+<p>$<code>code/mdsr2e/20-netsci.R</code>
+<a href="code/mdsr2e/20-netsci.R">code/mdsr2e/20-netsci.R</a></p>
+<p>$<code>code/mdsr2e/21-big_data.R</code>
+<a href="code/mdsr2e/21-big_data.R">code/mdsr2e/21-big_data.R</a></p>
+<p>$<code>code/mdsr2e/A-pkg.R</code>
+<a href="code/mdsr2e/A-pkg.R">code/mdsr2e/A-pkg.R</a></p>
+<p>$<code>code/mdsr2e/B-appR.R</code>
+<a href="code/mdsr2e/B-appR.R">code/mdsr2e/B-appR.R</a></p>
+<p>$<code>code/mdsr2e/C-algorithmic.R</code>
+<a href="code/mdsr2e/C-algorithmic.R">code/mdsr2e/C-algorithmic.R</a></p>
+<p>$<code>code/mdsr2e/D-reproducible.R</code>
+<a href="code/mdsr2e/D-reproducible.R">code/mdsr2e/D-reproducible.R</a></p>
+<p>$<code>code/mdsr2e/E-regression.R</code>
+<a href="code/mdsr2e/E-regression.R">code/mdsr2e/E-regression.R</a></p>
+<p>$<code>code/mdsr2e/F-dbsetup.R</code>
+<a href="code/mdsr2e/F-dbsetup.R">code/mdsr2e/F-dbsetup.R</a></p>
 </div>
 <div id="mdsr1e" class="section level2">
 <h2>1st edition</h2>
-<p>$<code>code/mdsr1e/algorithmic.R</code> <a href="code/mdsr1e/algorithmic.R">code/mdsr1e/algorithmic.R</a></p>
-<p>$<code>code/mdsr1e/bigData.R</code> <a href="code/mdsr1e/bigData.R">code/mdsr1e/bigData.R</a></p>
-<p>$<code>code/mdsr1e/dataI.R</code> <a href="code/mdsr1e/dataI.R">code/mdsr1e/dataI.R</a></p>
-<p>$<code>code/mdsr1e/dataII.R</code> <a href="code/mdsr1e/dataII.R">code/mdsr1e/dataII.R</a></p>
-<p>$<code>code/mdsr1e/datavizI.R</code> <a href="code/mdsr1e/datavizI.R">code/mdsr1e/datavizI.R</a></p>
-<p>$<code>code/mdsr1e/datavizII.R</code> <a href="code/mdsr1e/datavizII.R">code/mdsr1e/datavizII.R</a></p>
-<p>$<code>code/mdsr1e/datavizIII.R</code> <a href="code/mdsr1e/datavizIII.R">code/mdsr1e/datavizIII.R</a></p>
-<p>$<code>code/mdsr1e/dbsetup.R</code> <a href="code/mdsr1e/dbsetup.R">code/mdsr1e/dbsetup.R</a></p>
-<p>$<code>code/mdsr1e/ethics.R</code> <a href="code/mdsr1e/ethics.R">code/mdsr1e/ethics.R</a></p>
-<p>$<code>code/mdsr1e/foundations.R</code> <a href="code/mdsr1e/foundations.R">code/mdsr1e/foundations.R</a></p>
-<p>$<code>code/mdsr1e/intro.R</code> <a href="code/mdsr1e/intro.R">code/mdsr1e/intro.R</a></p>
-<p>$<code>code/mdsr1e/learningI.R</code> <a href="code/mdsr1e/learningI.R">code/mdsr1e/learningI.R</a></p>
-<p>$<code>code/mdsr1e/learningII.R</code> <a href="code/mdsr1e/learningII.R">code/mdsr1e/learningII.R</a></p>
-<p>$<code>code/mdsr1e/netsci.R</code> <a href="code/mdsr1e/netsci.R">code/mdsr1e/netsci.R</a></p>
-<p>$<code>code/mdsr1e/regression.R</code> <a href="code/mdsr1e/regression.R">code/mdsr1e/regression.R</a></p>
-<p>$<code>code/mdsr1e/reproducible.R</code> <a href="code/mdsr1e/reproducible.R">code/mdsr1e/reproducible.R</a></p>
-<p>$<code>code/mdsr1e/simulation.R</code> <a href="code/mdsr1e/simulation.R">code/mdsr1e/simulation.R</a></p>
-<p>$<code>code/mdsr1e/spatial.R</code> <a href="code/mdsr1e/spatial.R">code/mdsr1e/spatial.R</a></p>
-<p>$<code>code/mdsr1e/sql.R</code> <a href="code/mdsr1e/sql.R">code/mdsr1e/sql.R</a></p>
-<p>$<code>code/mdsr1e/sqlII.R</code> <a href="code/mdsr1e/sqlII.R">code/mdsr1e/sqlII.R</a></p>
-<p>$<code>code/mdsr1e/text.R</code> <a href="code/mdsr1e/text.R">code/mdsr1e/text.R</a></p>
+<p>$<code>code/mdsr1e/algorithmic.R</code>
+<a href="code/mdsr1e/algorithmic.R">code/mdsr1e/algorithmic.R</a></p>
+<p>$<code>code/mdsr1e/bigData.R</code>
+<a href="code/mdsr1e/bigData.R">code/mdsr1e/bigData.R</a></p>
+<p>$<code>code/mdsr1e/dataI.R</code>
+<a href="code/mdsr1e/dataI.R">code/mdsr1e/dataI.R</a></p>
+<p>$<code>code/mdsr1e/dataII.R</code>
+<a href="code/mdsr1e/dataII.R">code/mdsr1e/dataII.R</a></p>
+<p>$<code>code/mdsr1e/datavizI.R</code>
+<a href="code/mdsr1e/datavizI.R">code/mdsr1e/datavizI.R</a></p>
+<p>$<code>code/mdsr1e/datavizII.R</code>
+<a href="code/mdsr1e/datavizII.R">code/mdsr1e/datavizII.R</a></p>
+<p>$<code>code/mdsr1e/datavizIII.R</code>
+<a href="code/mdsr1e/datavizIII.R">code/mdsr1e/datavizIII.R</a></p>
+<p>$<code>code/mdsr1e/dbsetup.R</code>
+<a href="code/mdsr1e/dbsetup.R">code/mdsr1e/dbsetup.R</a></p>
+<p>$<code>code/mdsr1e/ethics.R</code>
+<a href="code/mdsr1e/ethics.R">code/mdsr1e/ethics.R</a></p>
+<p>$<code>code/mdsr1e/foundations.R</code>
+<a href="code/mdsr1e/foundations.R">code/mdsr1e/foundations.R</a></p>
+<p>$<code>code/mdsr1e/intro.R</code>
+<a href="code/mdsr1e/intro.R">code/mdsr1e/intro.R</a></p>
+<p>$<code>code/mdsr1e/learningI.R</code>
+<a href="code/mdsr1e/learningI.R">code/mdsr1e/learningI.R</a></p>
+<p>$<code>code/mdsr1e/learningII.R</code>
+<a href="code/mdsr1e/learningII.R">code/mdsr1e/learningII.R</a></p>
+<p>$<code>code/mdsr1e/netsci.R</code>
+<a href="code/mdsr1e/netsci.R">code/mdsr1e/netsci.R</a></p>
+<p>$<code>code/mdsr1e/regression.R</code>
+<a href="code/mdsr1e/regression.R">code/mdsr1e/regression.R</a></p>
+<p>$<code>code/mdsr1e/reproducible.R</code>
+<a href="code/mdsr1e/reproducible.R">code/mdsr1e/reproducible.R</a></p>
+<p>$<code>code/mdsr1e/simulation.R</code>
+<a href="code/mdsr1e/simulation.R">code/mdsr1e/simulation.R</a></p>
+<p>$<code>code/mdsr1e/spatial.R</code>
+<a href="code/mdsr1e/spatial.R">code/mdsr1e/spatial.R</a></p>
+<p>$<code>code/mdsr1e/sql.R</code>
+<a href="code/mdsr1e/sql.R">code/mdsr1e/sql.R</a></p>
+<p>$<code>code/mdsr1e/sqlII.R</code>
+<a href="code/mdsr1e/sqlII.R">code/mdsr1e/sqlII.R</a></p>
+<p>$<code>code/mdsr1e/text.R</code>
+<a href="code/mdsr1e/text.R">code/mdsr1e/text.R</a></p>
 </div>
 
     <div id="footer">

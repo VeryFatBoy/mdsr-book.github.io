@@ -5,14 +5,14 @@ title: "The Authors"
 <div class="row">
   <div class="col-sm-8">
 
-[**Benjamin S. Baumer**](http://www.science.smith.edu/~bbaumer) is an [associate professor](https://www.smith.edu/academics/faculty/ben-baumer) in the Statistical & Data Sciences program at Smith College. He has been a practicing data scientist since 2004, when he became the first full-time statistical analyst for the [New York Mets](http://www.nymets.com). Ben is a co-author of [*The Sabermetric Revolution*](http://www.upenn.edu/pennpress/book/15168.html) and [*Analyzing Baseball Data with R*](https://www.routledge.com/Analyzing-Baseball-Data-with-R-Second-Edition/Marchi-Albert-Marchi-Albert-Baumer/p/book/9780815353515). He received the 2019 Waller Education Award and the [2016 Contemporary Baseball Analysis Award](http://sabr.org/latest/baumer-brudnicki-mcmurray-win-2016-sabr-analytics-conference-research-awards) from the Society for American Baseball Research.
+[**Benjamin S. Baumer**](http://www.science.smith.edu/~bbaumer) is a [professor](https://www.smith.edu/academics/faculty/ben-baumer) in the Statistical & Data Sciences program at Smith College. He has been a practicing data scientist since 2004, when he became the first full-time statistical analyst for the [New York Mets](http://www.nymets.com). Ben is a co-author of [*The Sabermetric Revolution*](http://www.upenn.edu/pennpress/book/15168.html) and [*Analyzing Baseball Data with R*](https://www.routledge.com/Analyzing-Baseball-Data-with-R-Second-Edition/Marchi-Albert-Marchi-Albert-Baumer/p/book/9780815353515). He received the 2019 Waller Education Award and the [2016 Contemporary Baseball Analysis Award](http://sabr.org/latest/baumer-brudnicki-mcmurray-win-2016-sabr-analytics-conference-research-awards) from the Society for American Baseball Research.
 
 
   
   <a href="https://twitter.com/baumerben" class="twitter-follow-button" data-show-count="false">Follow @baumerben</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class="col-sm-4">
-  <img src="https://www.smith.edu/sites/default/files/styles/img-faculty-detail/public/media/Faculty/ben_baumer_crop.jpg?itok=QWfbn6aX" width="240px">
+  <img src="https://www.smith.edu/sites/default/files/styles/content_faculty_profile_full_large/public/media/Faculty/ben_baumer_crop.jpg.webp?itok=_RP8Ryp8" width="240px">
   </div>
 </div>
 
@@ -20,7 +20,7 @@ title: "The Authors"
 
 <div class="row">
   <div class="col-sm-4">
-  <img src="https://www.macalester.edu/~kaplan/kaplan.jpg" width="240px">
+  <img src="https://i1.rgstatic.net/ii/profile.image/278907891798018-1443508231312_Q512/Daniel-Kaplan-4.jpg" width="240px">
   </div>
   <div class="col-sm-8">
 
@@ -40,7 +40,7 @@ title: "The Authors"
 <a href="https://twitter.com/askdrstats" class="twitter-follow-button" data-show-count="false">Follow @askdrstats</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class="col-sm-4">
-  <img src="https://directory.amherst.edu/directory-photo/image.php?w=170&h=170&id=1545596&image=1&zoom=1&dummy=clear" width="240px">
+  <img src="https://wsgapps.aws.amherst.edu/directory-photo/image.php?id=1545596&original=1&image=1" width="240px">
   </div>
 </div>
 

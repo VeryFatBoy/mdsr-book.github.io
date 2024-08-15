@@ -13,8 +13,8 @@
 
 <title>exercises.knit</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -29,7 +29,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -95,6 +95,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
 
 
@@ -119,6 +120,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -176,11 +180,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -209,8 +217,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -218,16 +226,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -350,7 +351,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -366,7 +367,7 @@ div.tocify {
   <a href="authors.html">The Authors</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Content
      
     <span class="caret"></span>
@@ -404,7 +405,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Resources
      
     <span class="caret"></span>
@@ -462,59 +463,118 @@ div.tocify {
 <h3>Data Visualization</h3>
 <div id="exercise-2.3" class="section level4">
 <h4>Exercise 2.3</h4>
-<p>Choose one of the data graphics listed below and answer the following questions. Be sure to indicate which graphical display you picked.</p>
+<p>Choose one of the data graphics listed below and answer the following
+questions. Be sure to indicate which graphical display you picked.</p>
 <ol style="list-style-type: lower-alpha">
 <li>Identify the visual cues, coordinate system, and scale(s).</li>
-<li>How many variables are depicted in the graphic? Explicitly link each variable to a visual cue that you listed above.</li>
-<li>Critique this data graphic using the taxonomy described in this chapter.</li>
+<li>How many variables are depicted in the graphic? Explicitly link each
+variable to a visual cue that you listed above.</li>
+<li>Critique this data graphic using the taxonomy described in this
+chapter.</li>
 </ol>
 <ol style="list-style-type: decimal">
-<li><a href="http://thefuturebuzz.com/2012/09/19/simplicity-with-data-visualization-is-still-best">Who does not Pay Income Tax?</a></li>
-<li><a href="http://vizwiz.blogspot.com/2009/12/simple-is-better.html">World’s Top 10 Best Selling Cigarette Brands, 2004-2007</a></li>
-<li><del><a href="http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg">GNPD Usage by Food Categories</a></del></li>
-<li><a href="http://champsring.com/products/pro-basketball-2013">NBA Playoff Rings</a></li>
-<li><a href="http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg">UK University Rankings</a></li>
-<li><a href="http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif">Childhood Obesity in the US</a></li>
-<li><a href="http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg">Relationship between ages and psychosocial maturity</a></li>
-<li><del><a href="http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg">Location of Floating Plastic Trash</a></del></li>
+<li><a
+href="http://thefuturebuzz.com/2012/09/19/simplicity-with-data-visualization-is-still-best">Who
+does not Pay Income Tax?</a></li>
+<li><a
+href="http://vizwiz.blogspot.com/2009/12/simple-is-better.html">World’s
+Top 10 Best Selling Cigarette Brands, 2004-2007</a></li>
+<li><del><a
+href="http://www.nrsmithdesign.com/wp-content/uploads/2012/10/data-graphic.jpg">GNPD
+Usage by Food Categories</a></del></li>
+<li><a href="http://champsring.com/products/pro-basketball-2013">NBA
+Playoff Rings</a></li>
+<li><a
+href="http://static.guim.co.uk/sys-images/Guardian/Pix/maps_and_graphs/2010/9/7/1283876186403/Top-universities-graphic-001.jpg">UK
+University Rankings</a></li>
+<li><a
+href="http://www.sparkpe.org/blog/wp-content/uploads/2010/07/childhood-obesity-bmi.gif">Childhood
+Obesity in the US</a></li>
+<li><a
+href="http://ars.els-cdn.com/content/image/1-s2.0-S1043276005002602-gr2.jpg">Relationship
+between ages and psychosocial maturity</a></li>
+<li><del><a
+href="http://images.nationalgeographic.com/wpf/media-content/photos/000/816/81694-cb1405449966.jpg">Location
+of Floating Plastic Trash</a></del></li>
 </ol>
 </div>
 <div id="exercise-2.4" class="section level4">
 <h4>Exercise 2.4</h4>
-<p>Answer the following questions for each of the following collections of data graphics.</p>
+<p>Answer the following questions for each of the following collections
+of data graphics.</p>
 <ol>
-<li><a href="http://tinyurl.com/what-is-datascientist">What is a Data Scientist?</a></li>
-<li><a href="http://www.vox.com/a/explain-food-america">Charts that explain food in America</a></li>
+<li><a href="http://tinyurl.com/what-is-datascientist">What is a Data
+Scientist?</a></li>
+<li><a href="http://www.vox.com/a/explain-food-america">Charts that
+explain food in America</a></li>
 </ol>
-<p>Briefly (one paragraph) critique the designer’s choices. Would you have made different choices? Why or why not.</p>
+<p>Briefly (one paragraph) critique the designer’s choices. Would you
+have made different choices? Why or why not.</p>
 <blockquote>
-<p>Note: Each link contains a collection of many data graphics, and we don’t expect (or want) you to write a dissertation on each individual graphic. But each collection shares some common stylistic elements. You should comment on a few things that you notice about the design of the collection.</p>
+<p>Note: Each link contains a collection of many data graphics, and we
+don’t expect (or want) you to write a dissertation on each individual
+graphic. But each collection shares some common stylistic elements. You
+should comment on a few things that you notice about the design of the
+collection.</p>
 </blockquote>
 </div>
 <div id="exercise-2.5" class="section level4">
 <h4>Exercise 2.5</h4>
 <p>Consider one of the more complicated data graphics listed below.</p>
 <ol style="list-style-type: lower-alpha">
-<li>What story does the data graphic tell? What is the main message that you take away from it?</li>
-<li>Can the data graphic be described in terms of the taxonomy presented in this chapter? If so, list the visual cues, coordinate system, and scales(s) as you did in Problem 2(a). If not, describe the feature of this data graphic that lies outside of that taxonomy.</li>
-<li>Critique and/or praise the visualization choices made by the designer. Do they work? Are they misleading? Thought-provoking? Brilliant? Are there things that you would have done differently? Justify your response.</li>
+<li>What story does the data graphic tell? What is the main message that
+you take away from it?</li>
+<li>Can the data graphic be described in terms of the taxonomy presented
+in this chapter? If so, list the visual cues, coordinate system, and
+scales(s) as you did in Problem 2(a). If not, describe the feature of
+this data graphic that lies outside of that taxonomy.</li>
+<li>Critique and/or praise the visualization choices made by the
+designer. Do they work? Are they misleading? Thought-provoking?
+Brilliant? Are there things that you would have done differently?
+Justify your response.</li>
 </ol>
 <ol style="list-style-type: decimal">
-<li><del><a href="http://visualization.geblogs.com/visualization/network/">Health InfoScape</a></del></li>
-<li><a href="http://web.williams.edu/Mathematics/devadoss/careerpath.html">Career Paths for Williams College alums</a></li>
+<li><del><a
+href="http://visualization.geblogs.com/visualization/network/">Health
+InfoScape</a></del></li>
+<li><a
+href="http://web.williams.edu/Mathematics/devadoss/careerpath.html">Career
+Paths for Williams College alums</a></li>
 <li><a href="http://hint.fm/wind/">Wind Map</a></li>
-<li><a href="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?_r=1">Obama’s Budget</a></li>
-<li><a href="http://www.nytimes.com/imagepages/2008/11/11/science/20081111_EPIGENETICS_GRAPHIC.html">Mapping the Epigenome</a></li>
-<li><a href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/11/08/Public_spending_2710.pdf">UK Government Spending</a></li>
-<li>Malte Spitz’s <a href="http://www.zeit.de/datenschutz/malte-spitz-data-retention">cellphone usage</a></li>
-<li><del>Wharf 5 <a href="http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo_TidePrediction_1C_4_4096.jpg">Tide Prediction</a></del></li>
-<li><a href="http://rcmap.hatnote.com/#en,de,ru,ja,es,fr">Wikipedia Changes Map</a></li>
-<li><a href="http://infosthetics.com/archives/2014/09/githut_the_universe_of_programming_languages_across_github.html">Programming languages across GitHub</a></li>
-<li><a href="http://infosthetics.com/archives/2014/08/the_many_factors_influencing_breast_cancer_incidence.html">Causes for breast cancer</a></li>
-<li><a href="http://spatialinformationdesignlab.org/projects/citibike-rebalancing-study">CitiBike Rebalancing</a></li>
-<li><a href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/02/10/CarbonWeb.pdf">CO2 Emissions</a></li>
-<li><a href="http://circos.ca/intro/genomic_data/">Circos Genomic Data</a></li>
-<li><a href="http://flowingdata.com/2014/07/02/jobs-charted-by-state-and-salary/">Jobs Charted by State and Salary</a></li>
+<li><a
+href="http://www.nytimes.com/interactive/2012/02/13/us/politics/2013-budget-proposal-graphic.html?_r=1">Obama’s
+Budget</a></li>
+<li><a
+href="http://www.nytimes.com/imagepages/2008/11/11/science/20081111_EPIGENETICS_GRAPHIC.html">Mapping
+the Epigenome</a></li>
+<li><a
+href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/11/08/Public_spending_2710.pdf">UK
+Government Spending</a></li>
+<li>Malte Spitz’s <a
+href="http://www.zeit.de/datenschutz/malte-spitz-data-retention">cellphone
+usage</a></li>
+<li><del>Wharf 5 <a
+href="http://payload18.cargocollective.com/1/6/194031/2678199/WilfredCastillo_TidePrediction_1C_4_4096.jpg">Tide
+Prediction</a></del></li>
+<li><a href="http://rcmap.hatnote.com/#en,de,ru,ja,es,fr">Wikipedia
+Changes Map</a></li>
+<li><a
+href="http://infosthetics.com/archives/2014/09/githut_the_universe_of_programming_languages_across_github.html">Programming
+languages across GitHub</a></li>
+<li><a
+href="http://infosthetics.com/archives/2014/08/the_many_factors_influencing_breast_cancer_incidence.html">Causes
+for breast cancer</a></li>
+<li><a
+href="http://spatialinformationdesignlab.org/projects/citibike-rebalancing-study">CitiBike
+Rebalancing</a></li>
+<li><a
+href="http://image.guardian.co.uk/sys-files/Guardian/documents/2011/02/10/CarbonWeb.pdf">CO2
+Emissions</a></li>
+<li><a href="http://circos.ca/intro/genomic_data/">Circos Genomic
+Data</a></li>
+<li><a
+href="http://flowingdata.com/2014/07/02/jobs-charted-by-state-and-salary/">Jobs
+Charted by State and Salary</a></li>
 </ol>
 </div>
 </div>
@@ -563,6 +623,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

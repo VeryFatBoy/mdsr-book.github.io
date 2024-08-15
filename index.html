@@ -13,8 +13,8 @@
 
 <title>Modern Data Science with R</title>
 
-<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.27/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -92,6 +92,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="include/mdsr.css" type="text/css" />
 
 
@@ -116,6 +117,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -173,11 +177,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -206,8 +214,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -215,16 +223,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -268,7 +269,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -284,7 +285,7 @@ $(document).ready(function () {
   <a href="authors.html">The Authors</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Content
      
     <span class="caret"></span>
@@ -322,7 +323,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Resources
      
     <span class="caret"></span>
@@ -375,25 +376,54 @@ $(document).ready(function () {
 
 
 <div class="row">
-<div id="nd-edition-published-2021" class="section level3 col-sm-7">
-<h3><a href="https://mdsr-book.github.io/mdsr3e">2nd edition (plus light edits and updates), published 2023</a></h3>
-<h3><a href="https://mdsr-book.github.io/mdsr2e">2nd edition, published 2021</a></h3>
-<p><em>Modern Data Science with R</em> is a comprehensive <strong>data science textbook</strong> for undergraduates that incorporates statistical and computational thinking to solve real-world problems with data. Rather than focus exclusively on case studies or programming syntax, this book illustrates how statistical programming in the state-of-the-art R/RStudio computing environment can be leveraged to extract meaningful information from a variety of data in the service of addressing compelling statistical questions.</p>
-<p>Contemporary data science requires a tight integration of knowledge from statistics, computer science, mathematics, and a domain of application. This book will help readers with some background in statistics and modest prior experience with coding develop and practice the appropriate skills to tackle complex data science projects. The book features a number of exercises and has a flexible organization conducive to teaching a variety of semester courses.</p>
+<div class="col-sm-7">
+<div id="nd-edition-plus-light-edits-and-updates-published-2024"
+class="section level3">
+<h3><a href="https://mdsr-book.github.io/mdsr3e">2nd edition (plus light
+edits and updates), published 2024</a></h3>
+</div>
+<div id="nd-edition-published-2021" class="section level3">
+<h3><a href="https://mdsr-book.github.io/mdsr2e">2nd edition, published
+2021</a></h3>
+<p><em>Modern Data Science with R</em> is a comprehensive <strong>data
+science textbook</strong> for undergraduates that incorporates
+statistical and computational thinking to solve real-world problems with
+data. Rather than focus exclusively on case studies or programming
+syntax, this book illustrates how statistical programming in the
+state-of-the-art R/RStudio computing environment can be leveraged to
+extract meaningful information from a variety of data in the service of
+addressing compelling statistical questions.</p>
+<p>Contemporary data science requires a tight integration of knowledge
+from statistics, computer science, mathematics, and a domain of
+application. This book will help readers with some background in
+statistics and modest prior experience with coding develop and practice
+the appropriate skills to tackle complex data science projects. The book
+features a number of exercises and has a flexible organization conducive
+to teaching a variety of semester courses.</p>
 </br>
 <div>
-<p><a href="https://www.routledge.com/"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/CRC_Press_logo.svg/1280px-CRC_Press_logo.svg.png" width="300px"> </a></p>
+<p><a href="https://www.routledge.com/">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/CRC_Press_logo.svg/1280px-CRC_Press_logo.svg.png" width="300px">
+</a></p>
+</div>
 </div>
 </div>
 <div class="col-sm-5">
-<p><a href="https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498"><img src="mdsr2e_cover.png" /></a></p>
+<p><a
+href="https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498"><img
+src="mdsr2e_cover.png" /></a></p>
 <p>Buy it from:</p>
 <ul>
-<li><a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9780367191498">CRC Press</a></li>
-<li><a href="https://www.amazon.com/Modern-Science-Chapman-Texts-Statistical-dp-0367191490/dp/0367191490/ref=dp_ob_title_bk">Amazon.com</a></li>
+<li><a
+href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9780367191498">CRC
+Press</a></li>
+<li><a
+href="https://www.amazon.com/Modern-Science-Chapman-Texts-Statistical-dp-0367191490/dp/0367191490/ref=dp_ob_title_bk">Amazon.com</a></li>
 </ul>
 <div>
-<p><a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9780367191498"> <i class="fa fa-book"></i>Request an e-Inspection Copy <i class="fa fa-angle-double-right"></i> </a></p>
+<p><a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9780367191498">
+<i class="fa fa-book"></i>Request an e-Inspection Copy
+<i class="fa fa-angle-double-right"></i> </a></p>
 </div>
 </div>
 </div>
@@ -402,28 +432,57 @@ $(document).ready(function () {
 <div id="st-edition-published-2017" class="section level3 col-sm-7">
 <h3>1st edition, published 2017</h3>
 <blockquote>
-<p>“<em>Modern Data Science with R</em> is a breakthrough textbook” (<a href="https://dl.acm.org/citation.cfm?id=3300155&amp;dl=ACM&amp;coll=DL">Allan M. Miller</a>, UC Berkeley)</p>
+<p>“<em>Modern Data Science with R</em> is a breakthrough textbook” (<a
+href="https://dl.acm.org/citation.cfm?id=3300155&amp;dl=ACM&amp;coll=DL">Allan
+M. Miller</a>, UC Berkeley)</p>
 </blockquote>
 <blockquote>
-<p>“<em>Modern Data Science with R</em>” is a landmark: the first full textbook in data science…Indeed, if R were to cease to exist tomorrow, these readers would still be well-situated to be data scientists. In a nutshell, that approach is what makes this such a successful textbook (not a handbook) suited for a course (not a workshop) on data science (not statistics). (<a href="https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649">Andrew Bray</a>, Reed College)</p>
+<p>“<em>Modern Data Science with R</em>” is a landmark: the first full
+textbook in data science…Indeed, if R were to cease to exist tomorrow,
+these readers would still be well-situated to be data scientists. In a
+nutshell, that approach is what makes this such a successful textbook
+(not a handbook) suited for a course (not a workshop) on data science
+(not statistics). (<a
+href="https://amstat.tandfonline.com/doi/pdf/10.1080/00031305.2018.1496649">Andrew
+Bray</a>, Reed College)</p>
 </blockquote>
 <blockquote>
-<p>“The book is unique. It is an encyclopedia of Data Science, and it covers a wide variety of modern topics; another positive aspect is that it contains lots of examples and code, and the layout is quite catchy. One can learn (and teach) subjects as diverse as: How to give talks, administrating databases, how to model spatial data, and even ethics—all in one book.” (Miguel de Carvalho, The University of Edinburgh)</p>
+<p>“The book is unique. It is an encyclopedia of Data Science, and it
+covers a wide variety of modern topics; another positive aspect is that
+it contains lots of examples and code, and the layout is quite catchy.
+One can learn (and teach) subjects as diverse as: How to give talks,
+administrating databases, how to model spatial data, and even ethics—all
+in one book.” (Miguel de Carvalho, The University of Edinburgh)</p>
 </blockquote>
 <blockquote>
-<p>“This book is unique because it incorporates theoretical fundamentals such as statistical learning and regression modelling with the modern, practical elements of data science, including setting up databases and debugging. <em>Modern Data Science with R</em> presents a variety of topics with several illustrative and engaging examples in R. This book is a valuable resource to all those studying and interested in data science.” (<a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256">Shuangzhe Liu</a>, University of Canberra)</p>
+<p>“This book is unique because it incorporates theoretical fundamentals
+such as statistical learning and regression modelling with the modern,
+practical elements of data science, including setting up databases and
+debugging. <em>Modern Data Science with R</em> presents a variety of
+topics with several illustrative and engaging examples in R. This book
+is a valuable resource to all those studying and interested in data
+science.” (<a
+href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/insr.12256">Shuangzhe
+Liu</a>, University of Canberra)</p>
 </blockquote>
 <p><a href="publicity.html">Read more reviews…</a></p>
 </div>
 <div class="col-sm-5">
-<p><a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487"><img src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg" /></a></p>
+<p><a
+href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487"><img
+src="https://images.tandf.co.uk/common/jackets/amazon/978149872/9781498724487.jpg" /></a></p>
 <p>Buy it from:</p>
 <ul>
-<li><a href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487">CRC Press</a></li>
-<li><a href="https://www.amazon.com/Modern-Data-Science-Download-Statistical/dp/1498724485">Amazon.com</a></li>
+<li><a
+href="https://www.crcpress.com/Modern-Data-Science-with-R/Baumer-Horton-Kaplan/9781498724487">CRC
+Press</a></li>
+<li><a
+href="https://www.amazon.com/Modern-Data-Science-Download-Statistical/dp/1498724485">Amazon.com</a></li>
 </ul>
 <div>
-<p><a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9781498724487"> <i class="fa fa-book"></i>Request an e-Inspection Copy <i class="fa fa-angle-double-right"></i> </a></p>
+<p><a class="btn btn-primary btn-block" href="https://www.crcpress.com/textbooks/evaluation/9781498724487">
+<i class="fa fa-book"></i>Request an e-Inspection Copy
+<i class="fa fa-angle-double-right"></i> </a></p>
 </div>
 </div>
 </div>
